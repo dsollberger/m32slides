@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "library(\"tidyverse\")\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter",
+    "title": "Introduction",
+    "section": "Introducting the Presenter",
+    "text": "Introducting the Presenter\n\n\n\nLecturer: Derek Sollberger\n\nI go by “Derek” or “teacher”\n\nOriginally from Los Angeles\nBA in Applied Mathematics, UC Berkeley\nMS in Applied Mathematics, CSULB\nMS in Applied Mathematics, UC Merced"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter-1",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter-1",
+    "title": "Introduction",
+    "section": "Introducting the Presenter",
+    "text": "Introducting the Presenter\n\n\n\n\n\nContinuing Lecturer in Applied Mathematics\n10+ years of teaching at UC Merced\nCourses:\n\nBio 18: Data Science\nBio 175: Biostatistics\nBio 184: Python for Bioinformatics\nMath 32: Probability and Statistics"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#current-research-in-pedagogy",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#current-research-in-pedagogy",
+    "title": "Introduction",
+    "section": "Current Research in Pedagogy",
+    "text": "Current Research in Pedagogy\n\n\n\n\n\nactive learning\ncomputer programming\naugmented reality"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#on-notetaking",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#on-notetaking",
+    "title": "Introduction",
+    "section": "On Notetaking",
+    "text": "On Notetaking\n\n\n\nDo not write all of the information from the slides\nDo write along with what Derek writes on the whiteboard\nMake a few notes for main ideas and computer programming\nRetain placement notes, such as “Example #2” or “Survey#1”\nNo need to copy computer code from lecture (code will be provided)"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#why-probability",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#why-probability",
+    "title": "Introduction",
+    "section": "Why Probability?",
+    "text": "Why Probability?\n\nThe Classic Birthday Problem\nHow many students have to enter the classroom until there are two students that share a birthday?"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#deterministic-vs-probabilistic",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#deterministic-vs-probabilistic",
+    "title": "Introduction",
+    "section": "Deterministic vs Probabilistic",
+    "text": "Deterministic vs Probabilistic\nDeterministic: a situation that can be solved with equation solving and/or an algorithm\n\nExample: If water boils at 100 degrees Celsius, what is that threshold in Fahrenheit?\n\nProbabilistic: a situation that cannot be completely solved due to an element of chance\n\nExample: What is the chance that it will rain tomorrow?"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#probability-and-you",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#probability-and-you",
+    "title": "Introduction",
+    "section": "Probability and You",
+    "text": "Probability and You\n\nApplied MathematicsBioengineeringChemical SciencesComputer Science and EngineeringEnvironmental EngineeringMaterials Science and EngineeringMechanical EngineeringPhysics\n\n\nDoes a probabilistic sequence converge or diverge?\n\n\nWhat percentage of lyme disease patients would be cured with the current but experimental treatments?\n\n\nWhat proportion of reactants undergo a reaction early in the reaction?\n\n\nHow many computers in a network would be affected after a virus infection?\n\n\nHow many of a certain species of plants are in the Vernal Pools Reserve?\n\n\nWhat percentage of a semiconductor is made of impurities?\n\n\nFor a commercial passenger airplane, what is the probability that at least two engines fail during a flight?\n\n\nHow many stars are in the Milky Way?"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#ugh-the-syllabus",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#ugh-the-syllabus",
+    "title": "Introduction",
+    "section": "Ugh, the Syllabus",
+    "text": "Ugh, the Syllabus\n\nDescriptionCLOsPLOs\n\n\nConcepts of probability and statistics. Conditional probability, independence, random variables, distribution functions, descriptive statistics, transformations, sampling errors, confidence intervals, least squares and maximum likelihood. Exploratory data analysis and interactive computing.\n\n\n\nDevelop probabilistic models of random phenomena.\nInfer statistical models from real data.\nApply mathematical methods to probabilistic/statistical models to\n\n\nMake predictions and\nQuantify the uncertainty in these predictions.\n\n\nWrite and run “simple” R programs for the purposes of data analysis, modeling, and visualization.\n\n\n\n\nSolve mathematical problems using analytical methods.\nSolve mathematical problems using computational methods.\nRecognize the relationships between different areas of mathematics and the connections between mathematics and other disciplines.\nGive clear and organized written and verbal explanations of mathematical ideas to a variety of audiences\nModel real-world problems mathematically and analyze those models using their mastery of the core concepts."
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#assessment",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#assessment",
+    "title": "Introduction",
+    "section": "Assessment",
+    "text": "Assessment\n\nBefore-LectureComputer ProgrammingWritten AssignmentsDiscussionSurveysExams\n\n\n\n5 percent of semester grade\nquizzes due before lecture (i.e. 3 PM on TuTh)\n\nno extensions\n\n5 to 10 minutes per quiz\n\nreview concepts and formulas\npreview thought exercises\n\n\n\n\n\n20 percent of semester grade\nlanguage: R\nplatform: LearnR apps\nanswers to frequently asked questions\n\nno, work may not be done in another language (e.g. Python)\nno, work may not be done in another IDE (e.g. VS Code)\n\n10 to 20 minutes per week\n\n\n\n\n20 percent of semester grade\nclassical math textbook homework\nadvice: do most of the work during your discussion section\n\n\n\n\n10 percent of semester grade for discussion section participation\nTA will track attendance\nadvised to work on written and computer assignments during discussion sections\n\n\n\n\n5 percent of semester grade\ngraded quickly on effort and completion\n5 to 10 minutes per survey\n\n\n\n\nExam 1: 10 percent of semester grade (Tuesday, Sept. 27)\nExam 2: 15 percent of semester grade (Tuesday, Nov. 1)\nFinal Exam: 15 percent of semester grade (date TBD, see survey)"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#student-accessibility-services",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#student-accessibility-services",
+    "title": "Introduction",
+    "section": "Student Accessibility Services",
+    "text": "Student Accessibility Services\nSpecial Accommodations: University of California, Merced is committed to creating learning environments that are accessible to all. If you anticipate or experience physical or academic barriers based on a disability, please feel welcome to contact me privately so we can discuss options. In addition, please contact Student Accessibility Services (SAS) at (209) 228-6996 or disabilityservices@ucmerced.edu as soon as possible to explore reasonable accommodations. All accommodations must have prior approval from Student Accessibility Services on the basis of appropriate documentation. If you anticipate or experience barriers due to pregnancy, temporary medical condition, or injury,please feel welcome to contact me so we can discuss options. You are encouraged to contact the Dean of Students for support and resources at (209) 228-3633 or https://studentaffairs.ucmerced.edu/dean-students."
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#academic-integrity",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#academic-integrity",
+    "title": "Introduction",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic integrity is the foundation of an academic community and without it none of the educational or research goals of the university can be achieved. All members of the community are responsible for its academic integrity. Existing policies forbid cheating on examinations, plagiarism and other forms of academic dishonesty. The UC Merced Academic Honesty Policy The UC Merced Academic Honesty Policy can be found on the Student Conduct website. Infractions against academic integrity will incur consequences such as an “F” on the assignment/exam and/or a report to the Academic Senate."
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example",
+    "title": "Introduction",
+    "section": "Nerdy Example",
+    "text": "Nerdy Example\nHow many numbers between zero and one do we have to add up to have a sum that is greater than one?\n\nAssume selection from a uniform distribution"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation",
+    "title": "Introduction",
+    "section": "Cumulative Summation",
+    "text": "Cumulative Summation\nLet us start with the natural numbers\n\\[i = \\{1, 2, 3, ...\\}\\]\nThen cumulative summation takes place with\n\\[F(n) = \\sum_{i = 1}^{n} i\\]"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation-1",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation-1",
+    "title": "Introduction",
+    "section": "Cumulative Summation",
+    "text": "Cumulative Summation\nIn R, we can define a sequence of natural numbers\n\nnatural_numbers <- 1:10\nprint(natural_numbers)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nand then employ the cumsum() function to perform the cumulative summation.\n\ncumsum(natural_numbers)\n\n [1]  1  3  6 10 15 21 28 36 45 55"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#random-number-generation",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#random-number-generation",
+    "title": "Introduction",
+    "section": "Random Number Generation",
+    "text": "Random Number Generation\nIn R, we generate a random number between zero and one (here: assumed from a uniform distribution) with the runif function.\n\nrunif(1)\n\n[1] 0.4846619\n\n\nFrom there, we can (for example) produce a sample of \\(n = 32\\) such random numbers\n\nrunif(32)\n\n [1] 0.2185369 0.3940378 0.5758258 0.3764817 0.5044308 0.8941394 0.4154541\n [8] 0.7728458 0.9781093 0.2588285 0.7472654 0.7821928 0.9502488 0.8991333\n[15] 0.7453068 0.6602855 0.9276310 0.1583320 0.2656824 0.9538691 0.2242495\n[22] 0.4452160 0.6327137 0.2272241 0.9068342 0.8703618 0.5429740 0.5872487\n[29] 0.8669852 0.5120386 0.2491356 0.9479570"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
+    "title": "Introduction",
+    "section": "One Iteration",
+    "text": "One Iteration\nNext, we employ function composition to apply cumulative summation to our vector of random numbers\n\nX <- cumsum(runif(32))\nprint(X)\n\n [1]  0.5053297  0.6574869  1.6306085  2.3208455  2.9586195  3.1718754\n [7]  3.2813056  3.9788041  4.8999366  5.1343930  5.7260943  6.6692752\n[13]  7.5551552  8.2010636  8.3242118  9.3105347  9.7771243 10.6574139\n[19] 11.1404917 11.9605588 12.4631433 12.9236791 13.3914638 13.5979903\n[25] 14.3885037 14.6518585 15.0723886 15.3238639 16.2726798 16.5322323\n[31] 16.5659033 17.2515970\n\n\nand then we can check when our cumulative summation first exceeded 1.0\n\nwhich.max(X > 1.0)\n\n[1] 3"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#simulation",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#simulation",
+    "title": "Introduction",
+    "section": "Simulation",
+    "text": "Simulation\nTo try to understand the randomness, we can repeat the procedure for many iterations (here, \\(N = 10000\\)).\n\nN <- 1e5 #number of iterations\nour_results <- rep(NA, N) #initialize space for results\nfor(i in 1:N){\n  this_vector <- cumsum(runif(10))\n  this_result <- which.max(this_vector > 1.0)\n  our_results[i] <- this_result\n}"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#visualization",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#visualization",
+    "title": "Introduction",
+    "section": "Visualization",
+    "text": "Visualization\nTo understand a distribution of a probabilistic setting, we can visualize the results.\n\nCodeGraph\n\n\n\ndf <- data.frame(our_results)\ndf |>\n  ggplot() +\n  geom_histogram(aes(x = our_results), binwidth = 1,\n                 color = \"black\", fill = \"blue\") +\n  labs(title = \"Histogram of Results\",\n       subtitle = \"How would you describe the distribution?\",\n       caption = \"Math 32\",\n       x = \"number of numbers needed\",\n       y = \"count\") +\n  scale_x_continuous(breaks = seq(2,8))"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#measure-of-centrality",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#measure-of-centrality",
+    "title": "Introduction",
+    "section": "Measure of Centrality",
+    "text": "Measure of Centrality\nTo hone in on our understanding of the distribution, let us take the mean() of our_results\n\nmean(our_results, na.rm = TRUE)\n\n[1] 2.71679\n\n\n\nNote: R stops execution upon evaluating a missing value. For our intents and purposes, we will suppress that exception with na.rm = TRUE"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example-1",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example-1",
+    "title": "Introduction",
+    "section": "Nerdy Example",
+    "text": "Nerdy Example\nHow many numbers between zero and one do we have to add up to have a sum that is greater than one?\n\\[ e \\approx 2.718282\\]\n\n# theoretical answer\nexp(1)\n\n[1] 2.718282\n\n\nThought questions:\n\nhow do we know that the answer converges?\nhow many iterations did we need for a sufficient answer?"
+  },
+  {
+    "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#looking-ahead",
+    "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#looking-ahead",
+    "title": "Introduction",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\nBe mindful of before-lecture quizzes\n\ndue Fri., Aug. 26:\n\nFinal Exam Date (survey)\nSoftware Installation\n\n\nExam 1 will be on Tues., Sept. 27"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 32",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "m32slides",
+    "section": "",
+    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 27, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  }
+]

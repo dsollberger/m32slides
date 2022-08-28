@@ -1,0 +1,421 @@
+---
+title: "Introduction"
+author: "Derek Sollberger"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+---
+
+```{r}
+library("tidyverse")
+```
+
+
+## Introducting the Presenter
+
+:::: {.columns}
+
+::: {.column width="75%"}
+- Lecturer: Derek Sollberger
+
+   - I go by "Derek" or "teacher"
+   
+- Originally from Los Angeles
+- BA in Applied Mathematics, UC Berkeley
+- MS in Applied Mathematics, CSULB
+- MS in Applied Mathematics, UC Merced
+:::
+
+::: {.column width="25%"}
+![](dorm.png)
+:::
+
+::::
+
+## Introducting the Presenter
+
+
+:::: {.columns}
+
+::: {.column width="25%"}
+![](Randall_Park.png)
+:::
+
+::: {.column width="75%"}
+- Continuing Lecturer in Applied Mathematics
+- 10+ years of teaching at UC Merced
+- Courses:
+    - Bio 18: Data Science
+    - Bio 175: Biostatistics
+    - Bio 184: Python for Bioinformatics
+    - Math 32: Probability and Statistics
+ 
+:::
+
+::::
+
+## Current Research in Pedagogy
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](SARS Cov2 Spike Protein.png)
+:::
+
+::: {.column width="50%"}
+- active learning
+- computer programming
+- augmented reality
+:::
+
+::::
+
+## On Notetaking
+
+:::: {.columns}
+
+::: {.column width="75%"}
+- Do not write all of the information from the slides
+- Do write along with what Derek writes on the whiteboard
+- Make a few notes for main ideas and computer programming
+- Retain placement notes, such as “Example #2” or “Survey#1”
+- No need to copy computer code from lecture (code will be provided)
+:::
+
+::: {.column width="25%"}
+![](writing_notes.gif)
+:::
+
+::::
+
+## Why Probability?
+
+### The Classic Birthday Problem
+
+How many students have to enter the classroom until there are two students that share a birthday?
+
+## Deterministic vs Probabilistic
+
+Deterministic:  a situation that can be solved with equation solving and/or an algorithm
+
+- Example:  If water boils at 100 degrees Celsius, what is that threshold in Fahrenheit?
+
+Probabilistic: a situation that cannot be completely solved due to an element of chance
+
+- Example:  What is the chance that it will rain tomorrow?
+
+## Probability and You
+
+:::: {.panel-tabset}
+
+## Applied Mathematics
+
+Does a probabilistic sequence converge or diverge?
+
+## Bioengineering
+
+What percentage of lyme disease patients would be cured with the current but experimental treatments?
+
+## Chemical Sciences
+
+What proportion of reactants undergo a reaction early in the reaction?
+
+## Computer Science and Engineering
+
+How many computers in a network would be affected after a virus infection?
+
+## Environmental Engineering
+
+How many of a certain species of plants are in the Vernal Pools Reserve?
+
+## Materials Science and Engineering
+
+What percentage of a semiconductor is made of impurities?
+
+## Mechanical Engineering
+
+For a commercial passenger airplane, what is the probability that at least two engines fail during a flight?
+
+## Physics
+
+How many stars are in the Milky Way?
+
+::::
+
+## Ugh, the Syllabus
+
+:::: {.panel-tabset}
+
+## Description
+
+Concepts of probability and statistics. Conditional probability, independence, random variables, distribution functions, descriptive statistics, transformations, sampling errors, confidence intervals, least squares and maximum likelihood. Exploratory data analysis and interactive computing.
+
+## CLOs
+
+1. Develop probabilistic models of random phenomena.
+2. Infer statistical models from real data.
+3. Apply mathematical methods to probabilistic/statistical models to
+  - Make predictions and 
+  - Quantify the uncertainty in these predictions.
+4. Write and run “simple” R programs for the purposes of data analysis, modeling, and visualization.
+
+## PLOs
+
+1. Solve mathematical problems using analytical methods.
+2. Solve mathematical problems using computational methods.
+3. Recognize the relationships between different areas of mathematics and the connections between mathematics and other disciplines.
+4. ~~Give clear and organized written and verbal explanations of mathematical ideas to a variety of audiences~~
+5. Model real-world problems mathematically and analyze those models using their mastery of the core concepts.
+
+::::
+
+## Assessment
+
+:::: {.panel-tabset}
+
+## Before-Lecture
+
+- 5 percent of semester grade
+- quizzes due before lecture (i.e. 3 PM on TuTh)
+  - no extensions
+- 5 to 10 minutes per quiz
+  - review concepts and formulas
+  - preview thought exercises
+
+## Computer Programming
+
+- 20 percent of semester grade
+- language: `R`
+- platform: `LearnR` apps
+- answers to frequently asked questions
+  - no, work may not be done in another language (e.g. `Python`)
+  - no, work may not be done in another IDE (e.g. `VS Code`)
+- 10 to 20 minutes per week
+
+## Written Assignments
+
+- 20 percent of semester grade
+- classical math textbook homework
+- advice: do most of the work during your discussion section
+
+## Discussion
+
+- 10 percent of semester grade for discussion section participation
+- TA will track attendance
+- advised to work on written and computer assignments during discussion sections
+
+## Surveys
+
+- 5 percent of semester grade
+- graded quickly on effort and completion
+- 5 to 10 minutes per survey
+
+## Exams
+
+- Exam 1: 10 percent of semester grade (Tuesday, Sept. 27)
+- Exam 2: 15 percent of semester grade (Tuesday, Nov. 1)
+- Final Exam: 15 percent of semester grade (date TBD, see survey)
+
+::::
+
+## Student Accessibility Services
+
+
+Special Accommodations: University of California, Merced is committed to creating learning environments that are accessible to all. If you anticipate or experience physical or academic barriers based on a disability, please feel welcome to contact me privately so we can discuss options. In addition, please contact Student Accessibility Services (SAS) at (209) 228-6996 or disabilityservices@ucmerced.edu as soon as possible to explore reasonable accommodations. All accommodations must have prior approval from Student Accessibility Services on the basis of appropriate documentation. If you anticipate or experience barriers due to pregnancy, temporary medical condition, or injury,please feel welcome to contact me so we can discuss options. You are encouraged to contact the Dean of Students for support and resources at (209) 228-3633 or https://studentaffairs.ucmerced.edu/dean-students.
+
+## Academic Integrity
+Academic integrity is the foundation of an academic community and without it none of the educational or research goals of the university can be achieved. All members of the community are responsible for its academic integrity. Existing policies forbid cheating on examinations, plagiarism and other forms of academic dishonesty. The UC Merced Academic Honesty Policy The UC
+Merced Academic Honesty Policy can be found on the Student Conduct website. Infractions against academic integrity will incur consequences such as an “F” on the assignment/exam and/or a report to the Academic Senate.
+
+
+## Nerdy Example
+
+How many numbers between zero and one do we have to add up to have a sum that is greater than one?
+
+- Assume selection from a uniform distribution
+
+## Cumulative Summation
+
+Let us start with the natural numbers
+
+$$i = \{1, 2, 3, ...\}$$
+Then cumulative summation takes place with
+
+$$F(n) = \sum_{i = 1}^{n} i$$
+
+## Cumulative Summation
+
+In `R`, we can define a sequence of natural numbers
+
+```{r}
+#| echo: true
+natural_numbers <- 1:10
+print(natural_numbers)
+```
+
+and then employ the `cumsum()` function to perform the cumulative summation.
+
+```{r}
+#| echo: true
+cumsum(natural_numbers)
+```
+
+## Random Number Generation
+
+In `R`, we generate a random number between zero and one (here: assumed from a uniform distribution) with the `runif` function.
+
+```{r}
+#| echo: true
+runif(1)
+```
+
+From there, we can (for example) produce a **sample** of $n = 32$ such random numbers
+
+```{r}
+#| echo: true
+runif(32)
+```
+
+## One Iteration
+
+Next, we employ function composition to apply cumulative summation to our vector of random numbers
+
+```{r}
+#| echo: true
+X <- cumsum(runif(32))
+print(X)
+```
+
+and then we can check when our cumulative summation first exceeded 1.0
+
+```{r}
+#| echo: true
+which.max(X > 1.0)
+```
+
+## Simulation
+
+To try to understand the randomness, we can repeat the procedure for many iterations (here, $N = 10000$).
+
+```{r}
+#| echo: true
+
+N <- 1e5 #number of iterations
+our_results <- rep(NA, N) #initialize space for results
+for(i in 1:N){
+  this_vector <- cumsum(runif(10))
+  this_result <- which.max(this_vector > 1.0)
+  our_results[i] <- this_result
+}
+```
+
+## Visualization
+
+To understand a **distribution** of a probabilistic setting, we can visualize the results.
+
+:::: {.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+
+df <- data.frame(our_results)
+df |>
+  ggplot() +
+  geom_histogram(aes(x = our_results), binwidth = 1,
+                 color = "black", fill = "blue") +
+  labs(title = "Histogram of Results",
+       subtitle = "How would you describe the distribution?",
+       caption = "Math 32",
+       x = "number of numbers needed",
+       y = "count") +
+  scale_x_continuous(breaks = seq(2,8))
+```
+
+## Graph
+
+```{r}
+#| echo: false
+#| eval: true
+
+df <- data.frame(our_results)
+df |>
+  ggplot() +
+  geom_histogram(aes(x = our_results), binwidth = 1,
+                 color = "black", fill = "blue") +
+  labs(title = "Histogram of Results",
+       subtitle = "How would you describe the distribution?",
+       caption = "Math 32",
+       x = "number of numbers needed",
+       y = "count") +
+  scale_x_continuous(breaks = seq(2,8))
+```
+
+::::
+
+## Measure of Centrality
+
+To hone in on our understanding of the distribution, let us take the `mean()` of `our_results`
+
+```{r}
+#| echo: true
+mean(our_results, na.rm = TRUE)
+```
+
+- Note: `R` stops execution upon evaluating a missing value.  For our intents and purposes, we will suppress that exception with `na.rm = TRUE`
+
+## Nerdy Example
+
+How many numbers between zero and one do we have to add up to have a sum that is greater than one?
+
+$$ e \approx 2.718282$$
+
+```{r}
+#| echo: true
+
+# theoretical answer
+exp(1)
+```
+
+Thought questions:
+
+- how do we know that the answer converges?
+- how many iterations did we need for a sufficient answer?
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Be mindful of before-lecture quizzes	
+- due Fri., Aug. 26:
+  - Final Exam Date (survey)
+  - Software Installation
+  
+Exam 1 will be on Tues., Sept. 27
+
+:::
+
+::: {.column width="40%"}
+![](cow.png)
+:::
+
+::::
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
