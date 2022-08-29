@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dsollberger.com/posts/01_-_Introduction/Math_32_-_Introductions.html</loc>
-    <lastmod>2022-08-28T03:08:03.788Z</lastmod>
+    <lastmod>2022-08-29T22:47:39.861Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/about.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2022-08-28T03:07:58.043Z</lastmod>
+    <lastmod>2022-08-29T22:48:02.716Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,6 +22,10 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2022-08-28T03:07:29.356Z</lastmod>
+    <lastmod>2022-08-29T22:48:09.607Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
+    <lastmod>2022-08-29T22:48:01.400Z</lastmod>
   </url>
 </urlset>

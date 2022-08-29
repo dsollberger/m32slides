@@ -1,0 +1,224 @@
+---
+title: "02_-_Independence"
+author: "Derek Sollberger"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+library("tidyverse")
+```
+
+## Starter Examples
+
+In order to introduce probability concepts, you will notice that many sections of this
+book start out by talking about simple situations such as flipping a coin or rolling a die (or
+rolling a pair of dice). This is to ease the reader into more complicated examples.
+
+:::{.callout-note}
+A **possibility space** is a set of all of the possible outcomes.
+:::
+
+## Example 1: One Die
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Consider rolling one six-sided die. For each of the following events, list their possible ways, and then find their probabilities:
+
+- A: rolling an even number
+- B: rolling a number greater than 3
+- C: rolling a double-digit number
+:::
+
+::: {.column width="25%"}
+![one, six-sided die](die.png)
+:::
+::::
+
+## Starting to Combine
+
+At first, we consider simply adding up the probabilities to compute the probability of the union of the probabilities:
+
+$$P(A \cup B) = P(A) + P(B) = ?$$
+## Inconsistent?
+
+So far, 
+
+$$P(A \cup B) = P(A) + P(B) = 100\%$$
+What went wrong? (Discuss with a neighbor)
+
+## Some Set Notation
+
+:::{.callout-tip}
+The **union** of sets A and B is the set of all elements that appear either in set A OR set B
+$$A \cup B = \{x : x \in A \text{ OR } x \in B\}$$
+:::
+
+:::{.callout-tip}
+The **intersection** of sets A and B is the set of all elements that appear both in set A AND set B
+$$A \cap B = \{x : x \in A \text{ AND } x \in B\}$$
+:::
+
+## Inclusion-Exclusion Principle
+
+We observe that there was an *overlap* in the calculation.  Since some elements were counted twice, we can compensate by subtracting one copy of that overlap.  This notion is called the **Inclusion-Exclusion Principle**
+
+:::{.callout-note}
+To compute the probability of a set union, we need to consider the overlapping portions.  For two sets A and B, the probability of observing the union is
+$$P(A \cup B) = {\color{red}P(A)} + {\color{blue}P(B)} - {\color{purple}P(A \cap B)}$$
+:::
+
+## Example 2: Two dice
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Consider rolling two six-sided dice. Find the probability that their total is 8 or the
+second die shows a number greater or equal to 5.
+:::
+
+::: {.column width="25%"}
+![two dice](twodice.png)
+:::
+::::
+
+## Subtlety in Assumptions
+
+In the previous example, we assumed a notion of **sampling with replacement**. That is, when rolling dice, we know that a number can be repeated. In other situations were observations cannot repeat, we are **sampling without replacement**.
+
+## Example 3: Faculty Matters
+
+:::: {.panel-tabset}
+
+### Prompt
+
+Consider a subset of the UC Merced Applied Math department with 6 faculty members—Blanchette, Buvoli, Sandoval, Stepanian, Thompson, Yatskar—must select two of its members to serve on a personnel review committee. Because the work will be time-consuming, no one is anxious to serve, so it is decided that the representatives will be selected by putting 6 slips of paper in a box, mixing them, and selecting two without replacement.
+
+- What is the probability that both Thompson and Yatskar will be selected?
+- What is the probability that at least one of the two members whose name begins with ‘B’ is selected?
+- If the 6 faculty members have taught for 15, 3, 5, 9, 4, and 12 years, respectively, at the university, what is the probability that the two chosen representatives have at least a combined 10 years’ teaching experience at the university?
+
+### Sample Space 1
+
+![](faculty1.png)
+
+### Sample Space 2
+
+![](faculty2.png)
+
+::::
+
+## Assuming a Distribution
+
+Unless otherwise noted, the coin flip has two disjoint outcomes---`heads` or `tails`---with probabilities
+
+$$P(\text{heads}) = 0.5, \quad P(\text{tails}) = 0.5$$
+![](twocoins.png)
+
+In the early formation of the field of statistics, there were considerations such as the following.  How should the possibility space for a trial of flipping two coins be represented?
+
+- 3 elements: $\{$two heads, mixed result, two tails$\}$, OR
+- 4 elements: $\{$HH, HT, TH, TT$\}$
+
+## Complements
+
+:::{.callout-note}
+To sets are **disjoint** if
+$$P(A \cap B) = 0$$
+:::
+
+:::{.callout-note}
+A **possibility space** is a set of all of the possible outcomes for an event.  It is usually denoted by the Greek letter capital omega.
+:::
+
+For example, the set of all outcomes for two coin flips of a fair coin turns out to be
+
+$$\Omega = \{HH, HT, TH, TT\}$$
+
+:::{.callout-note}
+If $A$ is a set (and a subset of the possibility space), then the **complement** of A, denoted $A^{c}$, is the set of outcomes that is in the universal set but not in the set A
+
+$$A \subseteq \Omega \quad\Rightarrow\quad A^{c} = \Omega - A$$
+:::
+
+## Example 4: One Die
+
+:::: {.columns}
+
+::: {.column width="25%"}
+![](die.png)	
+:::
+
+::: {.column width="75%"}
+For example, if we think of our roll of a six-sided die, the possibility space was
+$$\Omega = \{1, 2, 3, 4, 5, 6\}$$
+If we have a subset consisting of the even numbers 
+$$E = \{2, 4, 6\}$$
+what do you think the complement $E^{c}$ will be?
+:::
+
+::::
+
+## Empty Set
+
+:::{.callout-note}
+The empty set $\{\}$ literally has zero elements in the set
+:::
+
+**Claim**: Set $A$ and its complement are disjoint.
+
+## Example 5: Replacement
+
+There may be situations where we need to be careful about whether selections from a set were done **with replacement** or **without replacement**.
+
+In the wardrobe, there are 8 blue socks and 6 red socks.
+
+$$B, B, B, B, B, B, B, B$$
+$$R, R, R, R, R, R$$
+
+Compute the following probabilities
+
+- Selecting 3 red socks with replacement
+- Selecting 3 red socks without replacement
+- Selecting 4 blue socks with replacement
+- Selecting 4 blue socks without replacement
+
+:::{.callout-tip}
+Notice how when we sample with replacement, each iteration is **independent** of the previous iterations.  When we sample without replacement, each iteration **depends** on the previous iterations.
+:::
+
+## De Morgan's Law
+
+One relationship between the notions of complements, intersections, and unions is as follows.
+
+:::{.callout-note}
+$$(A \cup B)^{c} = A^{c} \cap B^{c}$$
+The complement of the union is the intersection of the complements.
+:::
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::

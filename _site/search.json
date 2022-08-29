@@ -2,154 +2,154 @@
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "",
     "text": "library(\"tidyverse\")\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Introducting the Presenter",
     "text": "Introducting the Presenter\n\n\n\nLecturer: Derek Sollberger\n\nI go by “Derek” or “teacher”\n\nOriginally from Los Angeles\nBA in Applied Mathematics, UC Berkeley\nMS in Applied Mathematics, CSULB\nMS in Applied Mathematics, UC Merced"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter-1",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#introducting-the-presenter-1",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Introducting the Presenter",
     "text": "Introducting the Presenter\n\n\n\n\n\nContinuing Lecturer in Applied Mathematics\n10+ years of teaching at UC Merced\nCourses:\n\nBio 18: Data Science\nBio 175: Biostatistics\nBio 184: Python for Bioinformatics\nMath 32: Probability and Statistics"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#current-research-in-pedagogy",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#current-research-in-pedagogy",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Current Research in Pedagogy",
     "text": "Current Research in Pedagogy\n\n\n\n\n\nactive learning\ncomputer programming\naugmented reality"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#on-notetaking",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#on-notetaking",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "On Notetaking",
     "text": "On Notetaking\n\n\n\nDo not write all of the information from the slides\nDo write along with what Derek writes on the whiteboard\nMake a few notes for main ideas and computer programming\nRetain placement notes, such as “Example #2” or “Survey#1”\nNo need to copy computer code from lecture (code will be provided)"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#why-probability",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#why-probability",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Why Probability?",
     "text": "Why Probability?\n\nThe Classic Birthday Problem\nHow many students have to enter the classroom until there are two students that share a birthday?"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#deterministic-vs-probabilistic",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#deterministic-vs-probabilistic",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Deterministic vs Probabilistic",
     "text": "Deterministic vs Probabilistic\nDeterministic: a situation that can be solved with equation solving and/or an algorithm\n\nExample: If water boils at 100 degrees Celsius, what is that threshold in Fahrenheit?\n\nProbabilistic: a situation that cannot be completely solved due to an element of chance\n\nExample: What is the chance that it will rain tomorrow?"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#probability-and-you",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#probability-and-you",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Probability and You",
     "text": "Probability and You\n\nApplied MathematicsBioengineeringChemical SciencesComputer Science and EngineeringEnvironmental EngineeringMaterials Science and EngineeringMechanical EngineeringPhysics\n\n\nDoes a probabilistic sequence converge or diverge?\n\n\nWhat percentage of lyme disease patients would be cured with the current but experimental treatments?\n\n\nWhat proportion of reactants undergo a reaction early in the reaction?\n\n\nHow many computers in a network would be affected after a virus infection?\n\n\nHow many of a certain species of plants are in the Vernal Pools Reserve?\n\n\nWhat percentage of a semiconductor is made of impurities?\n\n\nFor a commercial passenger airplane, what is the probability that at least two engines fail during a flight?\n\n\nHow many stars are in the Milky Way?"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#ugh-the-syllabus",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#ugh-the-syllabus",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Ugh, the Syllabus",
     "text": "Ugh, the Syllabus\n\nDescriptionCLOsPLOs\n\n\nConcepts of probability and statistics. Conditional probability, independence, random variables, distribution functions, descriptive statistics, transformations, sampling errors, confidence intervals, least squares and maximum likelihood. Exploratory data analysis and interactive computing.\n\n\n\nDevelop probabilistic models of random phenomena.\nInfer statistical models from real data.\nApply mathematical methods to probabilistic/statistical models to\n\n\nMake predictions and\nQuantify the uncertainty in these predictions.\n\n\nWrite and run “simple” R programs for the purposes of data analysis, modeling, and visualization.\n\n\n\n\nSolve mathematical problems using analytical methods.\nSolve mathematical problems using computational methods.\nRecognize the relationships between different areas of mathematics and the connections between mathematics and other disciplines.\nGive clear and organized written and verbal explanations of mathematical ideas to a variety of audiences\nModel real-world problems mathematically and analyze those models using their mastery of the core concepts."
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#assessment",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#assessment",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Assessment",
     "text": "Assessment\n\nBefore-LectureComputer ProgrammingWritten AssignmentsDiscussionSurveysExams\n\n\n\n5 percent of semester grade\nquizzes due before lecture (i.e. 3 PM on TuTh)\n\nno extensions\n\n5 to 10 minutes per quiz\n\nreview concepts and formulas\npreview thought exercises\n\n\n\n\n\n20 percent of semester grade\nlanguage: R\nplatform: LearnR apps\nanswers to frequently asked questions\n\nno, work may not be done in another language (e.g. Python)\nno, work may not be done in another IDE (e.g. VS Code)\n\n10 to 20 minutes per week\n\n\n\n\n20 percent of semester grade\nclassical math textbook homework\nadvice: do most of the work during your discussion section\n\n\n\n\n10 percent of semester grade for discussion section participation\nTA will track attendance\nadvised to work on written and computer assignments during discussion sections\n\n\n\n\n5 percent of semester grade\ngraded quickly on effort and completion\n5 to 10 minutes per survey\n\n\n\n\nExam 1: 10 percent of semester grade (Tuesday, Sept. 27)\nExam 2: 15 percent of semester grade (Tuesday, Nov. 1)\nFinal Exam: 15 percent of semester grade (date TBD, see survey)"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#student-accessibility-services",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#student-accessibility-services",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Student Accessibility Services",
     "text": "Student Accessibility Services\nSpecial Accommodations: University of California, Merced is committed to creating learning environments that are accessible to all. If you anticipate or experience physical or academic barriers based on a disability, please feel welcome to contact me privately so we can discuss options. In addition, please contact Student Accessibility Services (SAS) at (209) 228-6996 or disabilityservices@ucmerced.edu as soon as possible to explore reasonable accommodations. All accommodations must have prior approval from Student Accessibility Services on the basis of appropriate documentation. If you anticipate or experience barriers due to pregnancy, temporary medical condition, or injury,please feel welcome to contact me so we can discuss options. You are encouraged to contact the Dean of Students for support and resources at (209) 228-3633 or https://studentaffairs.ucmerced.edu/dean-students."
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#academic-integrity",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#academic-integrity",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Academic Integrity",
     "text": "Academic Integrity\nAcademic integrity is the foundation of an academic community and without it none of the educational or research goals of the university can be achieved. All members of the community are responsible for its academic integrity. Existing policies forbid cheating on examinations, plagiarism and other forms of academic dishonesty. The UC Merced Academic Honesty Policy The UC Merced Academic Honesty Policy can be found on the Student Conduct website. Infractions against academic integrity will incur consequences such as an “F” on the assignment/exam and/or a report to the Academic Senate."
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Nerdy Example",
     "text": "Nerdy Example\nHow many numbers between zero and one do we have to add up to have a sum that is greater than one?\n\nAssume selection from a uniform distribution"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Cumulative Summation",
     "text": "Cumulative Summation\nLet us start with the natural numbers\n\\[i = \\{1, 2, 3, ...\\}\\]\nThen cumulative summation takes place with\n\\[F(n) = \\sum_{i = 1}^{n} i\\]"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation-1",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#cumulative-summation-1",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Cumulative Summation",
     "text": "Cumulative Summation\nIn R, we can define a sequence of natural numbers\n\nnatural_numbers <- 1:10\nprint(natural_numbers)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nand then employ the cumsum() function to perform the cumulative summation.\n\ncumsum(natural_numbers)\n\n [1]  1  3  6 10 15 21 28 36 45 55"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#random-number-generation",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#random-number-generation",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Random Number Generation",
-    "text": "Random Number Generation\nIn R, we generate a random number between zero and one (here: assumed from a uniform distribution) with the runif function.\n\nrunif(1)\n\n[1] 0.4846619\n\n\nFrom there, we can (for example) produce a sample of \\(n = 32\\) such random numbers\n\nrunif(32)\n\n [1] 0.2185369 0.3940378 0.5758258 0.3764817 0.5044308 0.8941394 0.4154541\n [8] 0.7728458 0.9781093 0.2588285 0.7472654 0.7821928 0.9502488 0.8991333\n[15] 0.7453068 0.6602855 0.9276310 0.1583320 0.2656824 0.9538691 0.2242495\n[22] 0.4452160 0.6327137 0.2272241 0.9068342 0.8703618 0.5429740 0.5872487\n[29] 0.8669852 0.5120386 0.2491356 0.9479570"
+    "text": "Random Number Generation\nIn R, we generate a random number between zero and one (here: assumed from a uniform distribution) with the runif function.\n\nrunif(1)\n\n[1] 0.2015114\n\n\nFrom there, we can (for example) produce a sample of \\(n = 32\\) such random numbers\n\nrunif(32)\n\n [1] 0.44946885 0.35676360 0.60728773 0.50835480 0.80870952 0.31661715\n [7] 0.41821635 0.49622077 0.63855946 0.67362123 0.68298397 0.35577207\n[13] 0.92774003 0.22663018 0.86547749 0.90890683 0.91462635 0.35743933\n[19] 0.74138146 0.72989729 0.07774665 0.68196050 0.82863786 0.42670627\n[25] 0.98048574 0.37735438 0.82639585 0.46566502 0.95398984 0.72313737\n[31] 0.62592808 0.97950823"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "One Iteration",
-    "text": "One Iteration\nNext, we employ function composition to apply cumulative summation to our vector of random numbers\n\nX <- cumsum(runif(32))\nprint(X)\n\n [1]  0.5053297  0.6574869  1.6306085  2.3208455  2.9586195  3.1718754\n [7]  3.2813056  3.9788041  4.8999366  5.1343930  5.7260943  6.6692752\n[13]  7.5551552  8.2010636  8.3242118  9.3105347  9.7771243 10.6574139\n[19] 11.1404917 11.9605588 12.4631433 12.9236791 13.3914638 13.5979903\n[25] 14.3885037 14.6518585 15.0723886 15.3238639 16.2726798 16.5322323\n[31] 16.5659033 17.2515970\n\n\nand then we can check when our cumulative summation first exceeded 1.0\n\nwhich.max(X > 1.0)\n\n[1] 3"
+    "text": "One Iteration\nNext, we employ function composition to apply cumulative summation to our vector of random numbers\n\nX <- cumsum(runif(32))\nprint(X)\n\n [1]  0.1872923  0.4027582  0.7182827  1.3145848  1.3454350  1.9051394\n [7]  2.6794054  3.5154235  4.2805220  4.9226541  5.7660863  6.4011116\n[13]  7.3294509  8.0940652  8.5022852  9.1266210  9.8513230 10.1969931\n[19] 11.1483167 11.2708436 11.3453341 11.9317544 12.0194413 12.1581700\n[25] 13.0830715 13.1786501 13.6122212 13.7655623 14.2714323 14.4323338\n[31] 14.5669573 14.7574751\n\n\nand then we can check when our cumulative summation first exceeded 1.0\n\nwhich.max(X > 1.0)\n\n[1] 4"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#simulation",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#simulation",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Simulation",
     "text": "Simulation\nTo try to understand the randomness, we can repeat the procedure for many iterations (here, \\(N = 10000\\)).\n\nN <- 1e5 #number of iterations\nour_results <- rep(NA, N) #initialize space for results\nfor(i in 1:N){\n  this_vector <- cumsum(runif(10))\n  this_result <- which.max(this_vector > 1.0)\n  our_results[i] <- this_result\n}"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#visualization",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#visualization",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Visualization",
     "text": "Visualization\nTo understand a distribution of a probabilistic setting, we can visualize the results.\n\nCodeGraph\n\n\n\ndf <- data.frame(our_results)\ndf |>\n  ggplot() +\n  geom_histogram(aes(x = our_results), binwidth = 1,\n                 color = \"black\", fill = \"blue\") +\n  labs(title = \"Histogram of Results\",\n       subtitle = \"How would you describe the distribution?\",\n       caption = \"Math 32\",\n       x = \"number of numbers needed\",\n       y = \"count\") +\n  scale_x_continuous(breaks = seq(2,8))"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#measure-of-centrality",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#measure-of-centrality",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Measure of Centrality",
-    "text": "Measure of Centrality\nTo hone in on our understanding of the distribution, let us take the mean() of our_results\n\nmean(our_results, na.rm = TRUE)\n\n[1] 2.71679\n\n\n\nNote: R stops execution upon evaluating a missing value. For our intents and purposes, we will suppress that exception with na.rm = TRUE"
+    "text": "Measure of Centrality\nTo hone in on our understanding of the distribution, let us take the mean() of our_results\n\nmean(our_results, na.rm = TRUE)\n\n[1] 2.71655\n\n\n\nNote: R stops execution upon evaluating a missing value. For our intents and purposes, we will suppress that exception with na.rm = TRUE"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example-1",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example-1",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Nerdy Example",
     "text": "Nerdy Example\nHow many numbers between zero and one do we have to add up to have a sum that is greater than one?\n\\[ e \\approx 2.718282\\]\n\n# theoretical answer\nexp(1)\n\n[1] 2.718282\n\n\nThought questions:\n\nhow do we know that the answer converges?\nhow many iterations did we need for a sufficient answer?"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#looking-ahead",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#looking-ahead",
-    "title": "Introduction",
+    "title": "01_-_Introductions",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\nBe mindful of before-lecture quizzes\n\ndue Fri., Aug. 26:\n\nFinal Exam Date (survey)\nSoftware Installation\n\n\nExam 1 will be on Tues., Sept. 27"
   },
@@ -186,6 +186,118 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 27, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
+    "title": "02_-_Independence",
+    "section": "",
+    "text": "library(\"tidyverse\")\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#starter-examples",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#starter-examples",
+    "title": "02_-_Independence",
+    "section": "Starter Examples",
+    "text": "Starter Examples\nIn order to introduce probability concepts, you will notice that many sections of this book start out by talking about simple situations such as flipping a coin or rolling a die (or rolling a pair of dice). This is to ease the reader into more complicated examples.\n\n\n\n\n\n\nNote\n\n\n\nA possibility space is a set of all of the possible outcomes."
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-1-one-die",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-1-one-die",
+    "title": "02_-_Independence",
+    "section": "Example 1: One Die",
+    "text": "Example 1: One Die\n\n\nConsider rolling one six-sided die. For each of the following events, list their possible ways, and then find their probabilities:\n\nA: rolling an even number\nB: rolling a number greater than 3\nC: rolling a double-digit number\n\n\n\n\n\none, six-sided die"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#starting-to-combine",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#starting-to-combine",
+    "title": "02_-_Independence",
+    "section": "Starting to Combine",
+    "text": "Starting to Combine\nAt first, we consider simply adding up the probabilities to compute the probability of the union of the probabilities:\n\\[P(A \\cup B) = P(A) + P(B) = ?\\]"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#inconsistent",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#inconsistent",
+    "title": "02_-_Independence",
+    "section": "Inconsistent?",
+    "text": "Inconsistent?\nSo far,\n\\[P(A \\cup B) = P(A) + P(B) = 100\\%\\]\nWhat went wrong? (Discuss with a neighbor)"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#some-set-notation",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#some-set-notation",
+    "title": "02_-_Independence",
+    "section": "Some Set Notation",
+    "text": "Some Set Notation\n\n\n\n\n\n\nTip\n\n\n\nThe union of sets A and B is the set of all elements that appear either in set A OR set B\n\\[A \\cup B = \\{x : x \\in A \\text{ OR } x \\in B\\}\\]\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe intersection of sets A and B is the set of all elements that appear both in set A AND set B\n\\[A \\cap B = \\{x : x \\in A \\text{ AND } x \\in B\\}\\]"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#inclusion-exclusion-principle",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#inclusion-exclusion-principle",
+    "title": "02_-_Independence",
+    "section": "Inclusion-Exclusion Principle",
+    "text": "Inclusion-Exclusion Principle\nWe observe that there was an overlap in the calculation. Since some elements were counted twice, we can compensate by subtracting one copy of that overlap. This notion is called the Inclusion-Exclusion Principle\n\n\n\n\n\n\nNote\n\n\n\nTo compute the probability of a set union, we need to consider the overlapping portions. For two sets A and B, the probability of observing the union is\n\\[P(A \\cup B) = {\\color{red}P(A)} + {\\color{blue}P(B)} - {\\color{purple}P(A \\cap B)}\\]"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-2-two-dice",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-2-two-dice",
+    "title": "02_-_Independence",
+    "section": "Example 2: Two dice",
+    "text": "Example 2: Two dice\n\n\nConsider rolling two six-sided dice. Find the probability that their total is 8 or the second die shows a number greater or equal to 5.\n\n\n\n\ntwo dice"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#subtlety-in-assumptions",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#subtlety-in-assumptions",
+    "title": "02_-_Independence",
+    "section": "Subtlety in Assumptions",
+    "text": "Subtlety in Assumptions\nIn the previous example, we assumed a notion of sampling with replacement. That is, when rolling dice, we know that a number can be repeated. In other situations were observations cannot repeat, we are sampling without replacement."
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-3-faculty-matters",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-3-faculty-matters",
+    "title": "02_-_Independence",
+    "section": "Example 3: Faculty Matters",
+    "text": "Example 3: Faculty Matters\n\nPromptSample Space 1Sample Space 2\n\n\nConsider a subset of the UC Merced Applied Math department with 6 faculty members—Blanchette, Buvoli, Sandoval, Stepanian, Thompson, Yatskar—must select two of its members to serve on a personnel review committee. Because the work will be time-consuming, no one is anxious to serve, so it is decided that the representatives will be selected by putting 6 slips of paper in a box, mixing them, and selecting two without replacement.\n\nWhat is the probability that both Thompson and Yatskar will be selected?\nWhat is the probability that at least one of the two members whose name begins with ‘B’ is selected?\nIf the 6 faculty members have taught for 15, 3, 5, 9, 4, and 12 years, respectively, at the university, what is the probability that the two chosen representatives have at least a combined 10 years’ teaching experience at the university?"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#assuming-a-distribution",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#assuming-a-distribution",
+    "title": "02_-_Independence",
+    "section": "Assuming a Distribution",
+    "text": "Assuming a Distribution\nUnless otherwise noted, the coin flip has two disjoint outcomes—heads or tails—with probabilities\n\\[P(\\text{heads}) = 0.5, \\quad P(\\text{tails}) = 0.5\\]\n\nIn the early formation of the field of statistics, there were considerations such as the following. How should the possibility space for a trial of flipping two coins be represented?\n\n3 elements: \\(\\{\\)two heads, mixed result, two tails\\(\\}\\), OR\n4 elements: \\(\\{\\)HH, HT, TH, TT\\(\\}\\)"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#complements",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#complements",
+    "title": "02_-_Independence",
+    "section": "Complements",
+    "text": "Complements\n\n\n\n\n\n\nNote\n\n\n\nTo sets are disjoint if\n\\[P(A \\cap B) = 0\\]\n\n\n\n\n\n\n\n\nNote\n\n\n\nA possibility space is a set of all of the possible outcomes for an event. It is usually denoted by the Greek letter capital omega.\n\n\nFor example, the set of all outcomes for two coin flips of a fair coin turns out to be\n\\[\\Omega = \\{HH, HT, TH, TT\\}\\]\n\n\n\n\n\n\nNote\n\n\n\nIf \\(A\\) is a set (and a subset of the possibility space), then the complement of A, denoted \\(A^{c}\\), is the set of outcomes that is in the universal set but not in the set A\n\\[A \\subseteq \\Omega \\quad\\Rightarrow\\quad A^{c} = \\Omega - A\\]"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-4-one-die",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-4-one-die",
+    "title": "02_-_Independence",
+    "section": "Example 4: One Die",
+    "text": "Example 4: One Die\n\n\n\n\nFor example, if we think of our roll of a six-sided die, the possibility space was\n\\[\\Omega = \\{1, 2, 3, 4, 5, 6\\}\\]\nIf we have a subset consisting of the even numbers\n\\[E = \\{2, 4, 6\\}\\]\nwhat do you think the complement \\(E^{c}\\) will be?"
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#empty-set",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#empty-set",
+    "title": "02_-_Independence",
+    "section": "Empty Set",
+    "text": "Empty Set\n\n\n\n\n\n\nNote\n\n\n\nThe empty set \\(\\{\\}\\) literally has zero elements in the set\n\n\nClaim: Set \\(A\\) and its complement are disjoint."
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-5-replacement",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#example-5-replacement",
+    "title": "02_-_Independence",
+    "section": "Example 5: Replacement",
+    "text": "Example 5: Replacement\nThere may be situations where we need to be careful about whether selections from a set were done with replacement or without replacement.\nIn the wardrobe, there are 8 blue socks and 6 red socks.\n\\[B, B, B, B, B, B, B, B\\]\n\\[R, R, R, R, R, R\\]\nCompute the following probabilities\n\nSelecting 3 red socks with replacement\nSelecting 3 red socks without replacement\nSelecting 4 blue socks with replacement\nSelecting 4 blue socks without replacement\n\n\n\n\n\n\n\nTip\n\n\n\nNotice how when we sample with replacement, each iteration is independent of the previous iterations. When we sample without replacement, each iteration depends on the previous iterations."
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#de-morgans-law",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#de-morgans-law",
+    "title": "02_-_Independence",
+    "section": "De Morgan’s Law",
+    "text": "De Morgan’s Law\nOne relationship between the notions of complements, intersections, and unions is as follows.\n\n\n\n\n\n\nNote\n\n\n\n\\[(A \\cup B)^{c} = A^{c} \\cap B^{c}\\]\nThe complement of the union is the intersection of the complements."
   }
 ]

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Derek Sollberger">
 
-<title>Math 32 - Introduction</title>
+<title>Math 32 - 01_-_Introductions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Introduction</h1>
+      <h1 class="title">01_-_Introductions</h1>
                       </div>
   </div>
     
@@ -457,18 +457,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4846619</code></pre>
+<pre><code>[1] 0.2015114</code></pre>
 </div>
 </div>
 <p>From there, we can (for example) produce a <strong>sample</strong> of <span class="math inline">\(n = 32\)</span> such random numbers</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.2185369 0.3940378 0.5758258 0.3764817 0.5044308 0.8941394 0.4154541
- [8] 0.7728458 0.9781093 0.2588285 0.7472654 0.7821928 0.9502488 0.8991333
-[15] 0.7453068 0.6602855 0.9276310 0.1583320 0.2656824 0.9538691 0.2242495
-[22] 0.4452160 0.6327137 0.2272241 0.9068342 0.8703618 0.5429740 0.5872487
-[29] 0.8669852 0.5120386 0.2491356 0.9479570</code></pre>
+<pre><code> [1] 0.44946885 0.35676360 0.60728773 0.50835480 0.80870952 0.31661715
+ [7] 0.41821635 0.49622077 0.63855946 0.67362123 0.68298397 0.35577207
+[13] 0.92774003 0.22663018 0.86547749 0.90890683 0.91462635 0.35743933
+[19] 0.74138146 0.72989729 0.07774665 0.68196050 0.82863786 0.42670627
+[25] 0.98048574 0.37735438 0.82639585 0.46566502 0.95398984 0.72313737
+[31] 0.62592808 0.97950823</code></pre>
 </div>
 </div>
 </section>
@@ -479,19 +480,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(<span class="fu">runif</span>(<span class="dv">32</span>))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  0.5053297  0.6574869  1.6306085  2.3208455  2.9586195  3.1718754
- [7]  3.2813056  3.9788041  4.8999366  5.1343930  5.7260943  6.6692752
-[13]  7.5551552  8.2010636  8.3242118  9.3105347  9.7771243 10.6574139
-[19] 11.1404917 11.9605588 12.4631433 12.9236791 13.3914638 13.5979903
-[25] 14.3885037 14.6518585 15.0723886 15.3238639 16.2726798 16.5322323
-[31] 16.5659033 17.2515970</code></pre>
+<pre><code> [1]  0.1872923  0.4027582  0.7182827  1.3145848  1.3454350  1.9051394
+ [7]  2.6794054  3.5154235  4.2805220  4.9226541  5.7660863  6.4011116
+[13]  7.3294509  8.0940652  8.5022852  9.1266210  9.8513230 10.1969931
+[19] 11.1483167 11.2708436 11.3453341 11.9317544 12.0194413 12.1581700
+[25] 13.0830715 13.1786501 13.6122212 13.7655623 14.2714323 14.4323338
+[31] 14.5669573 14.7574751</code></pre>
 </div>
 </div>
 <p>and then we can check when our cumulative summation first exceeded 1.0</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which.max</span>(X <span class="sc">&gt;</span> <span class="fl">1.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
 </section>
@@ -545,7 +546,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(our_results, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.71679</code></pre>
+<pre><code>[1] 2.71655</code></pre>
 </div>
 </div>
 <ul>
