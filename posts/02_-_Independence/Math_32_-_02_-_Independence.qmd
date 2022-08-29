@@ -1,6 +1,7 @@
 ---
 title: "02_-_Independence"
 author: "Derek Sollberger"
+date: "2022-08-30"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -201,7 +202,29 @@ $$(A \cup B)^{c} = A^{c} \cap B^{c}$$
 The complement of the union is the intersection of the complements.
 :::
 
+## Looking Ahead
 
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Sept. 2:
+  - WHW1
+  - LHW1
+  - CLO (survey)
+- Be mindful of before-lecture quizzes	
+  
+Exam 1 will be on Tues., Sept. 27
+
+:::
+
+::: {.column width="50%"}
+![Rafa Moral](rafamoral.png)
+
+[40-second song](https://mobile.twitter.com/rafamoral/status/1564376662971760642)
+
+:::
+
+::::
 
 
 

@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -299,5 +299,12 @@
     "title": "02_-_Independence",
     "section": "De Morgan’s Law",
     "text": "De Morgan’s Law\nOne relationship between the notions of complements, intersections, and unions is as follows.\n\n\n\n\n\n\nNote\n\n\n\n\\[(A \\cup B)^{c} = A^{c} \\cap B^{c}\\]\nThe complement of the union is the intersection of the complements."
+  },
+  {
+    "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#looking-ahead",
+    "href": "posts/02_-_Independence/Math_32_-_02_-_Independence.html#looking-ahead",
+    "title": "02_-_Independence",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 2:\n\nWHW1\nLHW1\nCLO (survey)\n\nBe mindful of before-lecture quizzes\n\nExam 1 will be on Tues., Sept. 27\n\n\n\n\nRafa Moral\n\n\n40-second song"
   }
 ]
