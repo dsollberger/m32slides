@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -306,5 +306,61 @@
     "title": "02_-_Independence",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 2:\n\nWHW1\nLHW1\nCLO (survey)\n\nBe mindful of before-lecture quizzes\n\nExam 1 will be on Tues., Sept. 27\n\n\n\n\nRafa Moral\n\n\n40-second song"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#example-subsetting",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#example-subsetting",
+    "title": "Dependence",
+    "section": "Example: Subsetting",
+    "text": "Example: Subsetting\nConsider the months of the year\n\\[M = \\{\\text{Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec} \\}\\]\nLet us say that a month is ``long’’ if it has 31 days. What is the probability that we have a long month given that we are in the Fall semester?\n\\[F = \\{ \\text{Aug, Sep, Oct, Nov, Dec} \\}\\]"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#conditional-probability",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#conditional-probability",
+    "title": "Dependence",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\nWe can condense this process into a formula for conditional probability:\n\n\n\n\n\n\nNote\n\n\n\nThe conditional probability of observing event \\(A\\) given event \\(B\\) has already taken place is\n\\[P(A|B) = \\displaystyle\\frac{P(A \\cap B)}{P(B)}\\]"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#example-contigency-tables",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#example-contigency-tables",
+    "title": "Dependence",
+    "section": "Example: Contigency Tables",
+    "text": "Example: Contigency Tables\nIn this hypothetical example, suppose that we are following an epidemiologist who is testing patients at a hospital in for the novel strain of coronavirus.\n\nBuild a contingency table with the following data\n\n\n175 true positives\n32 false negatives\n18 false positives\n2019 true negatives\n\n\nCompute the probability that a randomly selected patient is disease free given that the drug test is positive."
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#prosecutors-fallacy",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#prosecutors-fallacy",
+    "title": "Dependence",
+    "section": "Prosecutor’s Fallacy",
+    "text": "Prosecutor’s Fallacy\n\nUsing the same counts as the previous example, compute the probability that for a randomly selected patient the test returns positive given that the patient is disease free.\n\n\n\n\n\n\n\nWarning\n\n\n\nConverses for conditional probability are almost never equal.\n\\[P(A|B) \\neq P(B|A)\\]"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#bayes-rule",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#bayes-rule",
+    "title": "Dependence",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\nIn the previous section, we studied conditional probability\n\\[P(B|A) = \\displaystyle\\frac{P(A \\text{ and } B)}{P(A)}\\]\nand we talked about how the inverse probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are almost never equal. In this section, we discuss how to properly think and calculate that inverse probability.\n\n\n\n\n\n\nTip\n\n\n\nAnother look at conditional probability is\n\\[P(A \\text{ and } B) = P(B|A) \\cdot P(A)\\]\nThis is read as “The probability of the intersection \\(A\\) and \\(B\\) is the probability of event \\(B\\) conditioned on event \\(A\\).”\n\n\n\n\n\n\n\n\nTip\n\n\n\nMoreover, if we consider how if event \\(B\\) is dependent on event \\(A\\), then sometimes \\(B\\) happens when \\(A\\) happens and sometimes when \\(A\\) does not occur. More succinctly, the total probability of event \\(B\\) is\n\\[P(B) = P(B|A) \\cdot P(A) + P(B|A^{c}) \\cdot P(A^{c})\\]\n\n\n\n\n\n\n\n\nNote\n\n\n\nStaring with the conditional probability formula\n\\[P(B|A) = \\displaystyle\\frac{P(A \\text{ and } B)}{P(A)}\\]\nBayes’ Rule combines the ideas of conditioned probability and total probability as\n\\[P(A|B) = \\displaystyle\\frac{P(A \\text{ and } B)}{P(B)} = \\displaystyle\\frac{P(B|A) \\cdot P(A)}{P(B|A) \\cdot P(A) + P(B|A^{c}) \\cdot P(A^{c})}\\]"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#a-deep-dive",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#a-deep-dive",
+    "title": "Dependence",
+    "section": "A Deep Dive",
+    "text": "A Deep Dive\n\nExampleTree DiagramNumeratorDenominator\n\n\nAn executive has their blood tested for boneitis. Let \\(B\\) be the event that an executive has the disease, and let \\(T\\) be the event that the test returns positive. Laboratory trials yielded the following information:\n\\[P(T|B) = 0.70 \\quad\\text{and}\\quad P(T|B^{c}) = 0.10\\]\nAssume a prior probability of \\(P(B) = 0.0032\\). Compute \\(P(B|T)\\)\n\n\n\n\n\ntree diagram\n\n\n\n\n\n\n\ntree diagram\n\n\n\n\n\n\n\ntree diagram"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#more-practice",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#more-practice",
+    "title": "Dependence",
+    "section": "More Practice",
+    "text": "More Practice\n\nExampleTree DiagramNumeratorDenominator\n\n\nAn executive has their blood tested for boneitis. Let \\(B\\) be the event that an executive has the disease, and let \\(T\\) be the event that the test returns positive. Laboratory trials yielded the following information:\n\\[P(T|B) = 0.70 \\quad\\text{and}\\quad P(T|B^{c}) = 0.10\\]\nAssume a prior probability of \\(P(B) = 0.0032\\). Compute \\(P(B|T^{c})\\)\n\n\n\n\n\ntree diagram\n\n\n\n\n\n\n\ntree diagram\n\n\n\n\n\n\n\ntree diagram"
+  },
+  {
+    "objectID": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#looking-ahead",
+    "href": "posts/03_-_Dependence/Math_32_-_03_-_Dependence.html#looking-ahead",
+    "title": "Dependence",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 2:\n\nWHW1\nLHW1\nCLO (survey)\n\nBe mindful of before-lecture quizzes\nNo discussions next week for Math 32 (Sept. 5-7)\nExam 1 will be on Tues., Sept. 27\n\n\n\n\n\nsong about Bayes’ Rule"
   }
 ]
