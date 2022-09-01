@@ -109,14 +109,14 @@
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#random-number-generation",
     "title": "01_-_Introductions",
     "section": "Random Number Generation",
-    "text": "Random Number Generation\nIn R, we generate a random number between zero and one (here: assumed from a uniform distribution) with the runif function.\n\nrunif(1)\n\n[1] 0.2015114\n\n\nFrom there, we can (for example) produce a sample of \\(n = 32\\) such random numbers\n\nrunif(32)\n\n [1] 0.44946885 0.35676360 0.60728773 0.50835480 0.80870952 0.31661715\n [7] 0.41821635 0.49622077 0.63855946 0.67362123 0.68298397 0.35577207\n[13] 0.92774003 0.22663018 0.86547749 0.90890683 0.91462635 0.35743933\n[19] 0.74138146 0.72989729 0.07774665 0.68196050 0.82863786 0.42670627\n[25] 0.98048574 0.37735438 0.82639585 0.46566502 0.95398984 0.72313737\n[31] 0.62592808 0.97950823"
+    "text": "Random Number Generation\nIn R, we generate a random number between zero and one (here: assumed from a uniform distribution) with the runif function.\n\nrunif(1)\n\n[1] 0.81505\n\n\nFrom there, we can (for example) produce a sample of \\(n = 32\\) such random numbers\n\nrunif(32)\n\n [1] 0.23201307 0.87127077 0.70026832 0.87895876 0.87331526 0.05036756\n [7] 0.70975768 0.04589654 0.81148165 0.67277373 0.36444518 0.05252578\n[13] 0.93071222 0.65069917 0.63382323 0.50296153 0.74808861 0.93567290\n[19] 0.21726304 0.03206728 0.93737557 0.21783477 0.90292332 0.21608644\n[25] 0.31198929 0.27790058 0.42172615 0.43130608 0.20329206 0.94117982\n[31] 0.95907322 0.59290890"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#one-iteration",
     "title": "01_-_Introductions",
     "section": "One Iteration",
-    "text": "One Iteration\nNext, we employ function composition to apply cumulative summation to our vector of random numbers\n\nX <- cumsum(runif(32))\nprint(X)\n\n [1]  0.1872923  0.4027582  0.7182827  1.3145848  1.3454350  1.9051394\n [7]  2.6794054  3.5154235  4.2805220  4.9226541  5.7660863  6.4011116\n[13]  7.3294509  8.0940652  8.5022852  9.1266210  9.8513230 10.1969931\n[19] 11.1483167 11.2708436 11.3453341 11.9317544 12.0194413 12.1581700\n[25] 13.0830715 13.1786501 13.6122212 13.7655623 14.2714323 14.4323338\n[31] 14.5669573 14.7574751\n\n\nand then we can check when our cumulative summation first exceeded 1.0\n\nwhich.max(X > 1.0)\n\n[1] 4"
+    "text": "One Iteration\nNext, we employ function composition to apply cumulative summation to our vector of random numbers\n\nX <- cumsum(runif(32))\nprint(X)\n\n [1]  0.2451511  0.5850619  1.2441624  2.0179309  2.5838395  2.9461865\n [7]  3.1303979  3.8536004  4.5735742  4.6358679  4.8938637  5.6998413\n[13]  6.3232469  7.0119696  7.9724195  8.2188149  8.7869916  9.1473904\n[19]  9.8618203 10.3766007 11.3126492 11.9842738 12.1088123 12.6723460\n[25] 13.6674356 14.3986901 15.0511902 15.1968950 16.1945759 16.9695972\n[31] 17.9123227 17.9644575\n\n\nand then we can check when our cumulative summation first exceeded 1.0\n\nwhich.max(X > 1.0)\n\n[1] 3"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#simulation",
@@ -137,7 +137,7 @@
     "href": "posts/01_-_Introduction/Math_32_-_Introductions.html#measure-of-centrality",
     "title": "01_-_Introductions",
     "section": "Measure of Centrality",
-    "text": "Measure of Centrality\nTo hone in on our understanding of the distribution, let us take the mean() of our_results\n\nmean(our_results, na.rm = TRUE)\n\n[1] 2.71655\n\n\n\nNote: R stops execution upon evaluating a missing value. For our intents and purposes, we will suppress that exception with na.rm = TRUE"
+    "text": "Measure of Centrality\nTo hone in on our understanding of the distribution, let us take the mean() of our_results\n\nmean(our_results, na.rm = TRUE)\n\n[1] 2.71847\n\n\n\nNote: R stops execution upon evaluating a missing value. For our intents and purposes, we will suppress that exception with na.rm = TRUE"
   },
   {
     "objectID": "posts/01_-_Introduction/Math_32_-_Introductions.html#nerdy-example-1",
@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Derek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "Sep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
