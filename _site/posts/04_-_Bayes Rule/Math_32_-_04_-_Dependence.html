@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Derek Sollberger">
+<meta name="dcterms.date" content="2022-09-06">
+
+<title>Math 32 - Bayes’ Rule (Examples)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Math 32</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../slides.html">Slides</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Bayes’ Rule (Examples)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Derek Sollberger </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 6, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="cell">
+
+</div>
+<section id="example-spam-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="example-spam-filtering">Example: Spam Filtering</h2>
+<p>In 2002, Paul Graham used Bayes’ Rule as part of his algorithms to greatly decrease false positive rates of unwanted e-mails (“spam”). Let <span class="math inline">\(H^{c}\)</span> be the event that an e-mail is “spam”. Let <span class="math inline">\(W\)</span> be the event that an e-mail contains a trigger word such as “watches”. Suppose that</p>
+<ul>
+<li>the probability that an e-mail contains that word given that it is spam is 17%</li>
+<li>the probability that an e-mail contains that word given that it is not spam is 9%</li>
+<li>the probability that a randomly selected e-mail message is spam is 80%</li>
+</ul>
+<p>Find the probability that an e-mail message is spam, given that the trigger word appears.</p>
+</section>
+<section id="example-quality-control" class="level2">
+<h2 class="anchored" data-anchor-id="example-quality-control">Example: Quality Control</h2>
+<p>A manufacturing process produces integrated circuit chips. Over the long run the fraction of bad chips produced by the process is around 20%. Thoroughly testing a chip to determine whether it is good or bad is rather expensive, so a cheap test is tried. All good chips will pass the cheap test, but so will 10% of the bad chips. Given that a chip passes the test, what is the probability that the chip was defective?</p>
+</section>
+<section id="example-monty-hall-problem" class="level2">
+<h2 class="anchored" data-anchor-id="example-monty-hall-problem">Example: Monty Hall Problem</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="Monty_open_door.png" class="img-fluid"></p>
+</div><div class="column" style="width:67%;">
+<p>Monty Hall asks you to choose one of three doors. One of the doors hides a prize and the other two doors have no prize. You state out loud which door you pick, but you don’t open it right away.</p>
+“Monty opens one of the other two doors, and there is no prize behind it.
+<p>“At this moment, there are two closed doors, one of which you picked. The prize is behind one of the closed doors, but you don’t know which one. Monty asks you, ‘Do you want to switch doors?’”</p>
+<ul>
+<li>switch doors</li>
+<li>do not switch doors</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-dui-checkpoint" class="level2">
+<h2 class="anchored" data-anchor-id="example-dui-checkpoint">Example: DUI Checkpoint</h2>
+<p>A breath analyzer, used by the police to test whether drivers exceed the legal limit set for the blood alcohol percentage while driving, is known to satisfy</p>
+<p><span class="math display">\[P(A|B) = P(A^{c}|B^{c}) = x\]</span></p>
+<p>where <span class="math inline">\(A\)</span> is the event “breath analyzer indicates that legal limit is exceeded” and <span class="math inline">\(B\)</span> “driver’s blood alcohol percentage exceeds legal limit.” On Saturday nights, about 4% of the drivers are known to exceed the limit.</p>
+<ul>
+<li>Describe in words the meaning of <span class="math inline">\(P(B|A)\)</span></li>
+<li>Determine <span class="math inline">\(P(B|A)\)</span> if <span class="math inline">\(x = 0.90\)</span></li>
+<li>How big should <span class="math inline">\(x\)</span> be so that <span class="math inline">\(P(B|A) \geq 0.95\)</span>?</li>
+</ul>
+</section>
+<section id="example-disease-outbreak" class="level2">
+<h2 class="anchored" data-anchor-id="example-disease-outbreak">Example: Disease Outbreak</h2>
+<p>Suppose that at UC Merced, there is a two percent chance that a freshman has herpes at the end of the school year. Let <span class="math inline">\(H\)</span> be the event of having the virus, while <span class="math inline">\(C\)</span> represents the event that the freshman is from the Cathedral dorm. Among the herpes carriers, the probably of being a Cathedral resident is 32%. Among those free of disease, the probably of being a Cathedral resident is 13%. What is the probability that a freshman has herpes, given that you know that he or she lived in the Cathedral dorm?</p>
+</section>
+<section id="generalized-bayes-rule" class="level2">
+<h2 class="anchored" data-anchor-id="generalized-bayes-rule">Generalized Bayes’ Rule</h2>
+<p>If we are conditioning <span class="math inline">\(B\)</span> on an event <span class="math inline">\(A\)</span>, where the latter can be partitioned into several subsets,</p>
+<p><span class="math display">\[A = \{ A_{1}, A_{2}, ..., A_{j} \}\]</span></p>
+<p>then the total probability is</p>
+<p><span class="math display">\[P(B) = P(B|A_{1}) \cdot P(A_{1}) + P(B|A_{2}) \cdot P(A_{2}) + ... + P(B|A_{n}) \cdot P(A_{n})\]</span></p>
+<p>and Bayes Rule for computing the probability of <span class="math inline">\(A_{i}\)</span> given <span class="math inline">\(B\)</span> becomes</p>
+<p><span class="math display">\[P(A_{i}|B) = \displaystyle\frac{ P(B|A_{i}) \cdot P(A_{i}) }{ P(B|A_{1}) \cdot P(A_{1}) + P(B|A_{2}) \cdot P(A_{2}) + ... + P(B|A_{n}) \cdot P(A_{n}) }\]</span></p>
+</section>
+<section id="bayesian-odds" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-odds">Bayesian Odds</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Bayesian odds</strong> of event <span class="math inline">\(A\)</span> to event <span class="math inline">\(B\)</span> given that event <span class="math inline">\(C\)</span> has already taken place is</p>
+<p><span class="math display">\[\displaystyle\frac{ P(A|C) }{ P(B|C) }\]</span></p>
+</div>
+</div>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<div class="columns">
+<div class="column" style="width:67%;">
+<ul>
+<li><p>due Fri., Sept.&nbsp;9:</p>
+<ul>
+<li>WHW2</li>
+<li>LHW2</li>
+<li>Perceptions of Probability (survey)</li>
+</ul></li>
+<li><p>Be mindful of before-lecture quizzes</p></li>
+<li><p>No discussions this week for Math 32 (Sept.&nbsp;5-7)</p></li>
+<li><p>Exam 1 will be on Tues., Sept.&nbsp;27</p></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<p><img src="gas_prices.png" class="img-fluid"></p>
+<p><a href="https://mobile.twitter.com/MuzafferKal_/status/1565424700322627584">source</a></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="panel-tabset">
+
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
