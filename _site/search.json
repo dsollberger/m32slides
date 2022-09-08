@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Sep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "Sep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -418,5 +418,75 @@
     "title": "Bayes’ Rule (Examples)",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 9:\n\nWHW2\nLHW2\nPerceptions of Probability (survey)\n\nBe mindful of before-lecture quizzes\nNo discussions this week for Math 32 (Sept. 5-7)\nExam 1 will be on Tues., Sept. 27\n\n\n\nsource"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#review-summation-notation",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#review-summation-notation",
+    "title": "05: Measures of Centrality",
+    "section": "Review: Summation Notation",
+    "text": "Review: Summation Notation\nThe Fibonnaci Sequence \\(\\{1, 1, 2, 3, 5, 8, 13, ...\\}\\) is an example of a sequence where\n\\(F_{1} = 1, F_{2} = 1, F_{n} = F_{n-1} + F_{n-2}\\)\nCompute\n\n\\(\\displaystyle\\sum_{i=1}^{1} a_{i}\\)\n\\(\\displaystyle\\sum_{i=1}^{2} a_{i}\\)\n\\(\\displaystyle\\sum_{i=1}^{3} a_{i}\\)\n\\(\\displaystyle\\sum_{i=1}^{4} a_{i}\\)"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#populations-versus-samples",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#populations-versus-samples",
+    "title": "05: Measures of Centrality",
+    "section": "Populations versus Samples",
+    "text": "Populations versus Samples\nWe tend to study a relatively small sample to understand the behavior of a much larger population."
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#mean-average",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#mean-average",
+    "title": "05: Measures of Centrality",
+    "section": "Mean (Average)",
+    "text": "Mean (Average)\n\n“mean” and “average” are synonymous and will be used interchangably\nThe mean of \\(\\{ x_{1}, x_{2}, ..., x_{n} \\}\\) is denoted by\n\nGreek letter \\(\\mu\\) (“mu”) for a population mean (where we know all of the elements)\nAnglicized \\(\\bar{x}\\) (“x bar”) for a sample mean (where we are working with a sample of data)\n\nTo calculate the mean\n\nAdd up all of the numbers\nDivide by the amount of numbers\n\n\n\\[\\mu = \\displaystyle\\frac{1}{N}\\displaystyle\\sum_{i=1}^{N} x_{i} \\quad\\text{or}\\quad \\bar{x} = \\displaystyle\\frac{1}{n}\\displaystyle\\sum_{i=1}^{n} x_{i}\\]"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#example-one-die",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#example-one-die",
+    "title": "05: Measures of Centrality",
+    "section": "Example: One Die",
+    "text": "Example: One Die\n\nFind the mean of the roll of one six-sided die.\nFind the mean of the sample \\(\\{21, 22, 23, 32\\}\\)."
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#median",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#median",
+    "title": "05: Measures of Centrality",
+    "section": "Median",
+    "text": "Median\nThe median of an ordered, discrete set of numbers is the number in the middle. If there are an even amount of data, then the median is the average of the middle two numbers in the ordered data set.\n\nCompute the median of \\(\\{1, 2, 1, 5, 3\\}\\)\nCompute the median of \\(\\{1, 1, 2, 3, 5, 8\\}\\)"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#weighted-mean",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#weighted-mean",
+    "title": "05: Measures of Centrality",
+    "section": "Weighted Mean",
+    "text": "Weighted Mean\n\\[\\bar{x} = \\displaystyle\\frac{ \\displaystyle\\sum_{i=1}^{n} {\\color{red}w_{i}} \\cdot {\\color{blue}x_{i}}  }{ \\displaystyle\\sum_{i=1}^{n} {\\color{red}w_{i}} }\\]"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#example-cal-kulas",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#example-cal-kulas",
+    "title": "05: Measures of Centrality",
+    "section": "Example: Cal Kulas",
+    "text": "Example: Cal Kulas\n\n\n\nSetting\nGoing into the final exam for a Statistics course, Cal Kulas had earned the following marks in the other categories.\n\n\n\n\n\nCategory\n\n\nWeight\n\n\nCal Kulas\n\n\n\n\n\n\nattendance\n\n\n10%\n\n\n95%\n\n\n\n\nquizzes\n\n\n20%\n\n\n75%\n\n\n\n\nmidterms\n\n\n25%\n\n\n60%\n\n\n\n\nproject\n\n\n20%\n\n\n90%\n\n\n\n\n\n\n\n\nTasks\n\nWhat is his current grade in the course?\nWhat does Cal Kulas need on the final exam so that he earns at least 80% in the course?"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#review-summation-notation-1",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#review-summation-notation-1",
+    "title": "05: Measures of Centrality",
+    "section": "Review: Summation Notation",
+    "text": "Review: Summation Notation\nThe Fibonnaci Sequence \\(\\{1, 1, 2, 3, 5, 8, 13, ...\\}\\) is an example of a sequence where\n\\(F_{1} = 1, F_{2} = 1, F_{n} = F_{n-1} + F_{n-2}\\)\nCompute\n\n\\(\\displaystyle\\prod_{i=1}^{1} a_{i}\\)\n\\(\\displaystyle\\prod_{i=1}^{2} a_{i}\\)\n\\(\\displaystyle\\prod_{i=1}^{3} a_{i}\\)\n\\(\\displaystyle\\prod_{i=1}^{4} a_{i}\\)"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#for-formulas",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#for-formulas",
+    "title": "05: Measures of Centrality",
+    "section": "For Formulas",
+    "text": "For Formulas\nIn particular, sigma and product notation will allow us to express probability formulas more efficiently. For example, the independence formula for two events \\(A\\) and \\(B\\),\n\\[P(AB) = P(A) \\cdot P(B)\\]\nbecomes the following for \\(n\\) independent events:\n\\[P\\left(  \\{X_{i}\\}_{i=1}^{n} \\right) = \\displaystyle\\prod_{i=1}^{n} P(X_{i})\\]"
+  },
+  {
+    "objectID": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#looking-ahead",
+    "href": "posts/05_-_Measures of Centrality/Math_32_05_Centrality.html#looking-ahead",
+    "title": "05: Measures of Centrality",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 9:\n\nWHW2\nLHW2\nPerceptions of Probability (survey)\n\nBe mindful of before-lecture quizzes\nExam 1 will be on Tues., Sept. 27\n\n\n\n\n\nEven NASA makes mistakes!\n\n\nsource"
   }
 ]
