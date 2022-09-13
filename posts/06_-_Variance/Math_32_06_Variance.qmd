@@ -1,0 +1,257 @@
+---
+title: "06: Variance"
+author: "Derek Sollberger"
+date: "2022-09-13"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("shiny")
+library("tidyverse")
+```
+
+## Overview
+
+$$s^{2} = \ds\frac{1}{n-1}\ds\sum_{i = 1}^{n} (x_{i} - \bar{x})^{2}$$
+
+
+Today's main questions are "What is variance and what is a standard deviation?"  We will go through
+
+- the formulas and calculations
+- demostrations
+- applications (word problems)
+
+## Notation
+
+:::: {.columns}
+
+::: {.column width="25%"}
+![](samplesandpopulations.jpg)	
+:::
+
+::: {.column width="75%"}
+We tend to study a relatively small *sample* to understand the behavior of a much larger *population*.
+
+![](notation_table.png)
+:::
+
+::::
+
+## Example: Nathan's Hot Dog Eating Contest
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Each year on July 4, the Nathan’s Hot Dog Eating Contest takes place on Coney Island in New York.  The rule is simple: eat as many hot dogs (and buns) as you can in 10 minutes.  The past 5 winning amounts were:  63, 70, 72, 74, 71.  Compute the variance.	
+
+![source](https://en.wikipedia.org/wiki/Nathan%27s_Hot_Dog_Eating_Contest)
+
+:::
+
+::: {.column width="25%"}
+![winners Joey Chestnut and Miki Sudo](Nathans.png)
+:::
+
+::::
+
+## Units?
+
+![square hot dogs?](squarehotdogs.png)
+
+## Demostrations
+
+:::: {.panel-tabset}
+
+## Setup
+
+For each of the following sets
+
+- $A = \{1, 2, 3, 4, 5, 6, 7\}$
+- $B = \{3, 4, 5, 6, 7, 8, 9\}$
+- $C = \{-3, -2, -1, 0, 1, 2, 3\}$
+- $D = \{-9, -6, -3, 0, 3, 6, 9\}$
+
+we will compute the sample mean, sample median, and sample standard deviation.
+
+## R
+
+```{r}
+A <- seq(1, 7, 1)
+B <- A + 2
+C <- seq(-3, 3, 3)
+D <- 3*C
+```
+
+## A to B
+
+```{r}
+mean(A)
+mean(B)
+```
+
+```{r}
+median(A)
+median(B)
+```
+
+```{r}
+sd(A)
+sd(B)
+```
+
+## C to D
+
+```{r}
+mean(C)
+mean(D)
+```
+
+```{r}
+median(C)
+median(D)
+```
+
+```{r}
+sd(C)
+sd(D)
+```
+
+::::
+
+## Shiny
+
+```{r}
+#| eval: false
+# https://quarto.org/docs/interactive/shiny/
+sliderInput("mu", "mean:", 
+            min = 1, max = 10, value = 5)
+sliderInput("s", "deviation:", 
+            min = 1, max = 5, value = 2)
+plotOutput("distPlot")
+```
+
+```{r}
+#| eval: false
+#| context: server
+output$distPlot <- renderPlot({
+  x <- rnorm(100, mean = mu, sd = s)
+  df <- data.frame(x = x)
+  
+  df |>
+    ggplot(aes(x = x)) +
+    geom_density()
+})
+```
+
+
+## Standardization
+
+$$z = \ds\frac{x - \mu}{\sigma}$$
+
+To standardize data, compute a z-score by
+
+- subtracting by the mean
+- then dividing by the standard deviation
+
+This calculation is considered to be “unitless”, and the units are usually said as “[number of] standard deviations above/below the mean”
+
+Most data falls within two standard deviations of the mean, 
+
+$$\text{usually } z \in (-2, 2)$$
+
+but $z \in (-\infty, \infty)$
+
+
+## Example: Dating Website Data
+
+:::: {.panel-tabset}
+
+## Scenario 1
+
+![](howMenRateWomen.png)
+
+According to OkCupid data, if men rate women on a scale from 1 = “least attractive” to 7 = “most attractive”, the average score is 3.99 with a sample standard deviation of 1.6401.
+
+- What is the $z$-score of a woman rated a "6"?
+- What is the attractiveness score of a woman at a $z$-score of 1.5?
+
+## Scenario 2
+
+![](howWomenRateMen.png)
+
+According to OkCupid data, if women rate men on a scale from 1 = “least attractive” to 7 = “most attractive”, the average score is 2.43 with a sample standard deviation of 1.2510.
+
+- What is the $z$-score of a woman rated a "6"?
+- What is the attractiveness score of a woman at a $z$-score of 1.5?
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- due Fri., Sept. 16:
+  - WHW3
+  - LHW3
+  - Demographics Part 1 (survey)
+- Be mindful of before-lecture quizzes	
+  
+- Exam 1 will be on Tues., Sept. 27
+
+  - more information in weekly announcements
+
+:::
+
+::: {.column width="40%"}
+![](spaghetti.png)
+
+[source](https://mobile.twitter.com/pradaliko/status/1568430642513207297)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::

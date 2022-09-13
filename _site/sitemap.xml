@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2022-09-08T04:08:46.085Z</lastmod>
+    <lastmod>2022-09-13T01:44:13.973Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2022-09-08T04:08:49.445Z</lastmod>
+    <lastmod>2022-09-13T01:44:17.291Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -39,5 +39,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/05_-_Measures of Centrality/Math_32_05_Centrality.html</loc>
     <lastmod>2022-09-08T04:08:43.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/06_-_Variance/Math_32_06_Variance.html</loc>
+    <lastmod>2022-09-13T01:44:12.291Z</lastmod>
   </url>
 </urlset>
