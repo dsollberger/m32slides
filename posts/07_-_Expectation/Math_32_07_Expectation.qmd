@@ -1,0 +1,157 @@
+---
+title: "07: Expectation"
+author: "Derek Sollberger"
+date: "2022-09-15"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+# library("shiny")
+library("tidyverse")
+```
+
+## Example: Demographics
+
+![](ucmstudents.png)
+
+Suppose that all of the students in Math 32 are between ages 19 and 21 inclusively with the following distribution:
+
+- Age 19: 35\%
+- Age 20: 45\%
+- Age 21: 20\%
+
+Rewrite the data as a discrete mass function.
+
+## Discrete Probability Distributions
+
+:::{.callout-note}
+A **discrete probability distribution** is a population where we can *list* the possible values
+
+$$X = \{ x_{1}, x_{2}, x_{3}, ... x_{n} \}$$
+
+and measure the respective probabilities
+
+$$P(X = x_{1}), P(X = x_{2}), P(X = x_{3}), ..., P(X = x_{n})$$
+:::
+
+:::{.callout-tip}
+
+As usual, the probabilities rules include that each probability is between zero and one inclusively
+
+$$0 \leq P(X = x_{i}) \leq 1$$
+
+and that all probabilities add up to 100 percent
+
+$$\ds\sum_{x \in X} P(X = x) = 1$$
+:::
+
+## Expectation
+
+:::{.callout-note}
+For a *random variable* $X$ (understood through a discrete probability distribution), its **expected value** is
+$$\mu = \text{E}[{\color{blue}X}] = \ds\sum_{x \in X} {\color{blue}x} \cdot {\color{red}P(X = x)}$$
+:::
+
+![](die.png)
+
+Compute the expected value of the roll of one six-sided die.
+
+## Variance
+
+:::{.callout-note}
+The **variance** of a random variable $X$ is defined as the expected squared deviation from the mean
+
+$$\text{Var}(X) = \text{E}[(X - \text{E}[X])^{2}]$$
+:::
+
+:::{.callout-tip}
+The above *theoretical formula* is built from first principles and is good for building the math foundation.  However, the following *practical formula* is better for hand calculations and computer calculations.
+:::
+
+**Claim:** 
+
+$$\text{Var}(X) = \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2}$$
+
+## Example: Boxing Bets
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Before watching a boxing match, my friends and I made bets over which round the fight would end.  A boxing match lasts up to 12 rounds.  Each gambler pays \$5 and is assigned a round randomly.  The winner garners the whole pot of money.  What is the expected value of the bet?  What is the variance of the bet?	
+:::
+
+::: {.column width="25%"}
+![](CaneloVersusMayweather.png)
+:::
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Sept. 16:
+  - WHW3
+  - LHW3
+  - Demographics Part 1 (survey)
+- Be mindful of before-lecture quizzes	
+  
+- Exam 1 will be on Tues., Sept. 27
+
+  - more information in weekly announcements
+
+:::
+
+::: {.column width="50%"}
+![](mean_joke.png)
+
+[source](https://mobile.twitter.com/sgadarian/status/1569378193370480642)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::
