@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2022-09-20T02:21:41.559Z</lastmod>
+    <lastmod>2022-09-22T03:30:28.747Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2022-09-20T02:21:40.200Z</lastmod>
+    <lastmod>2022-09-22T03:30:27.374Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -51,5 +51,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/08_-_Binomial Distribution/Math_32_08_Binomial_Distribution.html</loc>
     <lastmod>2022-09-20T02:21:39.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html</loc>
+    <lastmod>2022-09-22T03:30:26.865Z</lastmod>
   </url>
 </urlset>

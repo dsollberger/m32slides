@@ -1,0 +1,16 @@
+{
+  "hash": "9b4e83d34ecd35696523df8fbaa56dfa",
+  "result": {
+    "markdown": "---\ntitle: \"9: Cumulative Computation\"\nauthor: \"Derek Sollberger\"\ndate: \"2022-09-20\"\n# format: \n#   revealjs:\n#     scrollable: true\nformat: html\n# server: shiny\n---\n\n\n\\newcommand{\\ds}{\\displaystyle}\n\n\n::: {.cell}\n\n:::\n\n\n## Probability Mass Function\n\nLast time, we developed the *probability mass function* for the binomial distribution.  The probability of choosing $k$ observations among a sample size of $n$, each observation with prior probability $p$, is given by\n\n\n\n$$P(k) = \\binom{n}{k}p^{k}(1-p)^{n-k}$$\n\n\n\nNote the usual properties of probability:\n\n- each probability is between zero and one (inclusively)\n    \n\n$$0 \\leq P(k) \\leq 1 \\quad\\text{for each } k$$\n\n- all probabilities add up to 100\\%\n    \n \n\n$$1 = \\ds\\sum_{k = 0}^{n} \\binom{n}{k}p^{k}(1-p)^{n-k}$$\n\n\n## From One to Many\n\n:::: {.panel-tabset}\n\n## Exactly\n\nThere are 4 parking spaces in front of the boba place.  Suppose that each parking space tends to be occupied about 57 percent of the time.  What is the probability that *exactly 3* of the parking spaces are open?\n\n![boba!](boba.png)\n\n## At Most\n\nThere are 4 parking spaces in front of the boba place.  Suppose that each parking space tends to be occupied about 57 percent of the time.  What is the probability that *at most 2* of the parking spaces are open?\n\n![boba!](boba.png)\n\n## Exactly\n\nThere are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 81 percent of the time.  What is the probability that *exactly 4* of the parking spaces are open?\n\n![parking](UCMparkinglot.png)\n\n## More Than\n\nThere are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 81 percent of the time.  What is the probability that *more than 5* of the parking spaces are open?\n\n![parking](UCMparkinglot.png)\n\n::::\n\n## Leveraging Complements\n\nThere are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 97 percent of the time.  What is the probability that **at least one** of the parking spaces is open?\n\n![parking](UCMparkinglot2.png)\n\n\n## Looking Ahead\n\n:::: {.columns}\n\n::: {.column width=\"50%\"}\n- due Fri., Sept. 23:\n  - WHW4\n  - LHW4\n  - Demographics Part 2 (survey)\n  \n- Exam 1 will be on Tues., Sept. 27\n\n  - more information in weekly announcements\n\n:::\n\n::: {.column width=\"50%\"}\n![some found sign in Sausalito](median_prohibited)\n\n\n\n:::\n\n::::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::: {.columns}\n\n::: {.column width=\"50%\"}\n\t\n:::\n\n::: {.column width=\"50%\"}\n\n:::\n\n::::\n\n:::: {.panel-tabset}\n\n\n\n::::\n",
+    "supporting": [
+      "Math_32_09_Cumulative_Computation_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

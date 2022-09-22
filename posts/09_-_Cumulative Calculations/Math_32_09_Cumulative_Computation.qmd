@@ -1,0 +1,135 @@
+---
+title: "9: Cumulative Computation"
+author: "Derek Sollberger"
+date: "2022-09-20"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+# library("shiny")
+# library("plotly")
+library("tidyverse")
+```
+
+## Probability Mass Function
+
+Last time, we developed the *probability mass function* for the binomial distribution.  The probability of choosing $k$ observations among a sample size of $n$, each observation with prior probability $p$, is given by
+
+
+$$P(k) = \binom{n}{k}p^{k}(1-p)^{n-k}$$
+
+
+Note the usual properties of probability:
+
+- each probability is between zero and one (inclusively)
+    
+$$0 \leq P(k) \leq 1 \quad\text{for each } k$$
+- all probabilities add up to 100\%
+    
+ 
+$$1 = \ds\sum_{k = 0}^{n} \binom{n}{k}p^{k}(1-p)^{n-k}$$
+
+## From One to Many
+
+:::: {.panel-tabset}
+
+## Exactly
+
+There are 4 parking spaces in front of the boba place.  Suppose that each parking space tends to be occupied about 57 percent of the time.  What is the probability that *exactly 3* of the parking spaces are open?
+
+![boba!](boba.png)
+
+## At Most
+
+There are 4 parking spaces in front of the boba place.  Suppose that each parking space tends to be occupied about 57 percent of the time.  What is the probability that *at most 2* of the parking spaces are open?
+
+![boba!](boba.png)
+
+## Exactly
+
+There are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 81 percent of the time.  What is the probability that *exactly 4* of the parking spaces are open?
+
+![parking](UCMparkinglot.png)
+
+## More Than
+
+There are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 81 percent of the time.  What is the probability that *more than 5* of the parking spaces are open?
+
+![parking](UCMparkinglot.png)
+
+::::
+
+## Leveraging Complements
+
+There are 32 parking spaces in a row in a UC Merced parking lot.  Suppose that each parking space tends to be occupied about 97 percent of the time.  What is the probability that **at least one** of the parking spaces is open?
+
+![parking](UCMparkinglot2.png)
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Sept. 23:
+  - WHW4
+  - LHW4
+  - Demographics Part 2 (survey)
+  
+- Exam 1 will be on Tues., Sept. 27
+
+  - more information in weekly announcements
+
+:::
+
+::: {.column width="50%"}
+![some found sign in Sausalito](median_prohibited)
+
+
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::

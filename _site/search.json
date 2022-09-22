@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Sep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "Sep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -663,5 +663,33 @@
     "title": "08: Binomial Distribution",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 23:\n\nWHW4\nLHW4\nDemographics Part 2 (survey)\n\nExam 1 will be on Tues., Sept. 27\n\nmore information in weekly announcements\n\n\n\n\nsource"
+  },
+  {
+    "objectID": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#probability-mass-function",
+    "href": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#probability-mass-function",
+    "title": "9: Cumulative Computation",
+    "section": "Probability Mass Function",
+    "text": "Probability Mass Function\nLast time, we developed the probability mass function for the binomial distribution. The probability of choosing \\(k\\) observations among a sample size of \\(n\\), each observation with prior probability \\(p\\), is given by\n\\[P(k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\\]\nNote the usual properties of probability:\n\neach probability is between zero and one (inclusively)\n\n\\[0 \\leq P(k) \\leq 1 \\quad\\text{for each } k\\]\n\nall probabilities add up to 100%\n\n\\[1 = \\displaystyle\\sum_{k = 0}^{n} \\binom{n}{k}p^{k}(1-p)^{n-k}\\]"
+  },
+  {
+    "objectID": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#from-one-to-many",
+    "href": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#from-one-to-many",
+    "title": "9: Cumulative Computation",
+    "section": "From One to Many",
+    "text": "From One to Many\n\nExactlyAt MostExactlyMore Than\n\n\nThere are 4 parking spaces in front of the boba place. Suppose that each parking space tends to be occupied about 57 percent of the time. What is the probability that exactly 3 of the parking spaces are open?\n\n\n\nboba!\n\n\n\n\nThere are 4 parking spaces in front of the boba place. Suppose that each parking space tends to be occupied about 57 percent of the time. What is the probability that at most 2 of the parking spaces are open?\n\n\n\nboba!\n\n\n\n\nThere are 32 parking spaces in a row in a UC Merced parking lot. Suppose that each parking space tends to be occupied about 81 percent of the time. What is the probability that exactly 4 of the parking spaces are open?\n\n\n\nparking\n\n\n\n\nThere are 32 parking spaces in a row in a UC Merced parking lot. Suppose that each parking space tends to be occupied about 81 percent of the time. What is the probability that more than 5 of the parking spaces are open?\n\n\n\nparking"
+  },
+  {
+    "objectID": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#leveraging-complements",
+    "href": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#leveraging-complements",
+    "title": "9: Cumulative Computation",
+    "section": "Leveraging Complements",
+    "text": "Leveraging Complements\nThere are 32 parking spaces in a row in a UC Merced parking lot. Suppose that each parking space tends to be occupied about 97 percent of the time. What is the probability that at least one of the parking spaces is open?\n\n\n\nparking"
+  },
+  {
+    "objectID": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#looking-ahead",
+    "href": "posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html#looking-ahead",
+    "title": "9: Cumulative Computation",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Sept. 23:\n\nWHW4\nLHW4\nDemographics Part 2 (survey)\n\nExam 1 will be on Tues., Sept. 27\n\nmore information in weekly announcements\n\n\n\n\n\n\nsome found sign in Sausalito"
   }
 ]
