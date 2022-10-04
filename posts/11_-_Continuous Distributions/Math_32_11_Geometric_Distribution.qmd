@@ -1,0 +1,230 @@
+---
+title: "11: Continuous Distributions"
+author: "Derek Sollberger"
+date: "2022-10-04"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+# library("shiny")
+# library("plotly")
+library("tidyverse")
+```
+
+## Continuous Variables
+
+![Image Credit: G2 Learing Hub](discrete vs continuous.png)
+
+- A discrete variable is “countable” (has values that can be in a list)
+- A continuous variable has values that cannot be written as a list (“uncountable”)
+
+## Uniform Distribution
+
+![](Cattracks1.png)
+
+You arrive at a bus stop at 10 o'clock, knowing that the bus will arrive at some time uniformly distributed between 10:00 and 10:30.
+
+::::: {.panel-tabset}
+
+## Normalization
+
+:::: {.columns}
+
+::: {.column width="50%"}
+We build a **probability density function** (PDF) by ensuring that the area under the curve equals 100 percent (i.e. one square unit).
+:::
+
+::: {.column width="50%"}
+![](fig12-1.png)
+:::
+
+::::
+
+## Fewer
+
+:::: {.columns}
+
+::: {.column width="50%"}
+What is the probability that you will have to wait fewer than 12 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-2.png)
+:::
+
+::::
+
+## More
+
+:::: {.columns}
+
+::: {.column width="50%"}
+What is the probability that you will have to wait longer than 10 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-3.png)
+:::
+
+::::
+
+## Conditional
+
+:::: {.columns}
+
+::: {.column width="50%"}
+If at 10:15 the bus has not yet arrived, what is the probability that you will have to wait at least an additional 10 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-4.png)
+:::
+
+::::
+
+:::::
+
+
+## Linear Distribution
+
+![](Cattracks2.png)
+
+You arrive at a bus stop at 10 o'clock, knowing that the bus will arrive at some time linearly distributed between 10:00 and 10:30.  The probability density function (PDF) is
+
+$$f(x) = \begin{cases} -\ds\frac{1}{450}x + \ds\frac{1}{15} & 0 \leq x \leq 30 \\ 0 & \text{otherwise} \end{cases}$$
+
+
+::::: {.panel-tabset}
+
+## PDF
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Probability Density Function (PDF)
+:::
+
+::: {.column width="50%"}
+![](fig12-5.png)
+:::
+
+::::
+
+## Fewer
+
+:::: {.columns}
+
+::: {.column width="50%"}
+What is the probability that you will have to wait fewer than 7 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-6.png)
+:::
+
+::::
+
+## Fewer
+
+:::: {.columns}
+
+::: {.column width="50%"}
+What is the probability that you will have to wait fewer than 11 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-7.png)
+:::
+
+::::
+
+## Between
+
+:::: {.columns}
+
+::: {.column width="50%"}
+What is the probability that you will have to wait between 7 and 11 minutes?
+:::
+
+::: {.column width="50%"}
+![](fig12-8.png)
+:::
+
+::::
+
+:::::
+
+
+## Cumulative Density Function
+
+- There are no nonzero probabilities to the left.  The CDF "starts with zero" probability.  Here, $F(0) = 0$
+- Since all probabilities add up to 100\%, the CDF 
+ends at one".  Here, $F(30) = 1$
+
+![CDF](fig12-9.png)
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 7:
+  - WHW5
+  - LHW5
+  - Mid-Semester Survey
+  
+- Exam 2 will be on Tues., Nov. 1
+
+:::
+
+::: {.column width="50%"}
+![Matt Salomone was an a capella singer with The Klein Four Group, and they made a whole album of mathematical songs](boring.png)
+![tweet source](https://mobile.twitter.com/matthematician/status/1574372761144811520)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::
