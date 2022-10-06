@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2022-10-04T02:17:18.638Z</lastmod>
+    <lastmod>2022-10-06T18:26:08.986Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2022-10-04T02:17:22.546Z</lastmod>
+    <lastmod>2022-10-06T18:26:07.480Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -63,5 +63,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/11_-_Continuous Distributions/Math_32_11_Geometric_Distribution.html</loc>
     <lastmod>2022-10-04T02:17:16.648Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/12_-_Exponential Distribution/Math_32_12_Exponential_Distribution.html</loc>
+    <lastmod>2022-10-06T18:26:06.952Z</lastmod>
   </url>
 </urlset>
