@@ -1,0 +1,199 @@
+---
+title: "14: Discrete Joint Distributions"
+author: "Derek Sollberger"
+date: "2022-10-13"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Joint Probability Mass Function
+
+:::{.callout-note}
+## Joint Probability Mass Function
+
+The joint probability mass function (joint PMF) to handle simultaneous calculations of random variables $X$ and $Y$ can be expressed as
+
+![](fig14-1.png)
+
+- $X = \{a_{1}, a_{2}, ..., a_{m}\}$
+- $Y = \{b_{1}, b_{2}, ..., b_{n}\}$
+- $p_{ij} = P(X = a_{i}, Y = b_{j})$
+:::
+
+:::{.callout-tip}
+## Properties
+
+- Each probability is between zero and one inclusively
+    $$0 \leq p_{ij} \leq 1$$
+- All probabilities add up to 100 percent
+    $$\ds\sum_{i = 1}^{m}\sum_{j = 1}^{n} p_{ij} = 1$$
+- Aside: it is okay if the total is 0.99 or 1.01 (artifact of rounding errors)
+:::
+
+
+## Setting
+
+The setting for the examples in this lecture is The Lantern---our beloved coffee shop.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Lantern](Lantern.png)
+:::
+
+::: {.column width="50%"}
+- $X$:  number of beverages purchased by a customer
+- $Y$:  number of snacks purchased by a customer
+
+![](fig14-2.png)
+:::
+
+::::
+
+
+## Joint Probability
+
+![](fig14-3.png)
+
+What is the probability that a randomly selected customer purchased one beverage and one snack?
+
+
+## Marginal Probability Mass Functions
+
+:::{.callout-note}
+## Marginal Probability Mass Functions
+
+The **marginal probability mass functions** with respect to $X$ and $Y$ respectively are
+
+$${\color{blue}p_{X}(a_{i}) = \ds\sum_{j = 1}^{n} p(a_{i}, b_{j})}, \quad {\color{red}p_{Y}(b_{j}) = \ds\sum_{i = 1}^{m} p(a_{i}, b_{j})}$$
+:::
+
+In our example setting, we have the following joint PMF with marginal probabilities:
+
+![](fig14-4.png)
+
+:::{.callout-tip collapse="true"}
+## Marginal Probability Mass Functions
+
+More succinctly, the marginal probability mass function of $X$ is
+
+![](fig14-5.png)
+
+and the marginal probability mass function of $Y$ is
+
+![](fig14-6.png)
+:::
+
+What is the probability that a randomly selected customer purchased one beverage or one snack?
+
+
+## Conditional Probability
+
+![](fig14-4.png)
+
+- Compute the probability that a randomly selected customer purchases one snack given that the customer purchased zero beverages.
+
+- Compute the probability that a randomly selected customer purchases a beverage given that the customer purchased two snacks.
+
+
+## Conditional Expectation
+
+:::{.callout-note}
+## Conditional Expectation
+
+The concept of conditional probability can be extended into the concept of the expected value.
+
+$$\text{E}[{\color{blue}A}| B = b_{j}] = \ds\sum_{i = 1}^{m} {\color{blue}a_{i}} \cdot {\color{red}P(a_{i} | B = b_{j})} = \ds\sum_{i = 1}^{m} {\color{blue}a_{i}} \cdot {\color{red}\ds\frac{P(A = a_{i}, B = b_{j})}{P(B = b_{j})}}$$
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](fig14-4.png)	
+:::
+
+::: {.column width="50%"}
+What is the expected number of snacks purchased given that a customer purchases one beverage?
+:::
+
+::::
+
+
+## Joint Cumulative Distribution Function
+
+:::{.callout-note}
+## Joint Cumulative Distribution Function
+
+As in the univariate case, the multivariate joint cumulative distribution function (joint CDF) is defined similarly as
+
+$$F(a, b) = P(X \leq a, Y \leq b)$$
+:::
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 14:
+  - WHW6
+  - LHW6
+  - Internet Connection Check (survey)
+  
+- Exam 2 will be on Tues., Nov. 1
+
+:::
+
+::: {.column width="50%"}
+![](third_pounder.png)
+
+
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
