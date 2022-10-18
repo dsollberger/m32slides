@@ -1,0 +1,270 @@
+---
+title: "15: Continuous Joint Distributions"
+author: "Derek Sollberger"
+date: "2022-10-18"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Joint Probability Density Function
+
+:::{.callout-note}
+## Joint Probability Density Function
+
+The joint probability density function $f(x,y)$ to handle simultaneous calculations of random variables $X$ and $Y$ can be expressed as
+
+$$P({\color{blue}a_{1} < X < a_{2}}, {\color{red}b_{1} < Y < b_{2}}) = \ds{\color{blue}\int_{a_{1}}^{a_{2}}}{\color{red}\int_{b_{1}}^{b_{2}}} \! {\color{purple}f(x,y)} \, {\color{red}dy} \, {\color{blue}dx}$$
+
+:::
+
+:::{.callout-tip}
+## Properties
+
+- Each probability is between zero and one inclusively
+    $$0 \leq {\color{purple}f(x,y)} \leq 1$ \text{ for all } {\color{blue}$x$}, {\color{red}$y$}$$
+- All probabilities add up to 100 percent
+    $${\color{red}\ds\int_{-\infty}^{\infty}}{\color{blue}\ds\int_{-\infty}^{\infty}} \! {\color{purple}f(x,y)} \, {\color{blue}dx} \, {\color{red}dy} = 1$$
+:::
+
+
+## Setting
+
+For the examples in this lecture session, we will model the queues at In-n-Out with random variables
+
+:::: {.columns}
+
+::: {.column width="33%"}
+![In-n-Out](innout.png)
+:::
+
+::: {.column width="67%"}
+- $X$:  wait time to order food
+- $Y$:  wait time to receive food
+
+and a function of the form
+
+$${\color{purple}f(x,y)} = k{\color{blue}x}{\color{red}y}{\color{blue}e^{-x}}{\color{red}e^{-y/5}},$$
+
+$${\color{blue}x > 0}, \quad {\color{red}y > 0}$$
+:::
+
+::::
+
+
+## Normalization
+
+Find the value of $k$ so that $f$ is a probability density function.
+
+$${\color{purple}f(x,y)} = k{\color{blue}x}{\color{red}y}{\color{blue}e^{-x}}{\color{red}e^{-y/5}}, \quad {\color{blue}x > 0}, \quad {\color{red}y > 0}$$
+
+## Joint Probability
+
+$${\color{purple}f(x,y)} = \ds\frac{1}{25}{\color{blue}x}{\color{red}y}{\color{blue}e^{-x}}{\color{red}e^{-y/5}}, \quad {\color{blue}x > 0}, \quad {\color{red}y > 0}$$
+
+Compute the probability that you will take {\color{blue}between 1 and 2 minutes to order} and wait {\color{red}between 3 and 4 minutes to receive} your food.
+
+
+## Joint Cumulative Distribution Function
+
+:::{.callout-note}
+## Joint Cumulative Distribution Function
+
+In general, we handle the probability calculations with the joint cumulative distribution function $F(a,b)$
+
+% joint cumulative distribution function
+$${\color{purple}F(a,b)} = P({\color{blue}X \leq a}, {\color{red}Y \leq b}) = {\color{blue}\ds\int_{-\infty}^{a}}{\color{red}\ds\int_{-\infty}^{b}} \! {\color{purple}f(x,y)} \, {\color{red}dy} \, {\color{blue}dx} $$
+:::
+
+:::{.callout-tip}
+## Properties
+
+We can verify that the joint CDF starts at zero
+    
+$${\color{purple}F(0,0)} = 0$$
+    
+and that the joint CDF collects all probabilities
+    
+$$\ds\lim_{a \to \infty, b \to \infty} F(a,b) = 1$$
+
+If need be, we can recover the joint PDF from the joint CDF as the mixed second-order partial derivatives
+
+$${\color{purple}f(x,y)} = \ds\frac{{\color{purple}\partial^{2}}}{{\color{blue}\partial x} {\color{red}\partial y}} {\color{purple}F(x,y)}$$
+:::
+
+What is the joint CDF for the In-n-Out setting?
+
+
+## Marginal Probabilities
+
+:::{.callout-note}
+## Marginal Cumulative Distribution Functions
+
+The marginal cumulative distribution functions can be computed as
+
+% marginal CDF
+$$\begin{array}{rcl}
+  {\color{blue}F_{X}(a)} & = & \ds\lim_{{\color{red}b \to \infty}} {\color{purple}F(a,b)} \\
+  {\color{red}F_{Y}(b)} & = & \ds\lim_{{\color{blue}a \to \infty}} {\color{purple}F(a,b)} \\
+\end{array}$$
+:::
+
+:::{.callout-tip}
+## Properties
+
+Intuition: the marginal CDF is seeking to analyze the probabilities in just one variable regardless of the other variables, so ``eliminate'' the other varibles by taking their limits to infinity.
+
+We can verify that the marginal CDFs start at zero
+    
+$${\color{blue}F_{X}(0)} = 0 \text{ and } {\color{red}F_{Y}(0)} = 0$$
+    
+and that the marginal CDFs collect all probabilities
+    
+$$\ds\lim_{{\color{blue}a \to \infty}} {\color{blue}F_{X}(a)} = 1 \text{ and } \ds\lim_{{\color{red}b \to \infty}} {\color{red}F_{Y}(b)} = 1$$
+:::
+
+What are the marginal CDFs for the In-n-Out setting?
+
+
+
+## Marginal Probabilities
+
+:::{.callout-note}
+## Marginal Cumulative Distribution Functions
+
+The marginal probability density functions can be computed as
+
+\begin{array}{rcl}
+  {\color{blue}f_{X}(x)} & = & {\color{red}\ds\int_{-\infty}^{\infty}} \! {\color{purple}f(x,y)} \, {\color{red}dy} \\
+  {\color{red}f_{Y}(y)} & = & {\color{blue}\ds\int_{-\infty}^{\infty}} \! {\color{purple}f(x,y)} \, {\color{blue}dx} \\
+\end{array}
+:::
+
+:::{.callout-tip}
+## Intuition
+
+Intuition: the marginal PDF is seeking to analyze the probabilities in just one variable regardless of the other variables, so ``integrate out'' the other variables.
+
+Alternatively,
+
+$${\color{blue}f_{X}(x) = \ds\frac{d}{dx} F_{X}(x)} \text{ and } {\color{red}f_{Y}(y) = \ds\frac{d}{dy} F_{Y}(y)} $$
+:::
+
+What are the marginal PDFs for the In-n-Out setting?
+
+
+## Marginal Expectation
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![In-N-Out](innout.png)	
+:::
+
+::: {.column width="60%"}
+- What is the expected wait time to order food?
+- What is the expected wait time to receive food?
+:::
+
+::::
+
+
+## Independence
+
+:::{.callout-note}
+## Independence
+
+Recall that two events $A$ and $B$ are independent if 
+
+$${\color{purple}P(AB)} = {\color{blue}P(A)} \cdot {\color{red}P(B)}$$
+:::
+
+Here, the variables $X$ and $Y$ in the In-n-Out example were **independent**, which can be easily verified by noting that the integrals were separable.
+
+\begin{array}{rcl}
+  {\color{purple}f(x,y)} & = & {\color{blue}f_{X}(x)} \cdot {\color{red}f_{Y}(y)} \\ 
+  {\color{red}\ds\frac{1}{25}} {\color{blue}x}{\color{red}y}{\color{blue}e^{-x}}{\color{red}e^{-y/5}} & = & {\color{blue}xe^{-x}} \cdot {\color{red}\ds\frac{y}{25}e^{-y/5}} \\
+\end{array}
+
+and
+
+\begin{array}{rcl}
+      {\color{purple}F(a,b)} & = & {\color{blue}\ds\int_{-\infty}^{a}} {\color{red}\ds\int_{-\infty}^{b}} \! {\color{purple}f(x,y)} \, {\color{red}dy} \, {\color{blue}dx} \\
+      ~ & = & {\color{red}\ds\frac{1}{25}} {\color{blue}\ds\int_{0}^{a}} {\color{red}\ds\int_{0}^{b}} \! {\color{blue}x}{\color{red}y}{\color{blue}e^{-x}}{\color{red}e^{-y/5}} \, {\color{red}dy} \, {\color{blue}dx}\\
+      ~ & = & {\color{red}\ds\frac{1}{25}} {\color{blue}\left(\ds\int_{0}^{a} xe^{-x} \, dx \right)} {\color{red}\left(\ds\int_{0}^{b} \! ye^{-y/5} \, dy \right)} \\
+      \end{array}
+
+:::{.callout-warning}
+## Dependence
+
+Upcoming lectures: dependent variables
+:::
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 21:
+  - WHW7
+  - LHW7
+  
+- Exam 2 will be on Tues., Nov. 1
+
+:::
+
+::: {.column width="50%"}
+![](docker.png)
+
+![tweet source](https://mobile.twitter.com/joel_nitta/status/1580727355513143296)
+
+
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
