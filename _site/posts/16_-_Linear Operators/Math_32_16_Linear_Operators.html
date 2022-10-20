@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Derek Sollberger">
+<meta name="dcterms.date" content="2022-10-20">
+
+<title>Math 32 - 16: Linear Operators</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Math 32</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../slides.html">Slides</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">16: Linear Operators</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Derek Sollberger </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 20, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Previously, in Math 32,
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(X\)</span> is a random variable with PDF <span class="math inline">\(f\)</span></li>
+<li><span class="math inline">\(Y\)</span> is a random variable with PDF <span class="math inline">\(g\)</span></li>
+</ul>
+<p><span class="math display">\[{\color{blue}\text{E}[X] = \displaystyle\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx}, \quad {\color{red}\text{E}[Y] = \displaystyle\int_{-\infty}^{\infty} \! y \cdot g(y) \, dy}\]</span></p>
+<p><span class="math display">\[{\color{blue}\text{Var}(X) = \text{E}[X^{2}] - \left( \text{E}[X] \right)^{2}}, \quad {\color{red}\text{Var}(Y) = \text{E}[Y^{2}] - \left( \text{E}[Y] \right)^{2}}\]</span></p>
+<p>Let <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> be constants.</p>
+</div>
+</div>
+<section id="linear-operators" class="level2">
+<h2 class="anchored" data-anchor-id="linear-operators">Linear Operators</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Linear Operators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We say that <span class="math inline">\(L\)</span> is a <strong>linear operator</strong> if</p>
+<p><span class="math display">\[\begin{array}{rcl}
+  L(a{\color{blue}f(x)}) &amp; = &amp; aL({\color{blue}f(x)}) \\
+  L({\color{blue}f(x)} + {\color{red}g(x)}) &amp; = &amp; L({\color{blue}f(x)}) + L({\color{red}g(x)}) \\
+\end{array}\]</span></p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Linear Operators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Loosely translated, <span class="math inline">\(L\)</span> is a linear operator if</p>
+<ul>
+<li>we can factor out a scalar multiple</li>
+<li>we can split the operator across a sum or difference</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="calculus-review" class="level2">
+<h2 class="anchored" data-anchor-id="calculus-review">Calculus Review</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Show that the derivative operator is a linear operator.<br>
+</li>
+<li>Show that the integral operator is a linear operator.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="derivativepun.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: the derivative operator is a linear operator
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof</strong></p>
+<span class="math display">\[\begin{array}{rcl}
+      \displaystyle\frac{d}{dx}(a{\color{blue}f(x)} + b{\color{red}g(x)}) &amp; = &amp; \displaystyle\frac{d}{dx} a{\color{blue}f(x)} + \displaystyle\frac{d}{dx} b{\color{red}g(x)} \\
+      ~ &amp; = &amp;  a\displaystyle\frac{d}{dx} {\color{blue}f(x)} + b\displaystyle\frac{d}{dx} {\color{red}g(x)} \\
+    \end{array}\]</span>
+<p><span class="math display">\[\displaystyle\frac{d}{dx}(a{\color{blue}f(x)} + b{\color{red}g(x)}) = a\displaystyle\frac{d}{dx} {\color{blue}f(x)} + b\displaystyle\frac{d}{dx} {\color{red}g(x)},\]</span></p>
+<p>so <span class="math inline">\(\displaystyle\frac{d}{dx}\)</span> is a linear operator.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: the integral operator is a linear operator
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof</strong></p>
+<span class="math display">\[\begin{array}{rcl}
+      \displaystyle\int \! (a{\color{blue}f(x)} + b{\color{red}g(x)}) \, dx &amp; = &amp; \displaystyle\int \! a{\color{blue}f(x)} \, dx + \displaystyle\int \! b{\color{red}g(x)} \, dx \\
+      ~ &amp; = &amp; a\displaystyle\int \! {\color{blue}f(x)} \, dx + b\displaystyle\int \! {\color{red}g(x)} \, dx \\
+    \end{array}\]</span>
+<p><span class="math display">\[\displaystyle\int \! (a{\color{blue}f(x)} + b{\color{red}g(x)}) \, dx = a\displaystyle\int \! {\color{blue}f(x)} \, dx + b\displaystyle\int \! {\color{red}g(x)} \, dx,\]</span></p>
+<p>so <span class="math inline">\(\displaystyle\int\)</span> is a linear operator.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="expected-value" class="level2">
+<h2 class="anchored" data-anchor-id="expected-value">Expected Value</h2>
+<p>Is the expectation operator <span class="math inline">\(\text{E}\)</span> a linear operator?</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{E}[aX] = a\text{E}[X]\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof</strong></p>
+<p><span class="math display">\[\text{E}[aX] = \displaystyle\int_{-\infty}^{\infty} \! ax \cdot f(x) \, dx = a{\color{blue}\displaystyle\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} = a{\color{blue}\text{E}[X]}\]</span></p>
+<p>We have shown that we can factor out a scalar multiple across the expectation operator.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{E}[X + c] = \text{E}[X] + c\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof</strong></p>
+<span class="math display">\[\begin{array}{rcl}
+          \text{E}[X + c] &amp; = &amp; \displaystyle\int_{-\infty}^{\infty} \! (x + c) \cdot f(x) \, dx \\
+          ~ &amp; = &amp; {\color{blue}\displaystyle\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} + \displaystyle\int_{-\infty}^{\infty} \! c \cdot f(x) \, dx\\
+          ~ &amp; = &amp; {\color{blue}\displaystyle\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} + c\displaystyle\int_{-\infty}^{\infty} \! f(x) \, dx \\
+          ~ &amp; = &amp; {\color{blue}\text{E}[X]} + c \\
+        \end{array}\]</span>
+<p>We have shown that a horizontal shift of <span class="math inline">\(c\)</span> units in the data also affects the expected value by <span class="math inline">\(c\)</span> units</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{E}[X + Y] = \text{E}[X] + \text{E}[Y]\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof</strong></p>
+<span class="math display">\[\begin{array}{rcl}
+          {\color{purple}\text{E}[X + Y]} &amp; = &amp; {\color{blue}\displaystyle\int_{-\infty}^{\infty}}{\color{red}\displaystyle\int_{-\infty}^{\infty}} \! {\color{purple}(x + y) \cdot f(x,y)} \, {\color{red}dy} \, {\color{blue}dx} \\
+          ~ &amp; = &amp; {\color{blue}\displaystyle\int_{-\infty}^{\infty}}{\color{red}\displaystyle\int_{-\infty}^{\infty}} \! {\color{blue}x} \cdot {\color{purple}f(x,y)} \, {\color{red}dy} \, {\color{blue}dx}  + {\color{red}\displaystyle\int_{-\infty}^{\infty}}{\color{blue}\displaystyle\int_{-\infty}^{\infty}} \! {\color{red}y} \cdot {\color{purple}f(x,y)} \, {\color{blue}dx} \, {\color{red}dy} \\
+          ~ &amp; = &amp; {\color{blue}\displaystyle\int_{-\infty}^{\infty}\! x \cdot f_{X}(x) \, dx}  + {\color{red}\displaystyle\int_{-\infty}^{\infty} \! y \cdot f_{Y}(y) \, dy} \\
+          ~ &amp; = &amp; {\color{blue}\text{E}[X]} + {\color{red}\text{E}[Y]} \\
+        \end{array}\]</span>
+<p>We have shown that the expected value of a sum \ is the sum of the expected values.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Conclusion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Combining the above results, since</p>
+<p><span class="math display">\[\text{E}[aX + bY] = a\text{E}[X] + b\text{E}[Y]\]</span></p>
+<p>we have shown that the expectation operator <span class="math inline">\(\text{E}\)</span> is a linear operator.</p>
+<p>Also,</p>
+<p><span class="math display">\[\text{E}[aX + bY + c] = a\text{E}[X] + b\text{E}[Y] + c\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="variance" class="level2">
+<h2 class="anchored" data-anchor-id="variance">Variance</h2>
+<p>Is the variance <span class="math inline">\(\text{Var}(X)\)</span> function a linear operator?</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{Var}(aX) = a\text{Var}(X)\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Counterpoint:</strong></p>
+<p>Recall the ``practical formula for variance’’</p>
+<p><span class="math display">\[\text{Var}(X) = \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2}\]</span></p>
+<p>and tracking the scaling factor proceeds as follows</p>
+<span class="math display">\[\begin{array}{rcl}
+          \text{Var}(aX) &amp; = &amp; \text{E}[(aX)^{2}] - \left(\text{E}[aX]\right)^{2} \\
+          ~ &amp; = &amp; \displaystyle\int_{-\infty}^{\infty}\! (ax)^{2} \cdot f(x) \, dx - \left(a\text{E}[X]\right)^{2} \\
+          ~ &amp; = &amp; \displaystyle\int_{-\infty}^{\infty}\! a^{2}x^{2} \cdot f(x) \, dx - a^{2}\left(\text{E}[X]\right)^{2} \\
+          ~ &amp; = &amp; a^{2} \left[ \displaystyle\int_{-\infty}^{\infty}\! x^{2} \cdot f(x) \, dx - \left(\text{E}[X]\right)^{2} \right] \\
+          ~ &amp; = &amp; a^{2} \left( \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2} \right) \\
+          ~ &amp; = &amp; a^{2} \text{Var}(X) \\
+        \end{array}\]</span>
+<p>When factoring out a scalar from the variance function, <em>the factor is squared</em>.</p>
+<p>Furthermore, since <span class="math inline">\(\text{Var}(aX) \neq a\text{Var}(X)\)</span>, we have shown that the variance function is <em>not</em> a linear operator.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{Var}(X + c) = \text{Var}(X) + c\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Counterpoint:</strong></p>
+<p>Recall the ``practical formula for variance’’</p>
+<span class="math display">\[\begin{array}{rcl}
+          \text{Var}(X + c) &amp; = &amp; \text{E}[(X + c)^{2}] - \left(\text{E}[X + c]\right)^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2} + 2cX + c^{2}] - \left(\text{E}[X] + c \right)^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2}] + \text{E}[2cX] + \text{E}[c^{2}] - \left(\text{E}[X]\right)^{2} - 2c\text{E}[X] - c^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2}] + 2c\text{E}[X] + c^{2} - \left(\text{E}[X]\right)^{2} - 2c\text{E}[X] - c^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2} \\
+          ~ &amp; = &amp; \text{Var}(X) \\
+        \end{array}\]</span>
+<p>We have shown that <span class="math inline">\(\text{Var}(X + c) = \text{Var}(X)\)</span>. That is, variance is not affected by a horizontal shift (phase shift)!</p>
+<p>Furthermore, since <span class="math inline">\(\text{Var}(X + c) \neq \text{Var}(X) + c\)</span>, we have shown that the variance function is not a linear operator.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Claim: <span class="math inline">\(\text{Var}(X + Y) = {\color{blue}\text{Var}(X)} + {\color{red}\text{Var}(Y)}\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Counterpoint:</strong></p>
+<span class="math display">\[\begin{array}{rcl}
+          \text{Var}(X + Y) &amp; = &amp; \text{E}[(X + Y)^{2}] - \left(\text{E}[X + Y]\right)^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2} + 2XY + Y^{2}] - \left(\text{E}[X] + \text{E}[Y]\right)^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2}] + \text{E}[2XY] + \text{E}[Y^{2}] - \left(\text{E}[X]\right)^{2}+ 2\text{E}[X]\text{E}[Y] + \left(\text{E}[Y]\right)^{2} \\
+          ~ &amp; = &amp; \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2}  + \text{E}[Y^{2}] - \left(\text{E}[Y]\right)^{2} + 2\text{E}[XY] - 2\text{E}[X]\text{E}[Y] \\
+          ~ &amp; = &amp; {\color{blue}\text{Var}(X)} + {\color{red}\text{Var}(Y)} + 2\left( {\color{purple}\text{E}[XY] - \text{E}[X]\text{E}[Y] } \right) \\
+        \end{array}\]</span>
+<p>We have shown that <span class="math inline">\(\text{Var}(X + Y) \neq \text{Var}(X) + \text{Var}(Y)\)</span>. That is, the variance of the sum is not the sum of the variances (unless …?)</p>
+<p>Furthermore, since <span class="math inline">\(\text{Var}(X + Y) \neq \text{Var}(X) + \text{Var}(Y)\)</span>, we have shown that the variance function is not a linear operator.</p>
+</div>
+</div>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Conclusion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have shown that the variance function is not a linear operator.</p>
+<p>Next time: working with</p>
+<p><span class="math display">\[{\color{purple}\text{E}[XY] - \text{E}[X]\text{E}[Y]}\]</span></p>
+<p>which is called the <strong>covariance</strong>!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>due Fri., Oct.&nbsp;21:
+<ul>
+<li>WHW7</li>
+<li>LHW7</li>
+</ul></li>
+<li>Exam 2 will be on Tues., Nov.&nbsp;1</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="logic.png" class="img-fluid"></p>
+<p><a href="https://mobile.twitter.com/CMastication/status/1582548812987772929">tweet source</a></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="panel-tabset">
+
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

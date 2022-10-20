@@ -1,0 +1,302 @@
+---
+title: "16: Linear Operators"
+author: "Derek Sollberger"
+date: "2022-10-20"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+:::{.callout-tip}
+## Previously, in Math 32,
+
+- $X$ is a random variable with PDF $f$
+- $Y$ is a random variable with PDF $g$
+
+
+$${\color{blue}\text{E}[X] = \ds\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx}, \quad {\color{red}\text{E}[Y] = \ds\int_{-\infty}^{\infty} \! y \cdot g(y) \, dy}$$
+
+$${\color{blue}\text{Var}(X) = \text{E}[X^{2}] - \left( \text{E}[X] \right)^{2}}, \quad {\color{red}\text{Var}(Y) = \text{E}[Y^{2}] - \left( \text{E}[Y] \right)^{2}}$$
+
+Let $a$, $b$, and $c$ be constants.
+:::
+
+
+## Linear Operators
+
+:::{.callout-note}
+## Linear Operators
+
+We say that $L$ is a **linear operator** if 
+
+$$\begin{array}{rcl}
+  L(a{\color{blue}f(x)}) & = & aL({\color{blue}f(x)}) \\
+  L({\color{blue}f(x)} + {\color{red}g(x)}) & = & L({\color{blue}f(x)}) + L({\color{red}g(x)}) \\
+\end{array}$$
+:::
+
+:::{.callout-tip}
+## Linear Operators
+
+Loosely translated, $L$ is a linear operator if
+
+- we can factor out a scalar multiple
+- we can split the operator across a sum or difference
+:::
+
+
+## Calculus Review
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Show that the derivative operator is a linear operator.	
+- Show that the integral operator is a linear operator.
+:::
+
+::: {.column width="50%"}
+![](derivativepun.png)
+:::
+
+::::
+
+:::{.callout-tip collapse="true"}
+## Claim: the derivative operator is a linear operator
+
+**Proof**
+
+\begin{array}{rcl}
+      \ds\frac{d}{dx}(a{\color{blue}f(x)} + b{\color{red}g(x)}) & = & \ds\frac{d}{dx} a{\color{blue}f(x)} + \ds\frac{d}{dx} b{\color{red}g(x)} \\
+      ~ & = &  a\ds\frac{d}{dx} {\color{blue}f(x)} + b\ds\frac{d}{dx} {\color{red}g(x)} \\
+    \end{array}
+    
+$$\ds\frac{d}{dx}(a{\color{blue}f(x)} + b{\color{red}g(x)}) = a\ds\frac{d}{dx} {\color{blue}f(x)} + b\ds\frac{d}{dx} {\color{red}g(x)},$$
+
+so $\ds\frac{d}{dx}$ is a linear operator.
+:::
+
+:::{.callout-tip collapse="true"}
+## Claim: the integral operator is a linear operator
+
+**Proof**
+
+\begin{array}{rcl}
+      \ds\int \! (a{\color{blue}f(x)} + b{\color{red}g(x)}) \, dx & = & \ds\int \! a{\color{blue}f(x)} \, dx + \ds\int \! b{\color{red}g(x)} \, dx \\
+      ~ & = & a\ds\int \! {\color{blue}f(x)} \, dx + b\ds\int \! {\color{red}g(x)} \, dx \\
+    \end{array}
+    
+$$\ds\int \! (a{\color{blue}f(x)} + b{\color{red}g(x)}) \, dx = a\ds\int \! {\color{blue}f(x)} \, dx + b\ds\int \! {\color{red}g(x)} \, dx,$$
+
+so $\ds\int$ is a linear operator. 
+:::
+
+
+## Expected Value
+
+Is the expectation operator $\text{E}$ a linear operator?
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{E}[aX] = a\text{E}[X]$
+
+**Proof**
+
+$$\text{E}[aX] = \ds\int_{-\infty}^{\infty} \! ax \cdot f(x) \, dx = a{\color{blue}\ds\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} = a{\color{blue}\text{E}[X]}$$
+        
+We have shown that we can factor out a scalar multiple across the expectation operator.
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{E}[X + c] = \text{E}[X] + c$
+
+**Proof**
+
+\begin{array}{rcl}
+          \text{E}[X + c] & = & \ds\int_{-\infty}^{\infty} \! (x + c) \cdot f(x) \, dx \\
+          ~ & = & {\color{blue}\ds\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} + \ds\int_{-\infty}^{\infty} \! c \cdot f(x) \, dx\\
+          ~ & = & {\color{blue}\ds\int_{-\infty}^{\infty} \! x \cdot f(x) \, dx} + c\ds\int_{-\infty}^{\infty} \! f(x) \, dx \\
+          ~ & = & {\color{blue}\text{E}[X]} + c \\
+        \end{array}
+        
+We have shown that a horizontal shift of $c$ units in the data also affects the expected value by $c$ units
+:::
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{E}[X + Y] = \text{E}[X] + \text{E}[Y]$
+
+**Proof**
+
+\begin{array}{rcl}
+          {\color{purple}\text{E}[X + Y]} & = & {\color{blue}\ds\int_{-\infty}^{\infty}}{\color{red}\ds\int_{-\infty}^{\infty}} \! {\color{purple}(x + y) \cdot f(x,y)} \, {\color{red}dy} \, {\color{blue}dx} \\
+          ~ & = & {\color{blue}\ds\int_{-\infty}^{\infty}}{\color{red}\ds\int_{-\infty}^{\infty}} \! {\color{blue}x} \cdot {\color{purple}f(x,y)} \, {\color{red}dy} \, {\color{blue}dx}  + {\color{red}\ds\int_{-\infty}^{\infty}}{\color{blue}\ds\int_{-\infty}^{\infty}} \! {\color{red}y} \cdot {\color{purple}f(x,y)} \, {\color{blue}dx} \, {\color{red}dy} \\
+          ~ & = & {\color{blue}\ds\int_{-\infty}^{\infty}\! x \cdot f_{X}(x) \, dx}  + {\color{red}\ds\int_{-\infty}^{\infty} \! y \cdot f_{Y}(y) \, dy} \\
+          ~ & = & {\color{blue}\text{E}[X]} + {\color{red}\text{E}[Y]} \\
+        \end{array}
+        
+We have shown that the expected value of a sum \\ is the sum of the expected values.
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Conclusion
+
+Combining the above results, since
+
+$$\text{E}[aX + bY] = a\text{E}[X] + b\text{E}[Y]$$
+
+we have shown that the expectation operator $\text{E}$ is a linear operator.
+        
+Also,
+        
+$$\text{E}[aX + bY + c] = a\text{E}[X] + b\text{E}[Y] + c$$
+:::
+
+
+## Variance
+
+Is the variance $\text{Var}(X)$ function a linear operator?
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{Var}(aX) = a\text{Var}(X)$
+
+**Counterpoint:**  
+
+Recall the ``practical formula for variance'' 
+
+$$\text{Var}(X) = \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2}$$
+
+and tracking the scaling factor proceeds as follows
+
+\begin{array}{rcl}
+          \text{Var}(aX) & = & \text{E}[(aX)^{2}] - \left(\text{E}[aX]\right)^{2} \\
+          ~ & = & \ds\int_{-\infty}^{\infty}\! (ax)^{2} \cdot f(x) \, dx - \left(a\text{E}[X]\right)^{2} \\
+          ~ & = & \ds\int_{-\infty}^{\infty}\! a^{2}x^{2} \cdot f(x) \, dx - a^{2}\left(\text{E}[X]\right)^{2} \\
+          ~ & = & a^{2} \left[ \ds\int_{-\infty}^{\infty}\! x^{2} \cdot f(x) \, dx - \left(\text{E}[X]\right)^{2} \right] \\
+          ~ & = & a^{2} \left( \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2} \right) \\
+          ~ & = & a^{2} \text{Var}(X) \\
+        \end{array}
+        
+When factoring out a scalar from the variance function, *the factor is squared*.
+
+Furthermore, since $\text{Var}(aX) \neq a\text{Var}(X)$, we have shown that the variance function is *not* a linear operator.
+:::
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{Var}(X + c) = \text{Var}(X) + c$
+
+**Counterpoint:**  
+
+Recall the ``practical formula for variance'' 
+        
+\begin{array}{rcl}
+          \text{Var}(X + c) & = & \text{E}[(X + c)^{2}] - \left(\text{E}[X + c]\right)^{2} \\
+          ~ & = & \text{E}[X^{2} + 2cX + c^{2}] - \left(\text{E}[X] + c \right)^{2} \\
+          ~ & = & \text{E}[X^{2}] + \text{E}[2cX] + \text{E}[c^{2}] - \left(\text{E}[X]\right)^{2} - 2c\text{E}[X] - c^{2} \\
+          ~ & = & \text{E}[X^{2}] + 2c\text{E}[X] + c^{2} - \left(\text{E}[X]\right)^{2} - 2c\text{E}[X] - c^{2} \\
+          ~ & = & \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2} \\
+          ~ & = & \text{Var}(X) \\
+        \end{array}
+        
+We have shown that $\text{Var}(X + c) = \text{Var}(X)$.  That is, variance is not affected by a horizontal shift (phase shift)!
+
+
+Furthermore, since $\text{Var}(X + c) \neq \text{Var}(X) + c$, we have shown that the variance function is not a linear operator.
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Claim: $\text{Var}(X + Y) = {\color{blue}\text{Var}(X)} + {\color{red}\text{Var}(Y)}$
+
+**Counterpoint:**  
+
+\begin{array}{rcl}
+          \text{Var}(X + Y) & = & \text{E}[(X + Y)^{2}] - \left(\text{E}[X + Y]\right)^{2} \\
+          ~ & = & \text{E}[X^{2} + 2XY + Y^{2}] - \left(\text{E}[X] + \text{E}[Y]\right)^{2} \\
+          ~ & = & \text{E}[X^{2}] + \text{E}[2XY] + \text{E}[Y^{2}] - \left(\text{E}[X]\right)^{2}+ 2\text{E}[X]\text{E}[Y] + \left(\text{E}[Y]\right)^{2} \\
+          ~ & = & \text{E}[X^{2}] - \left(\text{E}[X]\right)^{2}  + \text{E}[Y^{2}] - \left(\text{E}[Y]\right)^{2} + 2\text{E}[XY] - 2\text{E}[X]\text{E}[Y] \\
+          ~ & = & {\color{blue}\text{Var}(X)} + {\color{red}\text{Var}(Y)} + 2\left( {\color{purple}\text{E}[XY] - \text{E}[X]\text{E}[Y] } \right) \\
+        \end{array}
+    
+We have shown that $\text{Var}(X + Y) \neq \text{Var}(X) + \text{Var}(Y)$.  That is, the variance of the sum is not the sum of the variances (unless ...?)
+
+Furthermore, since $\text{Var}(X + Y) \neq \text{Var}(X) + \text{Var}(Y)$, we have shown that the variance function is not a linear operator.
+:::
+
+:::{.callout-warning collapse="true"}
+## Conclusion
+
+We have shown that the variance function is not a linear operator.
+        
+Next time: working with 
+
+$${\color{purple}\text{E}[XY] - \text{E}[X]\text{E}[Y]}$$
+
+which is called the **covariance**!
+:::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 21:
+  - WHW7
+  - LHW7
+  
+- Exam 2 will be on Tues., Nov. 1
+
+:::
+
+::: {.column width="50%"}
+![](logic.png)
+
+[tweet source](https://mobile.twitter.com/CMastication/status/1582548812987772929)
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
