@@ -1,0 +1,215 @@
+---
+title: "17: Covariance and Correlation"
+author: "Derek Sollberger"
+date: "2022-10-25"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Setting
+
+:::: {.columns}
+
+::: {.column width="60%"}
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+![joint PMF](pdf.png)	
+:::
+
+::: {.column width="40%"}
+![In-n-Out](innout.png)	
+:::
+
+::::
+
+
+## Independence
+
+![](pdf.png)	
+
+Are $X$ and $Y$ independent?
+
+
+## Covariance
+
+:::{.callout-warning collapse="true"}
+## True or False?  $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$
+
+False.  In general,
+    
+$$\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\left( \text{E}[XY] - \text{E}[X]\text{E}[Y] \right)$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Motivation for Independence
+
+As you probably suspected, $\text{Var}(X + Y)$ does equal $\text{Var}(X) + \text{Var}(Y)$ if $X$ and $Y$ are independent (exercise left to reader).
+:::
+
+:::{.callout-note}
+## Covariance
+
+We define the **covariance** of random variables as
+
+$$\text{Cov}(X,Y) = \text{E}[XY] - \text{E}[X]\text{E}[Y]$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Derek's Intuition
+
+As an analogy, the random variables somewhat act like waves in that they can work together and grow or somewhat cancel each other out.
+
+![](constructiveanddestructiveinterference.png)
+
+- Image source: https://www.physics-and-radio-electronics.com/physics/waveinterference.html
+:::
+
+:::{.callout-tip collapse="true"}
+## The Pythagorean Theorem of Statistics
+
+![](pythagorean_theorem_of_statistics.png)
+
+- Image credit: Bioinformatics professor Dr. David Ardell
+:::
+
+
+## Covariance
+
+![](pdf.png)	
+
+- Compute the covariance in the In-n-Out setting
+- What are the units of the answer in this example?
+
+
+## Correlation
+
+:::{.callout-note}
+## Correlation
+
+Just like how the $z$-score is a standardized and unitless measure, the **correlation** was designed to be standardized and unitless (i.e. units cancel out).
+
+$$r = \text{Corr}(X,Y) = \ds\frac{ \text{Cov}(X,Y) }{ \sqrt{ \text{Var}(X) \cdot \text{Var}(Y)} }$$
+
+- If $\text{Var}(X) = 0$, the data $X$ are constant, and simply return $r = 0$
+- If $\text{Var}(Y) = 0$, the data $Y$ are constant, and simply return $r = 0$
+:::
+
+![](pdf.png)	
+
+- Compute the correlation in the In-n-Out setting
+
+
+## Interpretation of Correlation
+
+:::{.callout-tip collapse="true"}
+## Ranges
+
+![Ranges](ranges.png)
+
+Aside: the infinity-sized expected values might happen in continuous distributions.
+:::
+
+:::{.callout-tip}
+## Interpretation of Correlation
+
+Early development of the concept of correlation was done by Karl Pearson.  Pearson suggested the following interpretations of the correlation (but there is no strict rule for this):
+
+- $|r| < 0.4$: virtually uncorrelated
+- $0.4 \leq |r| < 0.7$: slightly correlated
+- $0.7 \leq |r| \leq 1.0$: strongly correlated
+:::
+
+## Continuous Joint Probability Distribution Functions
+
+:::: {.columns}
+
+::: {.column width="75%"}
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+with joint PDF
+
+$$f(x,y) = \frac{1}{30}(x + y)e^{-x}e^{-y/5}$$
+- Are $X$ and $Y$ independent?
+- Are $X$ and $Y$ correlated?
+:::
+
+::: {.column width="25%"}
+![In-n-Out](innout.png)	
+:::
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 28:
+  - WHW8
+  - LHW8
+  
+- Exam 2 will be on Tues., Nov. 1
+  - more info in weekly announcement
+
+:::
+
+::: {.column width="50%"}
+![](maps.png)
+[tweet source](https://mobile.twitter.com/Hyperosonic/status/1583534703193124865)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
