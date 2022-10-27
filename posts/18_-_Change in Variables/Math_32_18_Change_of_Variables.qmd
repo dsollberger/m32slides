@@ -1,0 +1,177 @@
+---
+title: "18: Change of Variables"
+author: "Derek Sollberger"
+date: "2022-10-27"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+
+## Linear Conversion
+
+Let $F$ be the daily high temperature in Fahrenheit in Merced, California, with a mean of 76 degrees and a standard deviation of 15 degrees.  Compute those sample statistics in Celsius.
+
+:::{.callout-tip}
+## Temperature Conversion
+
+We know that the conversion formula is
+
+$$C = \ds\frac{5}{9}(F - 32)$$
+:::
+
+
+## Range Rule of Thumb
+
+:::{.callout-tip}
+## Range Rule of Thumb
+
+Recall
+
+- About 67 percent of data falls within one standard deviation of the mean
+- About 95 percent of data falls within two standard deviations of the mean
+
+$$\left( \mu - 2\sigma, \mu + 2\sigma \right)$$
+:::
+
+We had computed
+
+- $\mu_{F} \approx 76$ and $\sigma_{F} \approx 15$ degrees Fahrenheit
+- $\mu_{C} \approx 24.4444$ and $\sigma_{C} \approx 8.3333$ degrees Celsius
+
+Build range-rule-of-thumb intervals for the Merced high temperatures in Fahrenheit and in Celsius.
+
+
+## Distributions
+
+Determine the distribution and density functions for
+
+$$Y = \ds\frac{5}{9}(X - 32)$$
+
+
+## Change of Coordinates
+
+:::{.callout-note}
+## Change of Coordinates
+
+Let $X$ be a continuous random variable with distribution function $F_{X}$ and density function $f_{X}$.  If we apply a linear transformation
+
+$$Y = aX + c$$
+
+where $a >0$ and $c$ are constants, then
+
+$$F_{Y}(y) = F_{X}\left(\ds\frac{y - c}{a}\right) \text{ and } f_{Y}(y) = \ds\frac{1}{a}f_{X}\left(\ds\frac{y - c}{a}\right)$$
+:::
+
+If $X \sim Exp(1/2)$, then what kind of distribution does $Y = 32X$ have?
+
+## Nonlinear Transformations
+
+::::: {.panel-tabset}
+
+## Concave
+
+Let $X \sim U\left(0, \ds\frac{\pi}{2}\right)$ and $Y = \sin(X)$.
+
+Compare $\text{E}[\sin X]$ and $\sin(\text{E}[X])$
+
+![](jensen1.png)
+
+## Convex
+
+Suppose that a disease outbreak can be modeled where $X$ is the population density of a city and $Y$ is the number of diagnosed cases with
+
+$$X \sim U(0,100), \quad Y = X^{3.2}$$
+
+Compare $\text{E}[X^{3.2}]$ and $\left(\text{E}[X]\right)^{3.2}$
+
+![](jensen2.png)
+
+:::::
+
+:::{.callout-note}
+## Jensen's Inequality
+
+The previous two examples were demonstrations of \textit{Jensen's Inequality}, which states that
+
+- If $g$ is a convex function of random variable $X$, then
+
+$$g(\text{E}[X]) \leq \text{E}[g(X)]$$
+ - If $g$ is a concave function of random variable $X$, then
+
+$$g(\text{E}[X]) \geq \text{E}[g(X)]$$
+
+
+where the equal signs are not included when the function $g$ is strictly convex or strictly concave.
+:::
+
+
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Oct. 28:
+  - WHW8
+  - LHW8
+  
+- Exam 2 will be on Tues., Nov. 1
+  - more info in weekly announcement
+
+- Math 32 discussion sections on Oct. 31 are optional
+  - canceled for Nov. 2
+
+:::
+
+::: {.column width="50%"}
+![](jensen_road_sign.png)
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
