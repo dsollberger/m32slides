@@ -1,0 +1,189 @@
+---
+title: "19: Poisson Process"
+author: "Derek Sollberger"
+date: "2022-11-03"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+
+## Motivation for the Poisson Process
+
+- Assume a constant \textit{rate parameter} $\lambda$ of arrivals
+- Let $N_{t}$ be the number of arrivals in time interval $[0,t]$
+- Homogeneity:  $\text{E}[N_{t}] = \lambda t$ (``rate times time'')
+- Independence: numbers of arrivals in disjoint time intervals are independent random variables
+
+**Goal**: Derive distribution of number of arrivals
+
+- We expect $\text{E}[N_{t}] = \lambda t$ (``rate times time'')
+- Partition time interval $[0,t]$ into $n$ subintervals
+- Assuming $n$ is large enough so that each subinterval has zero or one arrival (i.e. Bernoulli trial)
+- Probability of arrival in a random subinterval: $p = \ds\frac{\lambda t}{n}$
+
+So far, we are assuming $N_{t} \sim \text{Bin}(n,p)$
+
+$$P(N_{t} = k) = \binom{n}{k} \left(\ds\frac{\lambda t}{n}\right)^{k} \left(1 - \ds\frac{\lambda t}{n}\right)^{n-k}$$
+
+
+## Infinitessimal
+
+However,
+
+- $n$ was arbitrary
+- time is a continuous variable
+
+So let's take the limit as $n$ goes to infinity.
+
+$$\ds\lim_{n \to \infty} P(N_{t} = k) = \ds\lim_{n \to \infty} {\color{purple}\binom{n}{k} \left(\ds\frac{\lambda t}{n}\right)^{k}} {\color{blue}\left(1 - \ds\frac{\lambda t}{n}\right)^{n}} {\color{red}\left(1 - \ds\frac{\lambda t}{n}\right)^{-k}}$$
+
+:::{.callout-tip collapse="true"}
+## Infinitessimal
+
+Handling the limit by its factors:
+$$\ds\lim_{n \to \infty} {\color{red}\left(1 - \ds\frac{\lambda t}{n}\right)^{-k}} = 1, \quad \ds\lim_{n \to \infty} {\color{blue}\left(1 - \ds\frac{\lambda t}{n}\right)^{n}} = e^{-\lambda t}$$
+
+$$\begin{array}{rcl}
+  \ds\lim_{n \to \infty} {\color{purple}\binom{n}{k} \left(\ds\frac{\lambda t}{n}\right)^{k}} & = & (\lambda t)^{k} \ds\lim_{n \to \infty} \binom{n}{k} \left(\ds\frac{1}{n}\right)^{k} \\
+  ~ & = & (\lambda t)^{k} \ds\lim_{n \to \infty} \ds\frac{n!}{k!(n-k)!} \cdot \ds\frac{1}{n^{k}} \\
+  ~ & = & \ds\frac{(\lambda t)^{k}}{k!} \ds\lim_{n \to \infty} \ds\frac{n!}{(n-k)!} \cdot \ds\frac{1}{n^{k}} \\
+  ~ & = & \ds\frac{(\lambda t)^{k}}{k!} \ds\lim_{n \to \infty} \ds\prod_{i = 0}^{k-1} \ds\frac{n - i}{n} \\
+  ~ & = & \ds\frac{(\lambda t)^{k}}{k!}  \ds\prod_{i = 0}^{k-1} \ds\lim_{n \to \infty} \ds\frac{n - i}{n} \\
+  ~ & = & \ds\frac{(\lambda t)^{k}}{k!}  \\
+\end{array}$$
+:::
+
+
+## Probability Density Function
+
+:::{.callout-note}
+## Probability Density Function
+
+Thus, if $X$ is the number of observed events in this model, let $\mu = \lambda t$ (was assumed to be constant), and
+$$P(X = k) = \ds\frac{\mu^{k}e^{-\mu}}{k!}$$
+
+This is called the probability mass function for the **Poisson distribution**.  The Poisson distribution is a discrete distribution that tends to be used to model rare events.
+:::
+
+## Expected Value
+
+Here we will derive the expected value for a $\text{Pois}(\mu)$ distribution.
+
+:::{.callout-tip collapse="true"}
+## Expected Value
+
+\begin{array}{rcl}
+  \text{E}[X] & = & \ds\sum_{k = 0}^{\infty} k \cdot P(x = k) \\
+  ~ & = & \ds\sum_{k = 0}^{\infty} k \cdot \ds\frac{\mu^{k}e^{-\mu}}{k!} \\
+  ~ & = & 0 + \ds\sum_{k = 1}^{\infty} k \cdot \ds\frac{\mu^{k}e^{-\mu}}{k!} \\
+  ~ & = & \ds\sum_{k = 1}^{\infty} \ds\frac{\mu^{k}e^{-\mu}}{(k-1)!} \\
+  ~ & = & \ds\sum_{k = 1}^{\infty} \ds\frac{\mu\mu^{k-1}e^{-\mu}}{(k-1)!} \\
+  ~ & = & \mu e^{-\mu}\ds\sum_{k = 1}^{\infty} \ds\frac{\mu^{k-1}}{(k-1)!} \\
+  ~ & = & \mu e^{-\mu}\ds\sum_{k = 0}^{\infty} \ds\frac{\mu^{k}}{k!} \\
+  ~ & = & \mu e^{-\mu}e^{\mu} \\
+\end{array}
+
+Recall: By Taylor series, $e^{x} = \ds\sum_{n = 0}^{\infty} \ds\frac{x^{n}}{n!}$
+
+Therefore $\text{E}[X] = \mu$ for a $\text{Pois}(\mu)$ distribution.  Furthermore, $\text{Var}(X) = \mu$ too for a $\text{Pois}(\mu)$ distribution.
+:::
+
+## Examples
+
+::::: {.panel-tabset}
+
+## Example 1
+
+**Campus Safety: Stalking**  The following data on reported incidents on stalking comes from the University of California Merced report *Safety Matters*.  Assume a Poisson distribution.
+
+![](figPois1.png)
+
+- Find the mean of the data.
+- Compute the probability that exactly 2 stalking incidents will be reported this year.
+
+:::{.callout-tip collapse="true"}
+## Probability Density Function
+
+![](figPois1b.png)
+:::
+
+- Compute the probability that at least one stalking incident will be reported this year.
+
+:::{.callout-tip collapse="true"}
+## Probability Density Function
+
+![](figPois1c.png)
+:::
+
+## Example 2
+
+**Campus Safety: Drug Law Violations**  The following data on arrests for drug law violations comes from the University of California Merced report *Safety Matters*.  Assume a Poisson distribution.
+
+![](figPois2.png)
+
+- Find the mean of the data.
+- Compute the probability that exactly 3 arrests will be made this year.
+
+:::{.callout-tip collapse="true"}
+## Probability Density Function
+
+![](figPois2b.png)
+:::
+
+- Compute the probability that at most one arrest will be made this year.
+
+:::{.callout-tip collapse="true"}
+## Probability Density Function
+
+![](figPois2c.png)
+:::
+
+:::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
