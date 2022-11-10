@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2022-11-08T04:10:56.382Z</lastmod>
+    <lastmod>2022-11-10T06:20:56.700Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2022-11-08T04:11:00.282Z</lastmod>
+    <lastmod>2022-11-10T06:20:59.984Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -95,5 +95,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/20_-_Law of Large Numbers/Math_32_20_Law_of_Large_Numbers.html</loc>
     <lastmod>2022-11-08T04:10:50.913Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/21_-_Estimators/Math_32_21_Law_of_Large_Numbers.html</loc>
+    <lastmod>2022-11-10T06:20:54.620Z</lastmod>
   </url>
 </urlset>
