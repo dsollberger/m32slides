@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Derek Sollberger">
+<meta name="dcterms.date" content="2022-11-17">
+
+<title>Math 32 - 23: Maximum Likelihood</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Math 32</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../slides.html">Slides</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">23: Maximum Likelihood</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Derek Sollberger </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 17, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="cell">
+
+</div>
+<section id="today-maximum-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="today-maximum-likelihood">Today: Maximum Likelihood</h2>
+<p><strong>Goal</strong>: Modify distribution parameters based on observed data</p>
+<p><strong>Objectives</strong>:</p>
+<ul>
+<li>derive maximum likelihood estimate for the exponential distribution</li>
+<li>derive maximum likelihood estimate for the Poisson distribution</li>
+</ul>
+</section>
+<section id="notation" class="level2">
+<h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall,</p>
+<ul>
+<li><p>Lower-case <span class="math inline">\(\{x_{1}, x_{2}, x_{3}, ..., x_{n}\}\)</span> is a set of <em>observations</em></p></li>
+<li><p>Upper-case <span class="math inline">\(\{X_{1}, X_{2}, X_{3}, ..., X_{n}\}\)</span> is a set of <em>random variables</em> (i.e.&nbsp;a data set)</p></li>
+<li><p>Treating <span class="math inline">\(\{X_{1}, X_{2}, ..., X_{n}\}\)</span> as a set of <span class="math inline">\(n\)</span> i.i.d. (<em>independent and identically distributed</em>) random variables is a common assumption.</p></li>
+<li><p>With independence,</p>
+<p><span class="math display">\[P(X_{1}, X_{2}, ..., X_{n}) = P(X_{1}) \cdot P(X_{2}) \cdot ... \cdot P(X_{n})\]</span></p></li>
+<li><p>Each individual probability is computed (at least theoretically) with a PDF (<em>probability density function</em>)</p>
+<p><span class="math display">\[P(x_{i}) = f_{X}(x_{i})\]</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="inverse" class="level2">
+<h2 class="anchored" data-anchor-id="inverse">Inverse</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Inverse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we have a sample of data <span class="math inline">\(\{x_{1}, x_{2}, x_{3}, ..., x_{n}\}\)</span>. Now we want to model with a probability distribution, but we need to figure out the distribution’s parameters. Let us think about this in a Bayesian way:</p>
+<p><span class="math display">\[{\color{purple}{P(\text{model} | \text{data})}} = \displaystyle\frac{ {\color{blue}{P(\text{data} | \text{model})} \cdot P(\text{model})} }{ {\color{red}{P(\text{data})}} }\]</span></p>
+<ul>
+<li><span class="math inline">\({\color{purple}{P(\text{model} | \text{data})}}\)</span> is the posterior probability that we want</li>
+<li><span class="math inline">\({\color{blue}{P(\text{data} | \text{model})}}\)</span> is a <em>likelihood</em></li>
+<li>Since the prior probability <span class="math inline">\({\color{red}{P(\text{data})}}\)</span> is a constant …</li>
+</ul>
+<p>… we say that the posterior probability is proportional to the likelihood.</p>
+</div>
+</div>
+</section>
+<section id="likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="likelihood">Likelihood</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Definition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Likelihood Function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let the <em>likelihood function</em>, in terms of a parameter <span class="math inline">\(\theta\)</span>, be the joint probability</p>
+<p><span class="math display">\[L(\theta) = P(X_{1} = x_{1}, X_{2} = x_{2}, ..., X_{n} = x_{n}) = f_{X}(x_{1}) \cdot f_{X}(x_{2}) \cdots f_{X}(x_{n})\]</span></p>
+<p>or</p>
+<p><span class="math display">\[L\left(\theta; \left\{x_{i}\right\}_{i=1}^{n}\right) = \displaystyle\prod_{i = 1}^{n} f_{X}(x_{i})\]</span></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Suppose that we have data for how long a certain type and brand of light bulb operated (in the same working conditions), and that data in months was</p>
+<p><span class="math display">\[6, \quad 18, \quad 29, \quad 44, \quad 48\]</span></p>
+<p>Goal: characterize the top 5 percent of light bulbs.</p>
+<ul>
+<li>Build the likelihood function assuming an exponential distribution.</li>
+<li>Compute the likelihood that <span class="math inline">\(\mu = 25\)</span>.</li>
+<li>Compute the likelihood that <span class="math inline">\(\mu = 50\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="log-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="log-likelihood">Log Likelihood</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Logarithms</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Logarithms
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You know that logarithms make large numbers smaller. More precisely,</p>
+<p><span class="math display">\[\ln(x) &lt; x, \quad x &gt; 1\]</span></p>
+<p>Example: <span class="math inline">\(\ln(1234) \approx 7.1180\)</span></p>
+<p>Did you know that logarithms make small numbers larger (in size). More precisely,</p>
+<p><span class="math display">\[|\ln(x)| &gt; x, \quad 0 &lt; x &lt; 1\]</span></p>
+<p>Example: <span class="math inline">\(|\ln(0.1234)| \approx 2.0923\)</span></p>
+<p>From pre-calculus, recall the properties of logarithms:</p>
+<p><span class="math display">\[\ln(AB) = \ln(A) + \ln(B), \quad \ln\left(\displaystyle\frac{A}{B}\right) = \ln A - \ln B, \quad \ln(A^{c}) = c\ln A\]</span></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>For modeling with the exponential distribution, we saw that the likelihood function was</p>
+<p><span class="math display">\[L\left(\lambda; \{x_{i}\}_{i=1}^{n}\right) = \displaystyle\prod_{i=1}^{n} f_{X}(x_{i}) = \lambda^{n}e^{-\lambda\sum x_{i}}\]</span></p>
+<p>We take the natural logarithm to compute the log-likelihood function</p>
+<p><span class="math display">\[\ell\left(\lambda; \{x_{i}\}_{i=1}^{n}\right) = \ln L\left(\lambda; \{x_{i}\}_{i=1}^{n}\right) = n\ln\lambda - \lambda\displaystyle\sum_{i=1}^{n} x_{i}\]</span></p>
+<ul>
+<li>Compute the log-likelihood that <span class="math inline">\(\mu = 25\)</span>.</li>
+<li>Compute the log-likelihood that <span class="math inline">\(\mu = 50\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="maximum-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-likelihood">Maximum Likelihood</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Definition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Visuals</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Example 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Example 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Likelihood Function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p> Given a data set <span class="math inline">\(\{x_{1}, x_{2}, ..., x_{n}\}\)</span>, we seek the desired parameter(s) that makes realizing the data set most likely.</p>
+<p><span class="math display">\[L\left(\theta; \left\{x_{i}\right\}_{i=1}^{n}\right) = \displaystyle\prod_{i = 1}^{n} f_{X}(x_{i})\]</span></p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Maximization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From calculus, recall that the main step in maximizing the value of a function is setting the first derivative equal to zero.</p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><img src="likelihood1.png" class="img-fluid" alt="simulation"> <img src="likelihood2.png" class="img-fluid" alt="a better simulation"></p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>Given a data set <span class="math inline">\(\{x_{1}, x_{2}, ..., x_{n}\}\)</span>, assume an <span class="math inline">\(\text{Exp}(\lambda)\)</span> distribution.</p>
+<ul>
+<li>Compute the value of rate parameter <span class="math inline">\(\lambda\)</span> that maximizes the likelihood of the data set.</li>
+<li>Compute the likelihood at the maximum likelihood estimate (MLE).</li>
+<li>Characterize the top 5 percent of light bulbs.</li>
+</ul>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p>Given a data set <span class="math inline">\(\{x_{1}, x_{2}, ..., x_{n}\}\)</span>, assume an <span class="math inline">\(\text{Pois}(\lambda)\)</span> distribution. Compute the value of parameter <span class="math inline">\(\lambda\)</span> that maximizes the likelihood of the data set.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estimators-revisited" class="level2">
+<h2 class="anchored" data-anchor-id="estimators-revisited">Estimators Revisited</h2>
+<p>If we sample from a theoretical <span class="math inline">\(U(0, M)\)</span> distribution, the sample maximum <span class="math inline">\(s_{M}\)</span> of each sample is less than or equal to <span class="math inline">\(M\)</span></p>
+<p><span class="math display">\[s_{M} \leq M\]</span></p>
+<p>It would follow that the average of the sample maxima underestimates the true maximum</p>
+<p><span class="math display">\[\text{E}[s_{M}] \leq M\]</span></p>
+<p>Therefore the sample maximum is a <em>biased estimator</em> of the true maximum.</p>
+<p><span class="math display">\[~\]</span></p>
+<p>Similarly, the sample minimum <span class="math inline">\(s_{m}\)</span> from a <span class="math inline">\(U(m, 0)\)</span> distribution overestimates</p>
+<p><span class="math display">\[\text{E}[s_{m}] \geq m\]</span></p>
+<p>Therefore the sample minumum is a <em>biased estimator</em> of the true minumum.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+</section>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="upcoming" class="level2">
+<h2 class="anchored" data-anchor-id="upcoming">Upcoming</h2>
+<ul>
+<li>WHW10</li>
+<li>(next LHW assignments will be given after Thanksgiving)</li>
+</ul>
+<p>Final Exam will be on Dec.&nbsp;8</p>
+</section>
+</div><div class="column" style="width:50%;">
+<p><img src="lambda.png" class="img-fluid"></p>
+<p><a href="https://mobile.twitter.com/KellyBodwin/status/1579981646844993536">tweet source</a></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="panel-tabset">
+
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
