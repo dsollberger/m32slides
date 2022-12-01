@@ -1,0 +1,250 @@
+---
+title: 'Case Study: Yawning'
+author: "[your name]"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("infer")      #tools to easily compute confidence intervals
+library("moderndive") #case study example
+library("readxl")     #to load Excel spreadsheets
+library("tidyverse")  #suite of useful data analysis packages
+
+outlier_remover <- function(numerical_list){
+  # This function will brashly remove outliers from a numerical list
+  # by applying a mean plus/minus 2 standard deviations
+  # range-rule-of-thumb interval
+  # INPUT: a column of numerical data (missing values are okay)
+  # OUTPUT: the numerical list, but with outliers replaced with "NA"
+  
+  # compute sample mean
+  xbar <- mean(numerical_list,  na.rm = TRUE)
+  
+  # compute sample standard deviation
+  s <- sd(numerical_list, na.rm = TRUE)
+  
+  # nullify outliers
+  numerical_list[numerical_list < xbar - 2*s] <- NA
+  numerical_list[numerical_list > xbar + 2*s] <- NA
+  
+  # return
+  numerical_list
+}
+```
+
+# Case Study
+
+After each code block, to the best of your current ability, describe what the `R` code is doing.
+
+This material comes from Chapter 8 of *Statistical Inference via Data Science: A ModernDive into R and the Tidyverse*
+
+* https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci
+
+"Let’s apply our knowledge of confidence intervals to answer the question: “Is yawning contagious?”. If you see someone else yawn, are you more likely to yawn? In an episode of the US show Mythbusters, the hosts conducted an experiment to answer this question."
+
+"Fifty adult participants who thought they were being considered for an appearance on the show were interviewed by a show recruiter. In the interview, the recruiter either yawned or did not. Participants then sat by themselves in a large van and were asked to wait. While in the van, the Mythbusters team watched the participants using a hidden camera to see if they yawned. The data frame containing the results of their experiment is available in the mythbusters_yawn data frame included in the moderndive package:"
+
+```{r}
+mythbusters_yawn
+```
+
+
+
+```{r}
+mythbusters_yawn %>% 
+  group_by(group, yawn) %>% 
+  summarize(count = n())
+```
+
+
+
+```{r}
+mythbusters_yawn %>% 
+  specify(formula = yawn ~ group, success = "yes")
+```
+
+
+
+```{r}
+first_six_rows <- head(mythbusters_yawn)
+```
+
+
+
+```{r}
+first_six_rows %>% 
+  sample_n(size = 6, replace = TRUE)
+```
+
+
+
+```{r}
+mythbusters_yawn %>% 
+  specify(formula = yawn ~ group, success = "yes") %>% 
+  generate(reps = 1000, type = "bootstrap")
+```
+
+
+
+```{r}
+bootstrap_distribution_yawning <- mythbusters_yawn %>% 
+  specify(formula = yawn ~ group, success = "yes") %>% 
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "diff in props", order = c("seed", "control"))
+bootstrap_distribution_yawning
+```
+
+
+
+```{r}
+visualize(bootstrap_distribution_yawning) +
+  geom_vline(xintercept = 0)
+```
+
+
+
+```{r}
+bootstrap_distribution_yawning %>% 
+  get_confidence_interval(type = "percentile", level = 0.95)
+```
+
+
+
+```{r}
+obs_diff_in_props <- mythbusters_yawn %>% 
+  specify(formula = yawn ~ group, success = "yes") %>% 
+  # generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "diff in props", order = c("seed", "control"))
+obs_diff_in_props
+```
+
+
+
+```{r}
+myth_ci_se <- bootstrap_distribution_yawning %>% 
+  get_confidence_interval(type = "percentile", level = 0.95)
+myth_ci_se
+```
+
+# Demographics Data
+
+```{r, message = FALSE, warning = FALSE}
+# since the data is in a CSV file, we will use the read_csv() function to load the data
+demo_df <- read_csv("demographics_survey_data.csv") 
+```
+
+```{r}
+# as usual, it is good to take a look at your data
+# for instance, looking for numeric or categorical data
+str(demo_df, give.attr = FALSE)
+```
+
+## Example: How often do you brush your teeth per week?
+
+```{r}
+# sample statistics
+demo_df %>%
+  summarize(count = sum(!is.na(brushingTeeth)),
+            xbar = mean(brushingTeeth, na.rm = TRUE),
+            med  = median(brushingTeeth, na.rm = TRUE),
+            s    = sd(brushingTeeth, na.rm = TRUE),
+            missing = sum(is.na(brushingTeeth)))
+```
+
+```{r}
+# bootstrap distribution
+bootstrap_distribution <- demo_df %>%
+  specify(response = brushingTeeth) %>%
+  generate(reps = 1337, type = "bootstrap") %>%
+  calculate(stat = "mean")
+```
+
+```{r}
+# form a 95% confidence interval
+bootstrap_distribution %>%
+  get_confidence_interval(level = 0.95, type = "percentile")
+```
+
+
+
+```{r}
+# visualize the confidence interval and sampling distribution
+SE_CI <- bootstrap_distribution %>%
+  get_ci(level = 0.95, type = "percentile")
+
+visualize(bootstrap_distribution) +
+  shade_ci(endpoints = SE_CI, color = "#DAA900", fill = "#002856")
+```
+
+## Exercises
+
+(1) Using the `GPA` numerical data,
+
+(a) compute sample statistics
+
+```{r}
+
+```
+
+(b) compute a 95% confidence interval, and describe the result in a complete sentence.
+
+```{r}
+
+```
+
+
+
+(c) produce a visual of the sampling distribution and the confidence interval.
+
+```{r}
+
+```
+
+
+(2) Using the `hoursStudying` numerical data,
+
+(a) compute sample statistics
+
+```{r}
+
+```
+
+(b) compute a 95% confidence interval, and describe the result in a complete sentence.
+
+```{r}
+
+```
+
+
+
+(c) produce a visual of the sampling distribution and the confidence interval.
+
+```{r}
+
+```
+
+
+(3) Using one more column of numerical data of your choosing,
+
+(a) compute sample statistics
+
+```{r}
+
+```
+
+(b) compute a 95% confidence interval, and describe the result in a complete sentence.
+
+```{r}
+
+```
+
+
+
+(c) produce a visual of the sampling distribution and the confidence interval.
+
+```{r}
+
+```
+

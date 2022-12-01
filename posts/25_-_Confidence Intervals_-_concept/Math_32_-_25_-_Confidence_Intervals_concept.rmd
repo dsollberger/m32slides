@@ -1,0 +1,317 @@
+---
+title: "Confidence Intervals"
+author: "[your name]"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: TRUE
+---
+
+```{r setup, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages() if needed
+library("infer")
+library("moderndive")
+library("patchwork")
+library("tidyverse")
+```
+
+Source:  **Statistical Inference via Data Science:** *A Modern Dive into R and the Tidyverse*
+
+* Chapter 8: Bootstrapping and Confidence Intervals
+* [https://moderndive.com/8-confidence-intervals.html](https://moderndive.com/8-confidence-intervals.html)
+
+# Setting: Pennies
+
+Among pennies in circulation in 2019, what was the average year of minting?  We have a sample size of 50 pennies.
+
+```{r}
+# looking at the data set
+pennies_sample
+```
+
+```{r}
+# visualizing the the pennies
+pennies_sample %>%
+  ggplot(aes(x = year)) +
+  geom_dotplot(binwidth = 1, color = "tan3", fill = "tan4") +
+  labs(title = "Pennies Sample",
+       subtitle = "observed in 2019",
+       caption = "Source: Modern Dive",
+       x = "year",
+       y = "proportion")
+```
+
+```{r}
+# visualizing the distribution of the pennies
+p1 <- pennies_sample %>%
+  ggplot(aes(x = year)) +
+  geom_histogram(binwidth = 10, color = "tan3", fill = "tan4") +
+  labs(title = "Pennies Sample",
+       subtitle = "observed in 2019",
+       caption = "Source: Modern Dive")
+
+# display graph (in addition to storing the graph in a variable)
+p1
+```
+
+```{r}
+pennies_sample %>% summarize(xbar = mean(year))
+```
+
+
+# Resampling
+
+Using the available sample of data to fabricate another sample is called *resampling*.
+
+## Resampling Once
+
+Suppose that we took the 50 pennies and resampled once while sampling *with replacement*.
+
+```{r}
+pennies_resampled_once <- pennies_sample %>%
+  sample_n(size = 50, replace = TRUE)
+```
+
+```{r}
+# visualizing the distribution of the pennies
+p2 <- pennies_resampled_once %>%
+  ggplot(aes(x = year)) +
+  geom_histogram(binwidth = 10, color = "tan3", fill = "tan4") +
+  labs(title = "Pennies Resampled Once",
+       subtitle = "sampled with replacement",
+       caption = "Source: Modern Dive")
+
+# (using `patchwork` package to arrange plots side-by-side
+p1 + p2
+```
+
+```{r}
+pennies_resampled_once %>% summarize(xbar = mean(year))
+```
+
+
+## Resampled Many Times
+
+Suppose now that we have each person in a 30-student discussion section repeat the act of drawing those 50 pennies with replacement.
+
+```{r}
+pennies_resampled_many <- pennies_sample %>%
+  rep_sample_n(size = 50, replace = TRUE, reps = 30)
+```
+
+Now we have each virtual student report their mean year.
+
+```{r}
+pennies_resampled_many %>%
+  group_by(replicate) %>%
+  summarize(mean_year = mean(year))
+```
+
+```{r}
+summary(pennies_sample$year)
+```
+```{r}
+pennies_resampled_many %>%
+  group_by(replicate) %>%
+  mutate(mean_year = mean(year)) %>%
+  ungroup() %>%
+  select(replicate, mean_year) %>%
+  distinct() %>%
+  ggplot(aes(x = mean_year)) +
+  geom_histogram(binwidth = 1, color = "tan3", fill = "tan4") +
+  labs(title = "Resampling Results",
+       subtitle = "N = 30 resamples",
+       caption = "Source: Modern Dive")
+```
+
+Out of curiosity, let us push this process to $N = 1337$ resamples.
+
+```{r}
+pennies_resampled_means <- pennies_sample %>%
+  rep_sample_n(size = 50, replace = TRUE, reps = 1337) %>%
+  group_by(replicate) %>%
+  mutate(mean_year = mean(year)) %>%
+  ungroup() %>%
+  select(replicate, mean_year) %>%
+  distinct() 
+
+pennies_resampled_means %>%
+  ggplot(aes(x = mean_year)) +
+  geom_histogram(binwidth = 1, color = "tan3", fill = "tan4") +
+  labs(title = "Resampling Results",
+       subtitle = "N = 1337 resamples",
+       caption = "Source: Modern Dive")
+```
+
+
+# Confidence Intervals
+
+## Toward Confidence Intervals
+
+The standard deviation of a sampling distribution is called the *standard error*.
+
+```{r}
+xbar <- mean(pennies_resampled_means$mean_year)
+SE   <- sd(pennies_resampled_means$mean_year)
+```
+
+We can build a 95% confidence interval by computing $\bar{x} \pm 1.96*SE$
+
+```{r}
+c(xbar - 1.96*SE, xbar + 1.96*SE)
+```
+```{r}
+pennies_resampled_means %>%
+  ggplot(aes(x = mean_year)) +
+  geom_histogram(binwidth = 1, color = "tan3", fill = "tan4") +
+  geom_vline(xintercept = c(xbar - 1.96*SE, xbar + 1.96*SE), color = "yellow", size = 2) +
+  labs(title = "Resampling Results",
+       subtitle = "N = 1337 resamples",
+       caption = "Source: Modern Dive") +
+  theme_minimal()
+```
+
+## Using the infer package
+
+```{r}
+pennies_sample %>%
+  specify(response = year)
+```
+
+```{r}
+pennies_sample %>%
+  specify(response = year) %>%
+  calculate(stat = "mean")
+```
+
+```{r}
+pennies_sample %>%
+  specify(response = year) %>%
+  generate(reps = 1337, type = "bootstrap")
+```
+
+```{r}
+bootstrap_distribution <- pennies_sample %>%
+  specify(response = year) %>%
+  generate(reps = 1337, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+# print
+bootstrap_distribution
+```
+
+```{r}
+visualise(bootstrap_distribution)
+```
+
+There are also wrappers in the `infer` package to extract the confidence interval
+
+```{r}
+bootstrap_distribution %>%
+  get_confidence_interval(point_estimate = mean(bootstrap_distribution$stat), 
+                          level = 0.95, type = "se")
+```
+
+Alternatively, we can use percentiles to build our confidence intervals.  This is useful when the data is not normally distributed.
+
+```{r}
+bootstrap_distribution %>%
+  get_confidence_interval(level = 0.95, type = "percentile")
+```
+
+```{r}
+SE_CI <- bootstrap_distribution %>%
+  get_ci(point_estimate = mean(bootstrap_distribution$stat),
+         level = 0.95, type = "se")
+
+visualize(bootstrap_distribution) +
+  shade_ci(endpoints = SE_CI, color = "#DAA900", fill = "#002856")
+```
+
+# Inference
+
+The `bowl` data was literally a classroom bowl of red and white marbles
+
+```{r}
+bowl %>%
+  ggplot(aes(x = color, fill = color)) +
+  geom_bar(stat = "count", color = "black") +
+  scale_fill_manual(values = c("red", "white")) +
+  labs(title = "Bowl of Marbles",
+       subtitle = "population is known",
+       caption = "Source: Modern Dive")
+```
+
+where we know the true proportion of red marbles.
+
+```{r}
+bowl %>%
+  summarize(proportion_red = mean(color == "red"))
+```
+
+
+```{r}
+CI_simulation <- function(confidence = 95, sample_size = 25, num_intervals = 10){
+  # Constants
+  alpha <- 1 - confidence/100
+  n <- sample_size
+  N <- num_intervals
+  proportion_red <- 0.375 #true population proportion
+  
+  # vector allocation
+  left <- rep(NA, N)
+  right <- rep(NA, N)
+  captured <- rep(NA, N)
+  
+  for(i in 1:N){
+    this_sample <- sample(bowl$color, n, replace = TRUE)
+    phat <- mean(this_sample == "red") #sample proportion
+    
+    #margin of error
+    E <- qnorm(1 - alpha/2)*sqrt( phat*(1-phat)/n)
+    
+    #this confidence interval
+    left[i] <- phat - E
+    right[i] <- phat + E
+    
+    #did the confidence interval capture the true proportion?
+    captured[i] <- ifelse(left[i] <= proportion_red & right[i] >= proportion_red, TRUE, FALSE)
+  }
+  
+  # graph
+  df <- data.frame(left, right, captured)
+  ggplot(df, aes(x = left, y = 1:N)) +
+    geom_vline(xintercept = proportion_red, color = "black") +
+    geom_segment(aes(x = left, y = 1:N, 
+                     xend = right, yend = 1:N,
+                     color = captured)) +
+    labs(title = "Simulation of bowl samples",
+         subtitle = paste0("alpha = ", alpha, ", n = ", n),
+         caption = "Bio 175", 
+         x = "proportion red",
+         y = "iteration") +
+    theme_minimal()
+}
+```
+
+```{r}
+CI_simulation(confidence = 95, sample_size = 25, num_intervals = 100)
+```
+
+```{r}
+p1 <- CI_simulation(80, 25, 100) + theme(legend.position = "none")
+p2 <- CI_simulation(95, 25, 100) + theme(legend.position = "none")
+p3 <- CI_simulation(99, 25, 100) + theme(legend.position = "none")
+
+p1 + p2 + p3
+```
+
+```{r}
+p4 <- CI_simulation(95, 25, 100) + theme(legend.position = "none")
+p5 <- CI_simulation(95, 100, 100) + theme(legend.position = "none")
+p6 <- CI_simulation(95, 400, 100) + theme(legend.position = "none")
+
+p4 + p5 + p6
+```
+

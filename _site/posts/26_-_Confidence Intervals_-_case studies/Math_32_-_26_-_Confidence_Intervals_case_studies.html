@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="[your name]">
+<meta name="dcterms.date" content="2022-11-30">
+
+<title>Math 32 - Case Study: Yawning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Math 32</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../slides.html">Slides</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Case Study: Yawning</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>[your name] </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 30, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="case-study" class="level1">
+<h1>Case Study</h1>
+<p>After each code block, to the best of your current ability, describe what the <code>R</code> code is doing.</p>
+<p>This material comes from Chapter 8 of <em>Statistical Inference via Data Science: A ModernDive into R and the Tidyverse</em></p>
+<ul>
+<li>https://moderndive.com/8-confidence-intervals.html#case-study-two-prop-ci</li>
+</ul>
+<p>“Let’s apply our knowledge of confidence intervals to answer the question: “Is yawning contagious?”. If you see someone else yawn, are you more likely to yawn? In an episode of the US show Mythbusters, the hosts conducted an experiment to answer this question.”</p>
+<p>“Fifty adult participants who thought they were being considered for an appearance on the show were interviewed by a show recruiter. In the interview, the recruiter either yawned or did not. Participants then sat by themselves in a large van and were asked to wait. While in the van, the Mythbusters team watched the participants using a hidden camera to see if they yawned. The data frame containing the results of their experiment is available in the mythbusters_yawn data frame included in the moderndive package:”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mythbusters_yawn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 50 × 3
+    subj group   yawn 
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;
+ 1     1 seed    yes  
+ 2     2 control yes  
+ 3     3 seed    no   
+ 4     4 seed    yes  
+ 5     5 seed    no   
+ 6     6 control no   
+ 7     7 seed    yes  
+ 8     8 control no   
+ 9     9 control no   
+10    10 seed    no   
+# … with 40 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mythbusters_yawn <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group, yawn) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'group'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+# Groups:   group [2]
+  group   yawn  count
+  &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;
+1 control no       12
+2 control yes       4
+3 seed    no       24
+4 seed    yes      10</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mythbusters_yawn <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">formula =</span> yawn <span class="sc">~</span> group, <span class="at">success =</span> <span class="st">"yes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: yawn (factor)
+Explanatory: group (factor)
+# A tibble: 50 × 2
+   yawn  group  
+   &lt;fct&gt; &lt;fct&gt;  
+ 1 yes   seed   
+ 2 yes   control
+ 3 no    seed   
+ 4 yes   seed   
+ 5 no    seed   
+ 6 no    control
+ 7 yes   seed   
+ 8 no    control
+ 9 no    control
+10 no    seed   
+# … with 40 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>first_six_rows <span class="ot">&lt;-</span> <span class="fu">head</span>(mythbusters_yawn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>first_six_rows <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="dv">6</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+   subj group   yawn 
+  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;
+1     4 seed    yes  
+2     6 control no   
+3     4 seed    yes  
+4     6 control no   
+5     2 control yes  
+6     2 control yes  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mythbusters_yawn <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">formula =</span> yawn <span class="sc">~</span> group, <span class="at">success =</span> <span class="st">"yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: yawn (factor)
+Explanatory: group (factor)
+# A tibble: 50,000 × 3
+# Groups:   replicate [1,000]
+   replicate yawn  group  
+       &lt;int&gt; &lt;fct&gt; &lt;fct&gt;  
+ 1         1 no    control
+ 2         1 yes   seed   
+ 3         1 no    seed   
+ 4         1 no    seed   
+ 5         1 no    seed   
+ 6         1 no    seed   
+ 7         1 no    seed   
+ 8         1 yes   seed   
+ 9         1 no    control
+10         1 no    control
+# … with 49,990 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bootstrap_distribution_yawning <span class="ot">&lt;-</span> mythbusters_yawn <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">formula =</span> yawn <span class="sc">~</span> group, <span class="at">success =</span> <span class="st">"yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in props"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"seed"</span>, <span class="st">"control"</span>))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>bootstrap_distribution_yawning</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: yawn (factor)
+Explanatory: group (factor)
+# A tibble: 1,000 × 2
+   replicate    stat
+       &lt;int&gt;   &lt;dbl&gt;
+ 1         1  0.225 
+ 2         2 -0.0870
+ 3         3 -0.0762
+ 4         4  0.103 
+ 5         5  0.0350
+ 6         6  0.333 
+ 7         7  0.0390
+ 8         8  0.228 
+ 9         9 -0.075 
+10        10 -0.105 
+# … with 990 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(bootstrap_distribution_yawning) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Math_32_-_26_-_Confidence_Intervals_case_studies_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>bootstrap_distribution_yawning <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(<span class="at">type =</span> <span class="st">"percentile"</span>, <span class="at">level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1   -0.233    0.289</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>obs_diff_in_props <span class="ot">&lt;-</span> mythbusters_yawn <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">formula =</span> yawn <span class="sc">~</span> group, <span class="at">success =</span> <span class="st">"yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate(reps = 1000, type = "bootstrap") %&gt;% </span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in props"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"seed"</span>, <span class="st">"control"</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>obs_diff_in_props</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: yawn (factor)
+Explanatory: group (factor)
+# A tibble: 1 × 1
+    stat
+   &lt;dbl&gt;
+1 0.0441</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>myth_ci_se <span class="ot">&lt;-</span> bootstrap_distribution_yawning <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(<span class="at">type =</span> <span class="st">"percentile"</span>, <span class="at">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>myth_ci_se</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1   -0.233    0.289</code></pre>
+</div>
+</div>
+</section>
+<section id="demographics-data" class="level1">
+<h1>Demographics Data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># since the data is in a CSV file, we will use the read_csv() function to load the data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>demo_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"demographics_survey_data.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as usual, it is good to take a look at your data</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for instance, looking for numeric or categorical data</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(demo_df, <span class="at">give.attr =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [281 × 131] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ enrolled            : chr [1:281] "Bio 18" "Bio 18" "Bio 18" "Bio 18" ...
+ $ home                : chr [1:281] "Central California" "Central California" "Southern California" "Central California" ...
+ $ ethnicity           : chr [1:281] "Hispanic or Latino,White or Caucausian" "Hispanic or Latino" "Hispanic or Latino" "Hispanic or Latino,White or Caucausian" ...
+ $ classStanding       : chr [1:281] "Senior" "Junior" "Sophomore" "Junior" ...
+ $ unitsCompleted      : num [1:281] 80 NA NA 104 70 NA 0 0 0 0 ...
+ $ unitsThisSemester   : num [1:281] NA 16 15 16 13 13 16 12 12 12 ...
+ $ GPA                 : num [1:281] NA NA NA NA NA NA NA NA NA NA ...
+ $ statsBefore         : chr [1:281] NA "Yes: Math 15 at UC Merced" "No" "Yes: Math 15 at UC Merced" ...
+ $ retakingWithDerek   : chr [1:281] NA "No" "No" "No" ...
+ $ learningStyle       : chr [1:281] NA "Visual" "Visual" "Visual" ...
+ $ hoursStudying       : num [1:281] NA 4 NA 2 8 50 30 5 24 NA ...
+ $ birthdayMonth       : chr [1:281] NA "December" "November" "May" ...
+ $ height              : num [1:281] NA 67 63 61 70 ...
+ $ shoeSize            : num [1:281] NA 7.5 7.5 5 11 8 9 12 10.5 9 ...
+ $ weight              : num [1:281] NA 170 NA 115 160 120 167 204 170 130 ...
+ $ calories            : num [1:281] NA 1800 NA NA 2500 600 2000 1780 2000 1500 ...
+ $ exercise            : num [1:281] NA 1 NA 8 10 NA 6 21 5 3 ...
+ $ sodas               : num [1:281] NA 2 1 0 0 0 2 0 0 1 ...
+ $ alcohol             : num [1:281] NA 0 NA NA 0 0 0 14 NA 0 ...
+ $ sleep               : num [1:281] NA 7 NA 6 5 6 5 8 7.5 7 ...
+ $ socialMedia         : chr [1:281] NA "Instagram" "Instagram,LinkedIn" "Instagram" ...
+ $ smartPhones         : chr [1:281] NA "iPhone" "iPhone" "iPhone" ...
+ $ baseball            : chr [1:281] NA "New York Mets,New York Yankees,San Franciso Giants" "Los Angeles Dodgers" NA ...
+ $ football            : chr [1:281] NA "San Francisco 49ers" NA NA ...
+ $ basketball          : chr [1:281] NA "Los Angeles Lakers" NA NA ...
+ $ hockey              : chr [1:281] NA "Los Angeles Kings" NA NA ...
+ $ politics            : num [1:281] NA 30 5 35 NA 50 50 20 50 25 ...
+ $ religious           : num [1:281] NA 50 50 50 90 0 30 60 0 30 ...
+ $ Kinsey              : chr [1:281] NA "3" "0" "0" ...
+ $ livingSituation     : chr [1:281] NA "off-campus apartment in Merced" "dormitory" "dormitory" ...
+ $ roommates           : num [1:281] NA 3 2 1 4 4 6 3 0 1 ...
+ $ roommatesLiked      : num [1:281] NA 3 2 1 4 NA 1 3 NA 1 ...
+ $ hoursWorking        : num [1:281] NA 0 NA NA 0 0 15 0 0 10 ...
+ $ happinessUCM        : num [1:281] NA NA 80 100 80 90 30 40 50 50 ...
+ $ happinessMercedCity : num [1:281] NA 50 80 30 80 60 30 10 40 35 ...
+ $ transportation      : chr [1:281] NA "bus" "bus" "car" ...
+ $ counselors          : num [1:281] NA 80 95 99 100 NA 60 80 30 NA ...
+ $ anxiousThisClass    : num [1:281] NA 60 60 2 65 50 70 0 0 NA ...
+ $ highSchoolType      : chr [1:281] NA "public school" "charter school" "public school" ...
+ $ anxiousTransitition : num [1:281] NA 80 0 10 70 50 50 80 50 60 ...
+ $ drugs               : chr [1:281] NA "Yes" NA "No" ...
+ $ diningCommons       : num [1:281] NA 85 20 35 0 NA 0 5 60 10 ...
+ $ diningOptions       : chr [1:281] NA "Bookstore\\, Marketplace\\, and/or the Lantern" "dining commons,Bookstore\\, Marketplace\\, and/or the Lantern,restaurant vendors" "dining commons,restaurant vendors" ...
+ $ enrolled2           : chr [1:281] "Bio 18" "Bio 18" NA "Bio 18" ...
+ $ UCMtopChoice        : chr [1:281] "No" "No" "No" "Yes" ...
+ $ parties             : chr [1:281] "Yes" "No" "Yes" "No" ...
+ $ firstGeneration     : chr [1:281] "Yes" "Yes" "Yes" "Yes" ...
+ $ languages           : num [1:281] 3 2 2.2 1.5 1.3 2 2.2 2 2 3.5 ...
+ $ parentsMarried      : chr [1:281] "Yes" "No" "No" "Yes" ...
+ $ homesickness        : num [1:281] 0 80 50 60 9 60 0 0 10 100 ...
+ $ safteyCampus        : num [1:281] 50 80 80 80 85 70 100 0 40 90 ...
+ $ makingFriends       : num [1:281] 100 50 50 75 70 90 50 0 65 70 ...
+ $ GreekLife           : chr [1:281] "No" "No" "No" "No" ...
+ $ campusSports        : chr [1:281] "No" "No" "No" "No" ...
+ $ anxiousOfficeHours  : num [1:281] 0 80 40 50 40 40 50 50 20 90 ...
+ $ studyGroups         : num [1:281] 100 60 80 100 65 60 50 100 70 70 ...
+ $ allowance           : num [1:281] 0 0 0 100 200 300 0 0 0 500 ...
+ $ familyIncome        : num [1:281] 100000 20000 32000 80000 65000 250000 13000 35000 NA 40000 ...
+ $ budgetHousing       : num [1:281] 40 70 20 40 40 50 25 100 100 20 ...
+ $ budgetFood          : num [1:281] 30 15 20 20 10 30 25 30 30 7 ...
+ $ budgetTransportation: num [1:281] 50 10 0 20 20 20 10 40 10 3 ...
+ $ budgetEducation     : num [1:281] 10 5 60 20 5 30 10 30 30 70 ...
+ $ retirementSavings   : chr [1:281] "Yes" "Yes" "No" "Yes" ...
+ $ happiness           : num [1:281] 80 50 50 70 90 85 80 100 70 70 ...
+ $ intelligence        : num [1:281] 80 60 60 89 75 80 80 69 0 75 ...
+ $ attractiveness      : num [1:281] 30 50 50 79 65 60 70 20 0 70 ...
+ $ transferring        : chr [1:281] "Yes" "No" "No" "No" ...
+ $ relationshipStatus  : chr [1:281] "Single" "Single" "Single" "Single" ...
+ $ favoriteColor       : chr [1:281] "White and red" "orange" "blue" "blue" ...
+ $ favoriteNumber      : num [1:281] 12 2 8 3 23 8 7 7 12 9 ...
+ $ happinessUCMcourses : num [1:281] 100 90 85 55 65 80 85 100 50 70 ...
+ $ showering           : num [1:281] 5 5 7 7 14 4 9 8 6 7 ...
+ $ brushingTeeth       : num [1:281] 20 7 12 14 14 14 14 20 7 14 ...
+ $ flossing            : num [1:281] 10 2 4 14 7 14 14 0 0 0 ...
+ $ washingHair         : num [1:281] 5 2 7 7 4 4 9 30 6 6 ...
+ $ pets                : num [1:281] 0 0 0 0 0 0 1 0 0 0 ...
+ $ homeVisits          : chr [1:281] "holidays" "monthly" "holidays" "weekly" ...
+ $ UCMfinanialAid      : num [1:281] 60 90 100 85 99 100 100 0 90 90 ...
+ $ careerConfidence    : num [1:281] 90 70 50 78 85 75 100 100 70 50 ...
+ $ siblings            : num [1:281] 1 1 3 1 1 1 6 1 5 3 ...
+ $ favoriteTV          : chr [1:281] "Greys anatomy" "Rick and Morty" "The Walking Dead" "Greys Anatomy" ...
+ $ favoriteMovie       : chr [1:281] "The lion king" "Lovely Bones" NA "Crazy Rich Asians" ...
+ $ loneliness          : num [1:281] 80 90 50 25 0 75 50 0 69 90 ...
+ $ organized           : num [1:281] 70 100 80 49 95 100 70 50 50 80 ...
+ $ breakfast           : chr [1:281] "No" "No" "No" "Yes" ...
+ $ snacks              : num [1:281] 3 2 3 3 5 3 5 3 5 4 ...
+ $ mandms              : num [1:281] 50 50 NA 100 23 150 0 300 370 52 ...
+ $ GPAhighSchool       : num [1:281] 3.9 3.5 NA 3.9 3.78 4 2.5 2 NA 3.7 ...
+ $ SATscore            : num [1:281] 600 1000 NA 1080 1430 1380 0 300 NA 0 ...
+ $ GreekLifeFuture     : chr [1:281] "I do not plan to join a fraternity nor sorority" "I do not plan to join a fraternity nor sorority" NA "I do not plan to join a fraternity nor sorority" ...
+ $ campusGroups        : num [1:281] 50 0 30 57 0 40 50 50 0 50 ...
+ $ procrastinator      : chr [1:281] "No" "Yes" "Yes" "Yes" ...
+ $ enrolled3           : chr [1:281] "Bio 18" "Bio 18" "Bio 18" "Bio 18" ...
+ $ computerAccess      : chr [1:281] "Laptop computer" "Laptop computer,Tablet" "Laptop computer" "Laptop computer" ...
+ $ reddit              : chr [1:281] "No" "No" "No" "No" ...
+ $ friends             : num [1:281] 6 5 8 3 5 10 10 22 1 10 ...
+ $ musicStudying       : chr [1:281] "Yes" "No" "No" "Yes" ...
+ $ thisClassCost       : num [1:281] 2785 0 37.2 500 70 ...
+ $ BachelorsUCM        : chr [1:281] "I plan on earning a bachelor's degree at UC Merced" "I plan on earning a bachelor's degree at UC Merced" "I plan on earning a bachelor's degree at UC Merced" "I plan on earning a bachelor's degree at UC Merced" ...
+  [list output truncated]</code></pre>
+</div>
+</div>
+<section id="example-how-often-do-you-brush-your-teeth-per-week" class="level2">
+<h2 class="anchored" data-anchor-id="example-how-often-do-you-brush-your-teeth-per-week">Example: How often do you brush your teeth per week?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample statistics</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>demo_df <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(brushingTeeth)),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">xbar =</span> <span class="fu">mean</span>(brushingTeeth, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">med  =</span> <span class="fu">median</span>(brushingTeeth, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">s    =</span> <span class="fu">sd</span>(brushingTeeth, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(brushingTeeth)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+  count  xbar   med     s missing
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;int&gt;
+1   275  12.0    14  3.54       6</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bootstrap distribution</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>bootstrap_distribution <span class="ot">&lt;-</span> demo_df <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> brushingTeeth) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1337</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 6 rows containing missing values.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># form a 95% confidence interval</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>bootstrap_distribution <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">type =</span> <span class="st">"percentile"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1     11.6     12.4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualize the confidence interval and sampling distribution</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>SE_CI <span class="ot">&lt;-</span> bootstrap_distribution <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_ci</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">type =</span> <span class="st">"percentile"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(bootstrap_distribution) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_ci</span>(<span class="at">endpoints =</span> SE_CI, <span class="at">color =</span> <span class="st">"#DAA900"</span>, <span class="at">fill =</span> <span class="st">"#002856"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Math_32_-_26_-_Confidence_Intervals_case_studies_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Using the <code>GPA</code> numerical data,</li>
+</ol>
+<ol type="a">
+<li>compute sample statistics</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="a">
+<li>compute a 95% confidence interval, and describe the result in a complete sentence.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="a">
+<li>produce a visual of the sampling distribution and the confidence interval.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="1">
+<li>Using the <code>hoursStudying</code> numerical data,</li>
+</ol>
+<ol type="a">
+<li>compute sample statistics</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="a">
+<li>compute a 95% confidence interval, and describe the result in a complete sentence.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="a">
+<li>produce a visual of the sampling distribution and the confidence interval.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>Using one more column of numerical data of your choosing,</li>
+</ol>
+<ol type="a">
+<li>compute sample statistics</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="a">
+<li>compute a 95% confidence interval, and describe the result in a complete sentence.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="a">
+<li>produce a visual of the sampling distribution and the confidence interval.</li>
+</ol>
+<div class="cell">
+
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
