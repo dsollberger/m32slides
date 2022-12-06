@@ -1,0 +1,442 @@
+---
+title: "Hypothesis Testing"
+author: "Derek Sollberger"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+    theme: cerulean
+---
+
+```{r setup, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# install.packages() if needed
+library("infer")         #pipeline workflow for hypothesis testing
+library("moderndive")    #textbook's package and data
+library("patchwork")     #easily let's me show graphs side-by-side
+library("tidyverse")     #the overall programming style universe
+```
+
+Source:  **Statistical Inference via Data Science:** *A Modern Dive into R and the Tidyverse*
+
+* Chapter 9: Hypothesis Testing
+* [https://moderndive.com/9-hypothesis-testing.html](https://moderndive.com/9-hypothesis-testing.html)
+
+# Setting: Job Promotions
+
+* data from a *Journal of Applied Psychology* study published in 1974
+* 48 bank supervisors asked to look at a resume
+* identical resume except the name at the top: 24 "female" names and 24 "male" names
+
+```{r}
+promotions %>%
+  sample_n(size = 10) %>%
+  arrange(id)
+```
+
+```{r}
+ggplot(promotions, aes(x = gender, fill = decision)) +
+  geom_bar() +
+  labs(title = "Bank Promotions Study",
+       subtitle = "identical resumes except for applicant name",
+       caption = "Source: Journal of Applied Psychology",
+       x = "Gender of name on resume")
+```
+
+```{r}
+promotions %>% 
+  group_by(gender, decision) %>% 
+  tally()
+```
+
+* male promotion rate: 21/24 = 0.875
+* female promotion rate: 14/24 = 0.583
+* difference in rates: 0.875 - 0.583 = 0.292
+
+## Shuffling
+
+If `gender` did not matter when it comes to these job promotions, then it should not matter if we shuffle the `gender` labels in the data.
+
+```{r}
+original_bar_graph <- ggplot(promotions, aes(x = gender, fill = decision)) +
+  geom_bar() +
+  labs(title = "original",
+       x = "Gender of name on resume") +
+  theme(legend.position = "none")
+
+gender_shuffled <- promotions
+gender_shuffled$gender <- sample(promotions$gender) 
+#sampled without replacement
+
+shuffled_bar_graph <- gender_shuffled %>%
+  ggplot(aes(x = gender, fill = decision)) +
+  geom_bar() +
+  labs(title = "shuffled",
+       x = "Gender of name on resume")
+
+original_bar_graph + shuffled_bar_graph
+```
+
+* in the previous chapter, we did a *bootstrap method* that used sampling with replacement
+* here, we are performing a *permutation test* that uses sampling without replacement
+
+
+# Hypothesis Test of Proportions
+
+1.  "First, a *hypothesis* is a statement about the value of an unknown population parameter. In our resume activity, our population parameter is the difference in population proportions $p_{m} - p_{f}$"
+
+2.  "Second, a hypothesis test consists of a test between two competing hypotheses ... Generally the *null hypothesis* is a claim that there really is 'no effect' or 'no difference.'" Here our null hypothesis is
+
+* $H_{0}$: men and women are promoted at the same rate
+
+"Generally the *alternative hypothesis* is the claim the experimenter or researcher wants to establish or find evidence for and is viewed as a 'challenger' hypothesis to the null hypothesis".  Here our alternative hypothesis is
+
+* $H_{a}$: men are promoted at a higher rate than women
+
+In math symbols, we have
+
+$$\begin{array}{rrcl}
+  H_{o}: p_{m} - p_{f} & = & 0 \\
+  H_{a}: p_{m} - p_{f} & > & 0 \\
+\end{array}$$
+
+3.  "Third, a *test statistic* is a point estimate/sample statistic formula used for hypothesis testing, where a sample statistic is merely a summary statistic based on a sample of observations."  Here, our test statistic $\hat{p}_{m} - \hat{p}_{f}$ estimates the parameter of interest: the difference in population proportions $p_{m} - p_{f}$
+
+4.  "Fourth, the observed test statistic is the value of the test statistic that we observed in real-life."  In this example the observed difference was
+
+$$\hat{p}_{m} - \hat{p}_{f} = 0.875 - 0.583 = 0.292$$
+
+5.  "Fifth, the null distribution is the sampling distribution of the test statistic assuming the null hypothesis $H_0$ is true."
+
+## Conducting a Hypothesis Test with `infer`
+
+```{r}
+promotions %>% 
+  specify(formula = decision ~ gender, success = "promoted")
+```
+
+```{r}
+promotions %>% 
+  specify(formula = decision ~ gender, success = "promoted") %>% 
+  # "point" for single sample or "independence" for two samples
+  hypothesize(null = "independence")
+```
+
+```{r}
+promotions_permutations <- promotions %>% 
+  specify(formula = decision ~ gender, success = "promoted") %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 1000, type = "permute")
+```
+
+```{r}
+null_distribution <- promotions %>% 
+  specify(formula = decision ~ gender, success = "promoted") %>% 
+  hypothesize(null = "independence") %>% 
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "diff in props", order = c("male", "female"))
+```
+
+```{r}
+# observed difference in proportions
+obs_diff_prop <- promotions %>% 
+  specify(decision ~ gender, success = "promoted") %>% 
+  calculate(stat = "diff in props", order = c("male", "female"))
+obs_diff_prop
+```
+
+```{r}
+visualize(null_distribution, bins = 10)
+```
+
+```{r}
+visualize(null_distribution, bins = 10) + 
+  # choices for direction are "right", "left", and "both"
+  shade_p_value(obs_stat = obs_diff_prop, direction = "right")
+```
+
+```{r}
+null_distribution %>% 
+  get_p_value(obs_stat = obs_diff_prop, direction = "right")
+```
+
+For NHST (null hypothesis significance testing), many scientists compare the p-value to a significance level of $\alpha = 0.05$.  Since the p-value < 0.05, we *reject the null hypothesis* of equal proportions of promotions among men and women.
+
+
+## Comparision to Confidence Intervals
+
+```{r}
+bootstrap_distribution <- promotions %>% 
+  specify(formula = decision ~ gender, success = "promoted") %>% 
+  # Change 1 - Remove hypothesize():
+  # hypothesize(null = "independence") %>% 
+  # Change 2 - Switch type from "permute" to "bootstrap":
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "diff in props", order = c("male", "female"))
+```
+
+```{r}
+percentile_ci <- bootstrap_distribution %>% 
+  get_confidence_interval(level = 0.95, type = "percentile")
+percentile_ci
+```
+
+```{r}
+visualize(bootstrap_distribution) + 
+  shade_confidence_interval(endpoints = percentile_ci)
+```
+
+
+# Demographics Examples
+
+```{r, message = FALSE, warning = FALSE}
+# since the data is in a CSV file, we will use the read_csv() function to load the data
+demo_df <- read_csv("demographics_survey_data.csv") 
+
+str(demo_df, give.attr = FALSE)
+```
+
+## Smart Phone Loyalty vs Class Standing
+
+* null hypothesis: Sophomores and Juniors choose iPhones and Androids with the same proportions
+* alternative hypothesis: Sophomores and Juniors choose iPhones and Androids with different proportions
+
+* predictor variable (categorical): `classStanding`
+* response variable (numerical): `smartPhones`
+
+```{r}
+# table(demo_df$classStanding)
+# table(demo_df$smartPhones)
+demo_df %>%
+  filter(classStanding == "Sophomore" | classStanding == "Junior") %>%
+  filter(smartPhones == "Android" | smartPhones == "iPhone") %>%
+  group_by(classStanding, smartPhones) %>%
+  summarize(classStanding = n())
+```
+
+
+In this scenario, our one-sided hypothesis test looks at a difference of two means.
+
+$$\begin{array}{rrcl}
+  H_{0}: p_{F} - p_{M} & = & 0 \\
+  H_{a}: p_{F} - p_{M} & \neq & 0 \\
+\end{array}$$
+
+```{r}
+# observed difference in proportions
+obs_diff_prop <- demo_df %>%
+  filter(classStanding == "Sophomore" | classStanding == "Junior") %>%
+  filter(smartPhones == "Android" | smartPhones == "iPhone") %>%
+  specify(smartPhones ~ classStanding, success = "iPhone") %>% 
+  calculate(stat = "diff in props", order = c("Sophomore", "Junior"))
+obs_diff_prop
+```
+
+```{r}
+null_distribution <- demo_df %>%
+  filter(classStanding == "Sophomore" | classStanding == "Junior") %>%
+  filter(smartPhones == "Android" | smartPhones == "iPhone") %>%
+  specify(smartPhones ~ classStanding, success = "iPhone") %>% 
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>% 
+  calculate(stat = "diff in props", order = c("Sophomore", "Junior"))
+```
+
+```{r}
+visualize(null_distribution, bins = 10) + 
+  shade_p_value(obs_stat = obs_diff_prop, direction = "two_sided")
+```
+
+```{r}
+null_distribution %>% 
+  get_p_value(obs_stat = obs_diff_prop, direction = "two_sided")
+```
+
+
+# Exercises
+
+## Procrastination vs Partying
+
+The survey questions were
+
+* "Do you consider yourself to be a procrastinator?"
+* "Do you plan to attend at least one party per month this semester?"
+
+* colloquial hypothesis: Party goers are more likely to be procrastinators
+* null hypothesis: Procrastinator proportion is the same regardless of party going plans
+* alternative hypothesis: Party goers are more likely to be procrastinators
+
+* predictor variable (categorical): `parties`
+* response variable (categorical): `procrastinator`
+
+In this scenario, our one-sided hypothesis test looks at a difference of two proportions.
+
+$$\begin{array}{rrcl}
+  H_{0}: p_{Y} - p_{N} & = & 0 \\
+  H_{a}: p_{Y} - p_{N} & > & 0 \\
+\end{array}$$
+
+(a) Compute the observed difference in proportions for the procrastination grouped by parties
+
+```{r}
+# table(demo_df$procrastinator)
+# table(demo_df$parties)
+```
+
+(b) Build a null distribution toward the hypothesis test.
+
+```{r}
+
+```
+
+(c) Use the `visualize` function to graph the null distribution and shade the p-value.
+
+```{r}
+
+```
+
+(d) Compute the p-value for the hypothesis test, and then write a sentence to describe the conclusion of the hypothesis test.
+
+```{r}
+
+```
+
+## Campus Food Satisfaction vs Class Standing
+
+* null hypothesis: Sophomores and Juniors report the same levels of happiness with campus food
+* alternative hypothesis: Sophomores and Juniors report different levels of happiness with campus food
+
+* predictor variable (categorical): `classStanding`
+* response variable (numerical): `diningCommons`
+
+```{r}
+# table(demo_df$classStanding)
+# summary(demo_df$diningCommons)
+demo_df |>
+  filter(classStanding == "Sophomore" | classStanding == "Junior") |>
+  filter(diningCommons >= 0 & diningCommons <= 100) |>
+  group_by(classStanding) |>
+  summarize(min = min(diningCommons, na.rm = TRUE),
+            xbar = mean(diningCommons, na.rm = TRUE),
+            median = median(diningCommons, na.rm = TRUE),
+            max = sd(diningCommons, na.rm = TRUE))
+```
+
+```{r}
+# table(demo_df$classStanding)
+# summary(demo_df$diningCommons)
+demo_df |>
+  filter(classStanding == "Sophomore" | classStanding == "Junior") |>
+  filter(diningCommons >= 0 & diningCommons <= 100) |>
+  ggplot(aes(x = classStanding, y = diningCommons)) +
+  geom_boxplot(aes(fill = classStanding)) +
+  labs(title = "Students Rating of the Main Campus Food Options",
+       subtitle = "2022",
+       caption = "UC Merced",
+       x = "class standing",
+       y = "favorability (0 = low, 100 = high)") +
+  theme_minimal()
+```
+
+In this scenario, our two-sided hypothesis test looks at a difference of two means.
+
+$$\begin{array}{rrcl}
+  H_{0}: \mu_{S} - \mu_{J} & = & 0 \\
+  H_{a}: \mu_{S} - \mu_{J} & \neq & 0 \\
+\end{array}$$
+
+```{r}
+# observed difference in means
+obs_diff_means <- demo_df |>
+  filter(classStanding == "Sophomore" | classStanding == "Junior") |>
+  filter(diningCommons >= 0 & diningCommons <= 100) |>
+  specify(diningCommons ~ classStanding) |> 
+  calculate(stat = "diff in means", order = c("Sophomore", "Junior"))
+obs_diff_means
+```
+
+```{r}
+null_distribution <- demo_df |>
+  filter(classStanding == "Sophomore" | classStanding == "Junior") |>
+  filter(diningCommons >= 0 & diningCommons <= 100) |>
+  specify(diningCommons ~ classStanding) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |> 
+  calculate(stat = "diff in means", order = c("Sophomore", "Junior"))
+```
+
+```{r}
+visualize(null_distribution, bins = 10) + 
+  shade_p_value(obs_stat = obs_diff_means, direction = "two_sided")
+```
+
+```{r}
+null_distribution |> 
+  get_p_value(obs_stat = obs_diff_means, direction = "two_sided")
+```
+
+
+## Happiness vs Top Choice
+
+The survey questions were
+
+* "Was UC Merced your top choice for university?"
+* "Rate your own happiness level"
+
+* colloquial hypothesis: Those who felt UC Merced was their top choice are currently more happy.
+* null hypothesis: Average happiness levels are the same for those who felt UCM was their top choice or not.
+* alternative hypothesis: Those who felt UC Merced was their top choice are currently more happy.
+
+* predictor variable (categorical): `UCMtopChoice`
+* response variable (categorical): `happiness`
+
+In this scenario, our one-sided hypothesis test looks at a difference of two proportions.
+
+$$\begin{array}{rrcl}
+  H_{0}: \mu_{A} - \mu_{B} & = & 0 \\
+  H_{a}: \mu_{A} - \mu_{B} & > & 0 \\
+\end{array}$$
+
+```{r}
+# table(demo_df$UCMtopChoice)
+demo_df |>
+  filter(happiness >= 0 & happiness <= 100) |>
+  specify(happiness ~ UCMtopChoice) |> 
+  ggplot(aes(x = UCMtopChoice, y = happiness)) +
+  geom_boxplot(aes(fill = UCMtopChoice)) +
+  labs(title = "Does Past Feelings about UCM Affect Current Happiness",
+       subtitle = "2022",
+       caption = "UC Merced",
+       x = "Was UC Merced their top choice?",
+       y = "happiness (0 = low, 100 = high)") +
+  theme_minimal()
+```
+
+
+```{r}
+# observed difference in means
+obs_diff_means_2 <- demo_df |>
+  filter(happiness >= 0 & happiness <= 100) |>
+  specify(happiness ~ UCMtopChoice) |> 
+  calculate(stat = "diff in means", order = c("Yes", "No"))
+obs_diff_means_2
+```
+
+```{r}
+null_distribution_2 <- demo_df |>
+  filter(happiness >= 0 & happiness <= 100) |>
+  specify(happiness ~ UCMtopChoice) |> 
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |> 
+  calculate(stat = "diff in means", order = c("Yes", "No"))
+```
+
+```{r}
+visualize(null_distribution_2, bins = 10) + 
+  shade_p_value(obs_stat = obs_diff_means_2, direction = "greater")
+```
+
+```{r}
+null_distribution_2 |> 
+  get_p_value(obs_stat = obs_diff_means_2, direction = "two_sided")
+```
