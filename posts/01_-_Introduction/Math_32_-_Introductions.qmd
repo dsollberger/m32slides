@@ -1,7 +1,7 @@
 ---
-title: "01_-_Introductions"
+title: "Introduction"
 author: "Derek Sollberger"
-date: "2022-08-25"
+date: "2023-01-17"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -21,8 +21,7 @@ library("tidyverse")
 - Lecturer: Derek Sollberger
 
    - I go by "Derek" or "teacher"
-   
-- Originally from Los Angeles
+
 - BA in Applied Mathematics, UC Berkeley
 - MS in Applied Mathematics, CSULB
 - MS in Applied Mathematics, UC Merced
@@ -68,6 +67,24 @@ library("tidyverse")
 - active learning
 - computer programming
 - augmented reality
+:::
+
+::::
+
+## Identity Statement
+
+:::: {.columns}
+
+::: {.column width="75%"}
+- Originally from Los Angeles
+- Math: easier to understand through graphs
+- Computer Programming: years of experience with R, Python, MATLAB, PHP, HTML, etc.
+- Learning: drawn to puzzles and manageable tasks
+- Personality: shy, introvert
+:::
+
+::: {.column width="25%"}
+![](math-zach-galifianakis.gif)
 :::
 
 ::::
@@ -177,8 +194,8 @@ Concepts of probability and statistics. Conditional probability, independence, r
 
 ## Before-Lecture
 
-- 5 percent of semester grade
-- quizzes due before lecture (i.e. 3 PM on TuTh)
+- 10 percent of semester grade
+- quizzes due before lecture
   - no extensions
 - 5 to 10 minutes per quiz
   - review concepts and formulas
@@ -186,9 +203,9 @@ Concepts of probability and statistics. Conditional probability, independence, r
 
 ## Computer Programming
 
-- 20 percent of semester grade
+- 15 percent of semester grade
 - language: `R`
-- platform: `LearnR` apps
+- platform: `JupyterHub`
 - answers to frequently asked questions
   - no, work may not be done in another language (e.g. `Python`)
   - no, work may not be done in another IDE (e.g. `VS Code`)
@@ -206,17 +223,18 @@ Concepts of probability and statistics. Conditional probability, independence, r
 - TA will track attendance
 - advised to work on written and computer assignments during discussion sections
 
-## Surveys
+## Surveys and Readings
 
 - 5 percent of semester grade
 - graded quickly on effort and completion
-- 5 to 10 minutes per survey
+- 5 to 10 minutes per survey/reading
 
 ## Exams
 
-- Exam 1: 10 percent of semester grade (Tuesday, Sept. 27)
-- Exam 2: 15 percent of semester grade (Tuesday, Nov. 1)
-- Final Exam: 15 percent of semester grade (date TBD, see survey)
+- Exam 1: 10 percent of semester grade (Wed., Mar. 1)
+- Exam 2: 15 percent of semester grade (Mon., Apr. 10)
+- Final Exam: 15 percent of semester grade (Sat., May 6)
+- based on the written assignments (i.e. no computer code)
 
 ::::
 
@@ -392,11 +410,12 @@ Thought questions:
 
 ::: {.column width="60%"}
 - Be mindful of before-lecture quizzes	
-- due Fri., Aug. 26:
-  - Final Exam Date (survey)
-  - Software Installation
+- due Fri., Jan. 20:
+  - Perceptions of Probability (survey)
+  - WHW1
+- Identity Statement (essay)
   
-Exam 1 will be on Tues., Sept. 27
+Exam 1 will be on Wed., Mar. 1
 
 :::
 

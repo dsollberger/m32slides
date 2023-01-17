@@ -2,6 +2,7 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/01_-_Introduction/Math_32_-_Introductions.html",
       "/posts/24_-_Linear Regression/Math_32_24_Linear_Regression.html",
       "/posts/23_-_Maximum Likelihood/Math_32_23_Maximum_Likelihood.html",
       "/posts/22_-_Central Limit Theorem/Math_32_22_Central_Limit_Theorem.html",
@@ -25,7 +26,6 @@
       "/posts/04_-_Bayes Rule/Math_32_-_04_-_Dependence.html",
       "/posts/03_-_Dependence/Math_32_-_03_-_Dependence.html",
       "/posts/02_-_Independence/Math_32_-_02_-_Independence.html",
-      "/posts/01_-_Introduction/Math_32_-_Introductions.html",
       "/posts/25_-_Confidence Intervals_-_concept/Math_32_-_25_-_Confidence_Intervals_concept.html",
       "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
       "/posts/27_-_Hypothesis Testing/Math_32_-_27_-_Hypothesis_Testing.html"
