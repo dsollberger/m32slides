@@ -1,0 +1,152 @@
+---
+title: "2: Inclusion-Exclusion"
+author: "Derek Sollberger"
+date: "2023-01-20"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+library("tidyverse")
+```
+
+## Starter Examples
+
+In order to introduce probability concepts, you will notice that many sections of this
+book start out by talking about simple situations such as flipping a coin or rolling a die (or
+rolling a pair of dice). This is to ease the reader into more complicated examples.
+
+:::{.callout-note}
+A **possibility space** is a set of all of the possible outcomes.
+:::
+
+## Example 1: One Die
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Consider rolling one six-sided die. For each of the following events, list their possible ways, and then find their probabilities:
+
+- A: rolling an even number
+- B: rolling a number greater than 3
+- C: rolling a double-digit number
+:::
+
+::: {.column width="25%"}
+![one, six-sided die](die.png)
+:::
+::::
+
+## Starting to Combine
+
+At first, we consider simply adding up the probabilities to compute the probability of the union of the probabilities:
+
+$$P(A \cup B) = P(A) + P(B) = ?$$
+## Inconsistent?
+
+So far, 
+
+$$P(A \cup B) = P(A) + P(B) = 100\%$$
+What went wrong? (Discuss with a neighbor)
+
+## Some Set Notation
+
+:::{.callout-tip}
+The **union** of sets A and B is the set of all elements that appear either in set A OR set B
+$$A \cup B = \{x : x \in A \text{ OR } x \in B\}$$
+:::
+
+:::{.callout-tip}
+The **intersection** of sets A and B is the set of all elements that appear both in set A AND set B
+$$A \cap B = \{x : x \in A \text{ AND } x \in B\}$$
+:::
+
+## Inclusion-Exclusion Principle
+
+We observe that there was an *overlap* in the calculation.  Since some elements were counted twice, we can compensate by subtracting one copy of that overlap.  This notion is called the **Inclusion-Exclusion Principle**
+
+:::{.callout-note}
+To compute the probability of a set union, we need to consider the overlapping portions.  For two sets A and B, the probability of observing the union is
+$$P(A \cup B) = {\color{red}P(A)} + {\color{blue}P(B)} - {\color{purple}P(A \cap B)}$$
+:::
+
+## Example 2: Two dice
+
+:::: {.columns}
+
+::: {.column width="75%"}
+Consider rolling two six-sided dice. Find the probability that their total is 8 or the
+second die shows a number greater or equal to 5.
+:::
+
+::: {.column width="25%"}
+![two dice](twodice.png)
+:::
+::::
+
+## Subtlety in Assumptions
+
+In the previous example, we assumed a notion of **sampling with replacement**. That is, when rolling dice, we know that a number can be repeated. In other situations were observations cannot repeat, we are **sampling without replacement**.
+
+## Example 3: Faculty Matters
+
+:::: {.panel-tabset}
+
+### Prompt
+
+Consider a subset of the UC Merced Applied Math department with 6 faculty members—Blanchette, Buvoli, Sandoval, Stepanian, Thompson, Yatskar—must select two of its members to serve on a personnel review committee. Because the work will be time-consuming, no one is anxious to serve, so it is decided that the representatives will be selected by putting 6 slips of paper in a box, mixing them, and selecting two without replacement.
+
+- What is the probability that both Thompson and Yatskar will be selected?
+- What is the probability that at least one of the two members whose name begins with ‘B’ is selected?
+- If the 6 faculty members have taught for 15, 3, 5, 9, 4, and 12 years, respectively, at the university, what is the probability that the two chosen representatives have at least a combined 10 years’ teaching experience at the university?
+
+### Sample Space 1
+
+![](faculty1.png)
+
+### Sample Space 2
+
+![](faculty2.png)
+
+::::
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+- due Fri., Jan. 20:
+  - Perceptions of Probability (survey)
+  - WHW1
+- Identity Statement (essay)
+- and the before-lecture quizzes	
+  
+Exam 1 will be on Wed., Mar. 1
+
+:::
+
+::: {.column width="40%"}
+![](Super_Statistician.png)
+:::
+
+::::
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::

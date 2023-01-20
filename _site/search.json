@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "Introduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nNov 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Covariance and Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nOct 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 4, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n9: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n06: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n05: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n04_-_Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Dependence\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n02_-_Independence\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nNov 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Covariance and Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nOct 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 4, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n9: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n06: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n05: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n04_-_Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Dependence\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n02_-_Independence\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -1608,5 +1608,75 @@
     "title": "Introduction",
     "section": "Identity Statement",
     "text": "Identity Statement\n\n\n\nOriginally from Los Angeles\nMath: easier to understand through graphs\nComputer Programming: years of experience with R, Python, MATLAB, PHP, HTML, etc.\nLearning: drawn to puzzles and manageable tasks\nPersonality: shy, introvert"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html",
+    "title": "2: Inclusion-Exclusion",
+    "section": "",
+    "text": "library(\"tidyverse\")\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.0      ✔ purrr   1.0.1 \n✔ tibble  3.1.8      ✔ dplyr   1.0.10\n✔ tidyr   1.2.1      ✔ stringr 1.5.0 \n✔ readr   2.1.3      ✔ forcats 0.5.1 \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#starter-examples",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#starter-examples",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Starter Examples",
+    "text": "Starter Examples\nIn order to introduce probability concepts, you will notice that many sections of this book start out by talking about simple situations such as flipping a coin or rolling a die (or rolling a pair of dice). This is to ease the reader into more complicated examples.\n\n\n\n\n\n\nNote\n\n\n\nA possibility space is a set of all of the possible outcomes."
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-1-one-die",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-1-one-die",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Example 1: One Die",
+    "text": "Example 1: One Die\n\n\nConsider rolling one six-sided die. For each of the following events, list their possible ways, and then find their probabilities:\n\nA: rolling an even number\nB: rolling a number greater than 3\nC: rolling a double-digit number\n\n\n\n\n\none, six-sided die"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#starting-to-combine",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#starting-to-combine",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Starting to Combine",
+    "text": "Starting to Combine\nAt first, we consider simply adding up the probabilities to compute the probability of the union of the probabilities:\n\\[P(A \\cup B) = P(A) + P(B) = ?\\] ## Inconsistent?\nSo far,\n\\[P(A \\cup B) = P(A) + P(B) = 100\\%\\] What went wrong? (Discuss with a neighbor)"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#some-set-notation",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#some-set-notation",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Some Set Notation",
+    "text": "Some Set Notation\n\n\n\n\n\n\nTip\n\n\n\nThe union of sets A and B is the set of all elements that appear either in set A OR set B \\[A \\cup B = \\{x : x \\in A \\text{ OR } x \\in B\\}\\]\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe intersection of sets A and B is the set of all elements that appear both in set A AND set B \\[A \\cap B = \\{x : x \\in A \\text{ AND } x \\in B\\}\\]"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#inclusion-exclusion-principle",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#inclusion-exclusion-principle",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Inclusion-Exclusion Principle",
+    "text": "Inclusion-Exclusion Principle\nWe observe that there was an overlap in the calculation. Since some elements were counted twice, we can compensate by subtracting one copy of that overlap. This notion is called the Inclusion-Exclusion Principle\n\n\n\n\n\n\nNote\n\n\n\nTo compute the probability of a set union, we need to consider the overlapping portions. For two sets A and B, the probability of observing the union is \\[P(A \\cup B) = {\\color{red}P(A)} + {\\color{blue}P(B)} - {\\color{purple}P(A \\cap B)}\\]"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-2-two-dice",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-2-two-dice",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Example 2: Two dice",
+    "text": "Example 2: Two dice\n\n\nConsider rolling two six-sided dice. Find the probability that their total is 8 or the second die shows a number greater or equal to 5.\n\n\n\n\ntwo dice"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#subtlety-in-assumptions",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#subtlety-in-assumptions",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Subtlety in Assumptions",
+    "text": "Subtlety in Assumptions\nIn the previous example, we assumed a notion of sampling with replacement. That is, when rolling dice, we know that a number can be repeated. In other situations were observations cannot repeat, we are sampling without replacement."
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-3-faculty-matters",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#example-3-faculty-matters",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Example 3: Faculty Matters",
+    "text": "Example 3: Faculty Matters\n\nPromptSample Space 1Sample Space 2\n\n\nConsider a subset of the UC Merced Applied Math department with 6 faculty members—Blanchette, Buvoli, Sandoval, Stepanian, Thompson, Yatskar—must select two of its members to serve on a personnel review committee. Because the work will be time-consuming, no one is anxious to serve, so it is decided that the representatives will be selected by putting 6 slips of paper in a box, mixing them, and selecting two without replacement.\n\nWhat is the probability that both Thompson and Yatskar will be selected?\nWhat is the probability that at least one of the two members whose name begins with ‘B’ is selected?\nIf the 6 faculty members have taught for 15, 3, 5, 9, 4, and 12 years, respectively, at the university, what is the probability that the two chosen representatives have at least a combined 10 years’ teaching experience at the university?"
+  },
+  {
+    "objectID": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#looking-ahead",
+    "href": "posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html#looking-ahead",
+    "title": "2: Inclusion-Exclusion",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Jan. 20:\n\nPerceptions of Probability (survey)\nWHW1\n\nIdentity Statement (essay)\nand the before-lecture quizzes\n\nExam 1 will be on Wed., Mar. 1"
   }
 ]
