@@ -1,0 +1,147 @@
+---
+title: "03_-_Complements"
+author: "Derek Sollberger"
+date: "2023-01-22"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+library("tidyverse")
+```
+
+## Assuming a Distribution
+
+Unless otherwise noted, the coin flip has two disjoint outcomes---`heads` or `tails`---with probabilities
+
+$$P(\text{heads}) = 0.5, \quad P(\text{tails}) = 0.5$$
+![](twocoins.png)
+
+In the early formation of the field of statistics, there were considerations such as the following.  How should the possibility space for a trial of flipping two coins be represented?
+
+- 3 elements: $\{$two heads, mixed result, two tails$\}$, OR
+- 4 elements: $\{$HH, HT, TH, TT$\}$
+
+## Complements
+
+:::{.callout-note}
+To sets are **disjoint** if
+$$P(A \cap B) = 0$$
+:::
+
+:::{.callout-note}
+A **possibility space** is a set of all of the possible outcomes for an event.  It is usually denoted by the Greek letter capital omega.
+:::
+
+For example, the set of all outcomes for two coin flips of a fair coin turns out to be
+
+$$\Omega = \{HH, HT, TH, TT\}$$
+
+:::{.callout-note}
+If $A$ is a set (and a subset of the possibility space), then the **complement** of A, denoted $A^{c}$, is the set of outcomes that is in the universal set but not in the set A
+
+$$A \subseteq \Omega \quad\Rightarrow\quad A^{c} = \Omega - A$$
+:::
+
+## Example 4: One Die
+
+:::: {.columns}
+
+::: {.column width="25%"}
+![](die.png)	
+:::
+
+::: {.column width="75%"}
+For example, if we think of our roll of a six-sided die, the possibility space was
+$$\Omega = \{1, 2, 3, 4, 5, 6\}$$
+If we have a subset consisting of the even numbers 
+$$E = \{2, 4, 6\}$$
+what do you think the complement $E^{c}$ will be?
+:::
+
+::::
+
+## Empty Set
+
+:::{.callout-note}
+The empty set $\{\}$ literally has zero elements in the set
+:::
+
+**Claim**: Set $A$ and its complement are disjoint.
+
+## Example 5: Replacement
+
+There may be situations where we need to be careful about whether selections from a set were done **with replacement** or **without replacement**.
+
+In the wardrobe, there are 8 blue socks and 6 red socks.
+
+$$B, B, B, B, B, B, B, B$$
+$$R, R, R, R, R, R$$
+
+Compute the following probabilities
+
+- Selecting 3 red socks with replacement
+- Selecting 3 red socks without replacement
+- Selecting 4 blue socks with replacement
+- Selecting 4 blue socks without replacement
+
+:::{.callout-tip}
+Notice how when we sample with replacement, each iteration is **independent** of the previous iterations.  When we sample without replacement, each iteration **depends** on the previous iterations.
+:::
+
+## De Morgan's Law
+
+One relationship between the notions of complements, intersections, and unions is as follows.
+
+:::{.callout-note}
+$$(A \cup B)^{c} = A^{c} \cap B^{c}$$
+The complement of the union is the intersection of the complements.
+:::
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- due Fri., Jan. 27:
+  - WHW2
+  - JHW0
+  - CLO (survey)
+- and the before-lecture quizzes	
+  
+Exam 1 will be on Tues., Sept. 27
+
+:::
+
+::: {.column width="40%"}
+![Rafa Moral](rafamoral.png)
+
+[40-second song](https://mobile.twitter.com/rafamoral/status/1564376662971760642)
+
+:::
+
+::::
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::
