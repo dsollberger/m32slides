@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nNov 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Covariance and Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nOct 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 4, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n9: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n06: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n05: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n04_-_Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Dependence\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n02_-_Independence\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "4: Conditional Probability\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Complements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nNov 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Covariance and Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nOct 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nOct 4, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n9: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 20, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n06: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n05: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n04_-_Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Dependence\n\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n02_-_Independence\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -1678,5 +1678,47 @@
     "title": "2: Inclusion-Exclusion",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\ndue Fri., Jan. 20:\n\nPerceptions of Probability (survey)\nWHW1\n\nIdentity Statement (essay)\nand the before-lecture quizzes\n\nExam 1 will be on Wed., Mar. 1"
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#dependence",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#dependence",
+    "title": "4: Conditional Probability",
+    "section": "Dependence",
+    "text": "Dependence\nGoal: Start to consider dependence in probability\nObjective: Practice conditional probability calculations"
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#example-subsetting",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#example-subsetting",
+    "title": "4: Conditional Probability",
+    "section": "Example: Subsetting",
+    "text": "Example: Subsetting\nConsider the months of the year\n\\[M = \\{\\text{Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec} \\}\\] Let us say that a month is ``long’’ if it has 31 days. What is the probability that we have a long month given that we are in the Spring semester?\n\\[S = \\{ \\text{Jan, Feb, Mar, Apr, May} \\}\\]"
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#conditional-probability",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#conditional-probability",
+    "title": "4: Conditional Probability",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\nWe can condense this process into a formula for conditional probability:\n\n\n\n\n\n\nConditional Probability\n\n\n\nThe conditional probability of observing event \\(A\\) given event \\(B\\) has already taken place is\n\\[P(A|B) = \\displaystyle\\frac{P(A \\cap B)}{P(B)}\\]"
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#example-contigency-tables",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#example-contigency-tables",
+    "title": "4: Conditional Probability",
+    "section": "Example: Contigency Tables",
+    "text": "Example: Contigency Tables\nIn this hypothetical example, suppose that we are following an epidemiologist who is testing patients at a hospital in for the novel strain of coronavirus.\n\nBuild a contingency table with the following data\n\n\n175 true positives\n32 false negatives\n18 false positives\n2019 true negatives\n\n\nCompute the probability that a randomly selected patient is disease free given that the drug test is positive."
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#prosecutors-fallacy",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#prosecutors-fallacy",
+    "title": "4: Conditional Probability",
+    "section": "Prosecutor’s Fallacy",
+    "text": "Prosecutor’s Fallacy\n\nUsing the same counts as the previous example, compute the probability that for a randomly selected patient the test returns positive given that the patient is disease free.\n\n\n\n\n\n\n\nWarning\n\n\n\n\n\nConverses for conditional probability are almost never equal.\n\\[P(A|B) \\neq P(B|A)\\]\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nWhat do we do when the order of the events switch?\nNext time: Bayes’ Rule"
+  },
+  {
+    "objectID": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#looking-ahead",
+    "href": "posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html#looking-ahead",
+    "title": "4: Conditional Probability",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\ndue Fri., Jan. 27:\n\nWHW2\nJHW0\nCLO (survey)\n\nand the before-lecture quizzes\n\nExam 1 will be on Wed., Mar. 1"
   }
 ]

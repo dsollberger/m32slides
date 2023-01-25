@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2023-01-20T06:04:33.162Z</lastmod>
+    <lastmod>2023-01-25T05:57:20.881Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2023-01-20T06:04:37.349Z</lastmod>
+    <lastmod>2023-01-25T05:57:18.517Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -131,5 +131,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html</loc>
     <lastmod>2023-01-20T06:04:29.955Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html</loc>
+    <lastmod>2023-01-25T05:57:17.695Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,16 @@
+{
+  "hash": "8ed864025f8f7582159659f94b4594a0",
+  "result": {
+    "markdown": "---\ntitle: \"4: Conditional Probability\"\nauthor: \"Derek Sollberger\"\ndate: \"2023-01-25\"\n# format: \n#   revealjs:\n#     scrollable: true\nformat: html\n---\n\n\n\\newcommand{\\ds}{\\displaystyle}\n\n\n::: {.cell}\n\n:::\n\n\n## Dependence\n\nGoal: Start to consider dependence in probability\n\nObjective: Practice conditional probability calculations\n\n## Example: Subsetting\n\nConsider the months of the year\n\n$$M = \\{\\text{Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec} \\}$$\nLet us say that a month is ``long'' if it has 31 days.  What is the probability that we have a long month given that we are in the Spring semester?\n\n$$S = \\{ \\text{Jan, Feb, Mar, Apr, May} \\}$$\n\n## Conditional Probability\n\nWe can condense this process into a formula for conditional probability:\n\n:::{.callout-note}\n## Conditional Probability\n\nThe **conditional probability** of observing event $A$ *given* event $B$ has already taken place is\n\n$$P(A|B) = \\ds\\frac{P(A \\cap B)}{P(B)}$$\n:::\n\n## Example: Contigency Tables\n\nIn this hypothetical example, suppose that we are following an epidemiologist who is testing patients at a hospital in for the novel strain of coronavirus.\n\n(A) Build a contingency table with the following data\n\n- 175 true positives\n- 32 false negatives\n- 18 false positives\n- 2019 true negatives\n\n(B) Compute the probability that a randomly selected patient is disease free given that the drug test is positive.\n\n## Prosecutor's Fallacy\n\n(C) Using the same counts as the previous example, compute the probability that for a randomly selected patient the test returns positive given that the patient is disease free.\n\n:::{.callout-warning collapse=\"true\"}\nConverses for conditional probability are almost never equal.\n\n$$P(A|B) \\neq P(B|A)$$\n:::\n\n:::{.callout-tip collapse=\"true\"}\nWhat do we do when the order of the events switch?  \n\nNext time: *Bayes' Rule*\n:::\n\n\n\n\n## Looking Ahead\n\n:::: {.columns}\n\n::: {.column width=\"60%\"}\n- due Fri., Jan. 27:\n  - WHW2\n  - JHW0\n  - CLO (survey)\n- and the before-lecture quizzes\t\n  \nExam 1 will be on Wed., Mar. 1\n\n:::\n\n::: {.column width=\"40%\"}\n![](Googling.png)\n\n:::\n\n::::\n\n:::: {.columns}\n\n::: {.column width=\"50%\"}\n\t\n:::\n\n::: {.column width=\"50%\"}\n\n:::\n\n::::\n\n:::: {.panel-tabset}\n\n\n\n::::\n",
+    "supporting": [
+      "Math_32_04_Conditional_Probability_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

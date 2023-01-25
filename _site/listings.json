@@ -2,6 +2,8 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html",
+      "/posts/03_-_Complements/Math_32_03_Complements.html",
       "/posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html",
       "/posts/01_-_Introduction/Math_32_-_Introductions.html",
       "/posts/24_-_Linear Regression/Math_32_24_Linear_Regression.html",
