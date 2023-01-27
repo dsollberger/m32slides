@@ -1,0 +1,167 @@
+---
+title: "5: Bayes' Rule (Concepts)"
+author: "Derek Sollberger"
+date: "2023-01-27"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Bayes' Rule
+
+In the previous section, we studied conditional probability
+$$P(B|A) = \ds\frac{P(A \text{ and } B)}{P(A)}$$
+and we talked about how the inverse probabilities $P(A|B)$ and $P(B|A)$ are almost never equal.  In this section, we discuss how to properly think and calculate that inverse probability.
+
+:::{.callout-tip}
+Another look at conditional probability is
+$$P(A \text{ and } B) = P(B|A) \cdot P(A)$$
+This is read as "The probability of the intersection $A$ and $B$ is the probability of event $B$ *conditioned* on event $A$."
+:::
+
+:::{.callout-tip}
+Moreover, if we consider how if event $B$ is dependent on event $A$, then sometimes $B$ happens when $A$ happens and sometimes when $A$ does not occur.  More succinctly, the *total probability* of event $B$ is
+$$P(B) = P(B|A) \cdot P(A) + P(B|A^{c}) \cdot P(A^{c})$$ 
+:::
+
+:::{.callout-note}
+Staring with the conditional probability formula
+$$P(B|A) = \ds\frac{P(A \text{ and } B)}{P(A)}$$
+*Bayes' Rule* combines the ideas of conditioned probability and total probability as
+$$P(A|B) = \ds\frac{P(A \text{ and } B)}{P(B)} = \ds\frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^{c}) \cdot P(A^{c})}$$
+:::
+
+## A Deep Dive
+
+:::: {.panel-tabset}
+
+## Example
+
+An executive has their blood tested for boneitis.  Let $B$ be the event that an executive has the disease, and let $T$ be the event that the test returns positive.  Laboratory trials yielded the following information:
+
+$$P(T|B) = 0.70 \quad\text{and}\quad P(T|B^{c}) = 0.10$$
+
+Assume a prior probability of $P(B) = 0.0032$.  Compute $P(B|T)$
+    
+## Tree Diagram
+
+![tree diagram](boneitis1.png)
+
+## Numerator
+
+![tree diagram](boneitis2.png)
+
+## Denominator
+
+![tree diagram](boneitis3.png)
+
+## Bayes' Rule
+
+![](deepdive1.png)
+
+::::
+
+## More Practice
+
+:::: {.panel-tabset}
+
+## Example
+
+An executive has their blood tested for boneitis.  Let $B$ be the event that an executive has the disease, and let $T$ be the event that the test returns positive.  Laboratory trials yielded the following information:
+
+$$P(T|B) = 0.70 \quad\text{and}\quad P(T|B^{c}) = 0.10$$
+
+Assume a prior probability of $P(B) = 0.0032$.  Compute $P(B|T^{c})$
+    
+## Tree Diagram
+
+![tree diagram](boneitis1.png)
+
+## Numerator
+
+![tree diagram](boneitis4.png)
+
+## Denominator
+
+![tree diagram](boneitis5.png)
+
+## Bayes' Rule
+
+![](deepdive2.png)
+
+::::
+
+
+## Example: Monty Hall Problem
+
+:::: {.columns}
+
+::: {.column width="33%"}
+![](Monty_open_door.png)	
+:::
+
+::: {.column width="67%"}
+Monty Hall asks you to choose one of three doors. One of the doors hides a prize and the other two doors have no prize. You state out loud which door you pick, but you don’t open it right away.
+
+"Monty opens one of the other two doors, and there is no prize behind it.
+    \begin{center}
+        \includegraphics[scale = 0.1]{images/Monty_open_door.jpg}
+    \end{center}
+    "At this moment, there are two closed doors, one of which you picked.  The prize is behind one of the closed doors, but you don’t know which one.  Monty asks you, 'Do you want to switch doors?' "
+
+- switch doors
+- do not switch doors
+:::
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- due Fri., Jan. 27:
+  - WHW2
+  - JHW0
+  - CLO (survey)
+- and the before-lecture quizzes	
+  
+Exam 1 will be on Wed., Mar. 1
+
+:::
+
+::: {.column width="40%"}
+![](gas_prices.png)
+
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+:::: {.panel-tabset}
+
+
+
+::::
