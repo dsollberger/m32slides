@@ -2,6 +2,8 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/08_-_Variance/Math_32_08_Variance.html",
+      "/posts/07_-_Measures of Centrality/Math_32_07_Centrality.html",
       "/posts/06_-_Bayes_Rule_2/Math_32_06_Bayes_Rule.html",
       "/posts/05_-_Bayes_Rule/Math_32_05_Bayes_Rule.html",
       "/posts/04_-_Conditional_Probability/Math_32_04_Conditional_Probability.html",
@@ -26,8 +28,6 @@
       "/posts/08_-_Binomial Distribution/Math_32_08_Binomial_Distribution.html",
       "/posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html",
       "/posts/07_-_Expectation/Math_32_07_Expectation.html",
-      "/posts/06_-_Variance/Math_32_06_Variance.html",
-      "/posts/07_-_Measures of Centrality/Math_32_07_Centrality.html",
       "/posts/25_-_Confidence Intervals_-_concept/Math_32_-_25_-_Confidence_Intervals_concept.html",
       "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
       "/posts/27_-_Hypothesis Testing/Math_32_-_27_-_Hypothesis_Testing.html"

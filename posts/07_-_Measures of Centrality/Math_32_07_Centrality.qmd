@@ -1,7 +1,7 @@
 ---
 title: "07: Measures of Centrality"
 author: "Derek Sollberger"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "2023-02-01"
 # format: 
 #   revealjs:
 #     scrollable: true
