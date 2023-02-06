@@ -1,7 +1,7 @@
 ---
-title: "07: Expectation"
+title: "09: Expectation"
 author: "Derek Sollberger"
-date: "2022-09-15"
+date: "2023-02-06"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -101,13 +101,13 @@ Before watching a boxing match, my friends and I made bets over which round the 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- due Fri., Sept. 16:
-  - WHW3
-  - LHW3
+- due Fri., Feb. 10:
+  - WHW4
+  - JHW2
   - Demographics Part 1 (survey)
 - Be mindful of before-lecture quizzes	
   
-- Exam 1 will be on Tues., Sept. 27
+- Exam 1 will be on Wed., Mar. 1
 
   - more information in weekly announcements
 

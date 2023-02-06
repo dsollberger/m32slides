@@ -166,8 +166,8 @@ According to OkCupid data, if men rate women on a scale from 1 = “least attrac
 
 According to OkCupid data, if women rate men on a scale from 1 = “least attractive” to 7 = “most attractive”, the average score is 2.43 with a sample standard deviation of 1.2510.
 
-- What is the $z$-score of a woman rated a "6"?
-- What is the attractiveness score of a woman at a $z$-score of 1.5?
+- What is the $z$-score of a man rated a "6"?
+- What is the attractiveness score of a man at a $z$-score of 1.5?
 
 ::::
 
