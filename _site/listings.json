@@ -2,6 +2,7 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/10_-_Binomial Distribution/Math_32_10_Binomial_Distribution.html",
       "/posts/09_-_Expectation/Math_32_09_Expectation.html",
       "/posts/08_-_Variance/Math_32_08_Variance.html",
       "/posts/07_-_Measures of Centrality/Math_32_07_Centrality.html",
@@ -26,7 +27,6 @@
       "/posts/12_-_Exponential Distribution/Math_32_12_Exponential_Distribution.html",
       "/posts/11_-_Continuous Distributions/Math_32_11_Geometric_Distribution.html",
       "/posts/10_-_Geometric Distribution/Math_32_10_Geometric_Distribution.html",
-      "/posts/08_-_Binomial Distribution/Math_32_08_Binomial_Distribution.html",
       "/posts/09_-_Cumulative Calculations/Math_32_09_Cumulative_Computation.html",
       "/posts/25_-_Confidence Intervals_-_concept/Math_32_-_25_-_Confidence_Intervals_concept.html",
       "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
