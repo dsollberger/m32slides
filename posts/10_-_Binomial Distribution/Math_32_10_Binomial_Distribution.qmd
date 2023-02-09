@@ -60,6 +60,7 @@ exactly twice?
 ## 3 Coins
 
 ```{r}
+#| echo: true
 coin <- c("H", "T")
 df <- data.frame(expand.grid(coin, coin, coin)) |>
   tidyr::unite("obs", c("Var1", "Var2", "Var3"),
@@ -71,6 +72,7 @@ dput(df$obs)
 ## 4 coins
 
 ```{r}
+#| echo: true
 coin <- c("H", "T")
 df <- data.frame(expand.grid(coin, coin, coin, coin)) |>
   tidyr::unite("obs", c("Var1", "Var2", "Var3", "Var4"),
@@ -82,6 +84,7 @@ dput(df$obs)
 ## 5 coins
 
 ```{r}
+#| echo: true
 coin <- c("H", "T")
 df <- data.frame(expand.grid(coin, coin, coin, coin, coin)) |>
   tidyr::unite("obs", c("Var1", "Var2", "Var3", "Var4", "Var5"),
@@ -152,6 +155,7 @@ Historically, Squirtle defeats Charizard 32\% of the time.  If there are 5 battl
 ## Battle Arena
 
 ```{r}
+#| echo: true
 battle <- c("S", "C")
 df <- data.frame(expand.grid(battle, battle, battle, battle, battle)) |>
   tidyr::unite("obs", c("Var1", "Var2", "Var3", "Var4", "Var5"),
@@ -257,6 +261,7 @@ df |>
 ## R code
 
 ```{r}
+#| echo: true
 k <- 0:5
 pk <- dbinom(k, 5, 0.32)
 k_bool <- k == 2
@@ -285,6 +290,7 @@ df |>
 ```
 
 ```{r}
+#| echo: true
 k <- 0:5
 pk <- dbinom(k, 5, 0.68)
 k_bool <- k == 3
