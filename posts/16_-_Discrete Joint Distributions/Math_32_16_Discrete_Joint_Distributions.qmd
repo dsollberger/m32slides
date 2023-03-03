@@ -1,7 +1,7 @@
 ---
-title: "14: Discrete Joint Distributions"
+title: "16: Discrete Joint Distributions"
 author: "Derek Sollberger"
-date: "2022-10-13"
+date: "2023-02-27"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -145,17 +145,18 @@ $$F(a, b) = P(X \leq a, Y \leq b)$$
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- due Fri., Oct. 14:
-  - WHW6
-  - LHW6
-  - Internet Connection Check (survey)
-  
-- Exam 2 will be on Tues., Nov. 1
+::: {.column width="60%"}
+Exam 1 will be on Wed., Mar. 1
+
+  - more information in weekly announcements
+
+No lecture session for Math 32: 
+
+* Mar 10, Mar 24
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](third_pounder.png)
 
 

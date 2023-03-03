@@ -1,7 +1,7 @@
 ---
-title: "15: Continuous Joint Distributions"
+title: "17: Continuous Joint Distributions"
 author: "Derek Sollberger"
-date: "2022-10-18"
+date: "2023-03-03"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -33,7 +33,7 @@ $$P({\color{blue}a_{1} < X < a_{2}}, {\color{red}b_{1} < Y < b_{2}}) = \ds{\colo
 ## Properties
 
 - Each probability is between zero and one inclusively
-    $$0 \leq {\color{purple}f(x,y)} \leq 1$ \text{ for all } {\color{blue}$x$}, {\color{red}$y$}$$
+    $$0 \leq {\color{purple}f(x,y)} \leq 1 \text{ for all } {\color{blue}$x$}, {\color{red}$y$}$$
 - All probabilities add up to 100 percent
     $${\color{red}\ds\int_{-\infty}^{\infty}}{\color{blue}\ds\int_{-\infty}^{\infty}} \! {\color{purple}f(x,y)} \, {\color{blue}dx} \, {\color{red}dy} = 1$$
 :::
@@ -215,16 +215,19 @@ Upcoming lectures: dependent variables
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- due Fri., Oct. 21:
+::: {.column width="60%"}
+- due Fri., Mar. 10:
   - WHW7
-  - LHW7
+  - LHW6
+  - Internet Connection (survey)
   
-- Exam 2 will be on Tues., Nov. 1
+- Exam 2 will be on Mon., Apr. 10
+
+- no lecture on Mar. 10, Mar. 24
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](docker.png)
 
 ![tweet source](https://mobile.twitter.com/joel_nitta/status/1580727355513143296)

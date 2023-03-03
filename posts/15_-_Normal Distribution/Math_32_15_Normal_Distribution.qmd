@@ -165,7 +165,7 @@ About 99% of data falls within 3 standard deviations of the mean.
 
 Some scientific literature refers to the area under the curve of the probability density function of the $X \sim N(0, 1/2)$ normal distribution as the \textbf{error function}
 
-$$\text{erf}(x) = \ds\frac{2}{\sqrt{\pi}}\int_{0}^{x} \! e^{-t^{2}/2} \, dt$$ 
+$$\text{erf}(x) = \ds\frac{2}{\sqrt{\pi}}\int_{0}^{x} \! e^{-t^{2}} \, dt$$ 
 
 and we can recover the CDF of the standard normal distribution with
 
