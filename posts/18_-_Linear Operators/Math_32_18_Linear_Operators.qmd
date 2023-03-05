@@ -1,7 +1,7 @@
 ---
-title: "16: Linear Operators"
+title: "18: Linear Operators"
 author: "Derek Sollberger"
-date: "2022-10-20"
+date: "2023-03-06"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -250,16 +250,19 @@ which is called the **covariance**!
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- due Fri., Oct. 21:
+::: {.column width="60%"}
+- due Fri., Mar. 10:
   - WHW7
-  - LHW7
+  - LHW6
+  - Internet Connection (survey)
   
-- Exam 2 will be on Tues., Nov. 1
+- Exam 2 will be on Mon., Apr. 10
+
+- no lecture on Mar. 10, Mar. 24
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](logic.png)
 
 [tweet source](https://mobile.twitter.com/CMastication/status/1582548812987772929)

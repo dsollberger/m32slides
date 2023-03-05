@@ -2,6 +2,7 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/18_-_Linear Operators/Math_32_18_Linear_Operators.html",
       "/posts/17_-_Continuous Joint Distributions/Math_32_17_Continuous_Joint_Distributions.html",
       "/posts/16_-_Discrete Joint Distributions/Math_32_16_Discrete_Joint_Distributions.html",
       "/posts/15_-_Normal Distribution/Math_32_15_Normal_Distribution.html",
@@ -27,7 +28,6 @@
       "/posts/19_-_Poisson Process/Math_32_19_Poisson_Process.html",
       "/posts/18_-_Change in Variables/Math_32_18_Change_of_Variables.html",
       "/posts/17_-_Covariance/Math_32_17_Covariance.html",
-      "/posts/16_-_Linear Operators/Math_32_16_Linear_Operators.html",
       "/posts/25_-_Confidence Intervals_-_concept/Math_32_-_25_-_Confidence_Intervals_concept.html",
       "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
       "/posts/27_-_Hypothesis Testing/Math_32_-_27_-_Hypothesis_Testing.html"
