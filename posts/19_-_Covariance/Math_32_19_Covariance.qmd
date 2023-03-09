@@ -1,0 +1,182 @@
+---
+title: "19: Covariance"
+author: "Derek Sollberger"
+date: "2023-03-08"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Setting
+
+:::: {.columns}
+
+::: {.column width="60%"}
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+![joint PMF](pdf.png)	
+:::
+
+::: {.column width="40%"}
+![In-n-Out](innout.png)	
+:::
+
+::::
+
+
+## Independence
+
+![](pdf.png)	
+
+Are $X$ and $Y$ independent?
+
+
+## Covariance
+
+:::{.callout-warning collapse="true"}
+## True or False?  $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$
+
+False.  In general,
+    
+$$\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\left( \text{E}[XY] - \text{E}[X]\text{E}[Y] \right)$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Motivation for Independence
+
+As you probably suspected, $\text{Var}(X + Y)$ does equal $\text{Var}(X) + \text{Var}(Y)$ if $X$ and $Y$ are independent (exercise left to reader).
+:::
+
+:::{.callout-note}
+## Covariance
+
+We define the **covariance** of random variables as
+
+$$\text{Cov}(X,Y) = \text{E}[XY] - \text{E}[X]\text{E}[Y]$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Derek's Intuition
+
+As an analogy, the random variables somewhat act like waves in that they can work together and grow or somewhat cancel each other out.
+
+![](constructiveanddestructiveinterference.png)
+
+- Image source: https://www.physics-and-radio-electronics.com/physics/waveinterference.html
+:::
+
+:::{.callout-tip collapse="true"}
+## The Pythagorean Theorem of Statistics
+
+![](pythagorean_theorem_of_statistics.png)
+
+- Image credit: Bioinformatics professor Dr. David Ardell
+:::
+
+
+## Covariance
+
+![](pdf.png)	
+
+- Compute the covariance in the In-n-Out setting
+
+
+
+## Continuous Joint Probability Distribution Functions
+
+:::: {.columns}
+
+::: {.column width="75%"}
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+with joint PDF
+
+$$f(x,y) = \frac{1}{30}(x + y)e^{-x}e^{-y/5}$$
+
+- Are $X$ and $Y$ independent?
+
+- Compute the covariance in the In-n-Out setting
+
+:::
+
+::: {.column width="25%"}
+![In-n-Out](innout.png)	
+:::
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- due Fri., Mar. 10:
+  - WHW7
+  - LHW6
+  - Internet Connection (survey)
+  
+- Exam 2 will be on Mon., Apr. 10
+
+- no lecture on Mar. 10, Mar. 24
+
+:::
+
+::: {.column width="40%"}
+![](maps.png)
+[tweet source](https://mobile.twitter.com/Hyperosonic/status/1583534703193124865)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::

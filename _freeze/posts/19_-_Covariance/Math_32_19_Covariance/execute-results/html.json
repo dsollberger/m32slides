@@ -1,0 +1,16 @@
+{
+  "hash": "f61694e02766e2a519e740f599b6d9eb",
+  "result": {
+    "markdown": "---\ntitle: \"19: Covariance\"\nauthor: \"Derek Sollberger\"\ndate: \"2023-03-08\"\n# format: \n#   revealjs:\n#     scrollable: true\nformat: html\n# server: shiny\n---\n\n\n\\newcommand{\\ds}{\\displaystyle}\n\n\n::: {.cell}\n\n:::\n\n\n## Setting\n\n:::: {.columns}\n\n::: {.column width=\"60%\"}\nWe will once again visualize the act of ordering food at In-n-Out.\n\n- $X$: number of fries orders\n- $Y$: number of beef patties ordered\n\n![joint PMF](pdf.png)\t\n:::\n\n::: {.column width=\"40%\"}\n![In-n-Out](innout.png)\t\n:::\n\n::::\n\n\n## Independence\n\n![](pdf.png)\t\n\nAre $X$ and $Y$ independent?\n\n\n## Covariance\n\n:::{.callout-warning collapse=\"true\"}\n## True or False?  $\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y)$\n\nFalse.  In general,\n    \n$$\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y) + 2\\left( \\text{E}[XY] - \\text{E}[X]\\text{E}[Y] \\right)$$\n:::\n\n:::{.callout-tip collapse=\"true\"}\n## Motivation for Independence\n\nAs you probably suspected, $\\text{Var}(X + Y)$ does equal $\\text{Var}(X) + \\text{Var}(Y)$ if $X$ and $Y$ are independent (exercise left to reader).\n:::\n\n:::{.callout-note}\n## Covariance\n\nWe define the **covariance** of random variables as\n\n$$\\text{Cov}(X,Y) = \\text{E}[XY] - \\text{E}[X]\\text{E}[Y]$$\n:::\n\n:::{.callout-tip collapse=\"true\"}\n## Derek's Intuition\n\nAs an analogy, the random variables somewhat act like waves in that they can work together and grow or somewhat cancel each other out.\n\n![](constructiveanddestructiveinterference.png)\n\n- Image source: https://www.physics-and-radio-electronics.com/physics/waveinterference.html\n:::\n\n:::{.callout-tip collapse=\"true\"}\n## The Pythagorean Theorem of Statistics\n\n![](pythagorean_theorem_of_statistics.png)\n\n- Image credit: Bioinformatics professor Dr. David Ardell\n:::\n\n\n## Covariance\n\n![](pdf.png)\t\n\n- Compute the covariance in the In-n-Out setting\n\n\n\n## Continuous Joint Probability Distribution Functions\n\n:::: {.columns}\n\n::: {.column width=\"75%\"}\nWe will once again visualize the act of ordering food at In-n-Out.\n\n- $X$: number of fries orders\n- $Y$: number of beef patties ordered\n\nwith joint PDF\n\n$$f(x,y) = \\frac{1}{30}(x + y)e^{-x}e^{-y/5}$$\n\n- Are $X$ and $Y$ independent?\n\n- Compute the covariance in the In-n-Out setting\n\n:::\n\n::: {.column width=\"25%\"}\n![In-n-Out](innout.png)\t\n:::\n\n::::\n\n\n## Looking Ahead\n\n:::: {.columns}\n\n::: {.column width=\"60%\"}\n- due Fri., Mar. 10:\n  - WHW7\n  - LHW6\n  - Internet Connection (survey)\n  \n- Exam 2 will be on Mon., Apr. 10\n\n- no lecture on Mar. 10, Mar. 24\n\n:::\n\n::: {.column width=\"40%\"}\n![](maps.png)\n[tweet source](https://mobile.twitter.com/Hyperosonic/status/1583534703193124865)\n\n:::\n\n::::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::: {.columns}\n\n::: {.column width=\"50%\"}\n\t\n:::\n\n::: {.column width=\"50%\"}\n\n:::\n\n::::\n\n::::: {.panel-tabset}\n\n\n\n:::::\n",
+    "supporting": [
+      "Math_32_19_Covariance_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
