@@ -1,0 +1,305 @@
+---
+title: "20: Correlation"
+author: "Derek Sollberger"
+date: "2023-03-13"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+## Setting
+
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+![joint PMF](pdf.png)	
+
+:::{.callout-note}
+## Covariance
+
+We define the **covariance** of random variables as
+
+$$\text{Cov}(X,Y) = \text{E}[XY] - \text{E}[X]\text{E}[Y]$$
+:::
+
+## Correlation
+
+:::{.callout-note}
+## Correlation
+
+Just like how the $z$-score is a standardized and unitless measure, the **correlation** was designed to be standardized and unitless (i.e. units cancel out).
+
+$$r = \text{Corr}(X,Y) = \ds\frac{ \text{Cov}(X,Y) }{ \sqrt{ \text{Var}(X) \cdot \text{Var}(Y)} }$$
+
+- If $\text{Var}(X) = 0$, the data $X$ are constant, and simply return $r = 0$
+- If $\text{Var}(Y) = 0$, the data $Y$ are constant, and simply return $r = 0$
+:::
+
+![](pdf.png)	
+
+- Compute the correlation in the In-n-Out setting
+
+## Interpretation of Correlation
+
+:::{.callout-tip collapse="true"}
+## Ranges
+
+![Ranges](ranges.png)
+
+Aside: the infinity-sized expected values might happen in continuous distributions.
+:::
+
+:::{.callout-tip}
+## Interpretation of Correlation
+
+Early development of the concept of correlation was done by Karl Pearson.  Pearson suggested the following interpretations of the correlation (but there is no strict rule for this):
+
+- $|r| < 0.4$: virtually uncorrelated
+- $0.4 \leq |r| < 0.7$: slightly correlated
+- $0.7 \leq |r| \leq 1.0$: strongly correlated
+:::
+
+## Examples of Correlation
+
+::::: {.panel-tabset}
+
+# R
+
+```{r}
+#| echo: true
+
+correlatedValues = function(x, r = 0.9){
+  r2 = r**2
+  ve = 1-r2
+  SD = sqrt(ve)
+  e  = rnorm(length(x), mean=0, sd=SD)
+  y  = r*x + e
+  return(y)
+}
+
+x1 = rnorm(100, mean = 0, sd = 1)
+y1 = correlatedValues(x1, r = -0.9)
+x2 = rnorm(100, mean = 0, sd = 1)
+y2 = correlatedValues(x2, r = -0.4)
+x3 = rnorm(100, mean = 0, sd = 1)
+y3 = correlatedValues(x3, r = 0.0)
+x4 = rnorm(100, mean = 0, sd = 1)
+y4 = correlatedValues(x4, r = 0.4)
+x5 = rnorm(100, mean = 0, sd = 1)
+y5 = correlatedValues(x5, r = 0.9)
+
+df1 <- data.frame(x1, y1, "group 1")
+df2 <- data.frame(x2, y2, "group 2")
+df3 <- data.frame(x3, y3, "group 3")
+df4 <- data.frame(x4, y4, "group 4")
+df5 <- data.frame(x5, y5, "group 5")
+names(df1) <- c("xdata", "ydata", "group")
+names(df2) <- c("xdata", "ydata", "group")
+names(df3) <- c("xdata", "ydata", "group")
+names(df4) <- c("xdata", "ydata", "group")
+names(df5) <- c("xdata", "ydata", "group")
+main_df <- rbind(df1, df2, df3, df4, df5)
+```
+
+
+# 1
+
+```{r}
+#| echo: false
+# compute correlation
+r <- main_df |>
+  filter(group == "group 1") |>
+  summarize(cor = cor(xdata, ydata))
+
+# plot correlation
+main_df |>
+  filter(group == "group 1") |>
+  ggplot(aes(x = xdata, y = ydata)) +
+  geom_point(color = "blue", size = 3) +
+  coord_equal() +
+  labs(title = "strongly and negatively correlated",
+       subtitle = paste0("r = ", round(r, 4)),
+       caption = "Math 32") +
+  theme_minimal()
+```
+
+# 2
+
+```{r}
+#| echo: false
+# compute correlation
+r <- main_df |>
+  filter(group == "group 2") |>
+  summarize(cor = cor(xdata, ydata))
+
+# plot correlation
+main_df |>
+  filter(group == "group 2") |>
+  ggplot(aes(x = xdata, y = ydata)) +
+  geom_point(color = "blue", size = 3) +
+  coord_equal() +
+  labs(title = "slightly and negatively correlated",
+       subtitle = paste0("r = ", round(r, 4)),
+       caption = "Math 32") +
+  theme_minimal()
+```
+
+# 3
+
+```{r}
+#| echo: false
+# compute correlation
+r <- main_df |>
+  filter(group == "group 3") |>
+  summarize(cor = cor(xdata, ydata))
+
+# plot correlation
+main_df |>
+  filter(group == "group 3") |>
+  ggplot(aes(x = xdata, y = ydata)) +
+  geom_point(color = "blue", size = 3) +
+  coord_equal() +
+  labs(title = "virually uncorrelated",
+       subtitle = paste0("r = ", round(r, 4)),
+       caption = "Math 32") +
+  theme_minimal()
+```
+
+# 4
+
+```{r}
+#| echo: false
+# compute correlation
+r <- main_df |>
+  filter(group == "group 4") |>
+  summarize(cor = cor(xdata, ydata))
+
+# plot correlation
+main_df |>
+  filter(group == "group 4") |>
+  ggplot(aes(x = xdata, y = ydata)) +
+  geom_point(color = "blue", size = 3) +
+  coord_equal() +
+  labs(title = "slightly and positively correlated",
+       subtitle = paste0("r = ", round(r, 4)),
+       caption = "Math 32") +
+  theme_minimal()
+```
+
+# 5
+
+```{r}
+#| echo: false
+# compute correlation
+r <- main_df |>
+  filter(group == "group 5") |>
+  summarize(cor = cor(xdata, ydata))
+
+# plot correlation
+main_df |>
+  filter(group == "group 5") |>
+  ggplot(aes(x = xdata, y = ydata)) +
+  geom_point(color = "blue", size = 3) +
+  coord_equal() +
+  labs(title = "positively and strongly correlated",
+       subtitle = paste0("r = ", round(r, 4)),
+       caption = "Math 32") +
+  theme_minimal()
+```
+
+:::::
+
+## Continuous Joint Probability Distribution Functions
+
+:::: {.columns}
+
+::: {.column width="75%"}
+We will once again visualize the act of ordering food at In-n-Out.
+
+- $X$: number of fries orders
+- $Y$: number of beef patties ordered
+
+with joint PDF
+
+$$f(x,y) = \frac{1}{30}(x + y)e^{-x}e^{-y/5}$$
+
+- Compute the correlation in the In-n-Out setting
+
+:::
+
+::: {.column width="25%"}
+![In-n-Out](innout.png)	
+:::
+
+::::
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- due Fri., Mar. 17:
+  - WHW8
+  - LHW7
+  
+- Exam 2 will be on Mon., Apr. 10
+
+- no lecture on Mar. 24, Apr. 3
+
+:::
+
+::: {.column width="40%"}
+![](maps.png)
+[tweet source](https://mobile.twitter.com/Hyperosonic/status/1583534703193124865)
+
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
