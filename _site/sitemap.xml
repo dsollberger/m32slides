@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2023-03-13T03:19:00.009Z</lastmod>
+    <lastmod>2023-03-15T04:43:13.745Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2023-03-13T03:19:03.101Z</lastmod>
+    <lastmod>2023-03-15T04:43:11.090Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -199,5 +199,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/20_-_Correlation/Math_32_20_Correlation.html</loc>
     <lastmod>2023-03-13T03:19:06.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/21_-_Change in Variables/Math_32_21_Change_of_Variables.html</loc>
+    <lastmod>2023-03-15T04:43:10.247Z</lastmod>
   </url>
 </urlset>

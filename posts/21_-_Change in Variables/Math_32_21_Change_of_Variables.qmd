@@ -1,7 +1,7 @@
 ---
-title: "18: Change of Variables"
+title: "21: Change of Variables"
 author: "Derek Sollberger"
-date: "2022-10-27"
+date: "2023-03-15"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -124,25 +124,26 @@ where the equal signs are not included when the function $g$ is strictly convex 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- due Fri., Oct. 28:
+- due Fri., Mar. 17:
   - WHW8
-  - LHW8
-  
-- Exam 2 will be on Tues., Nov. 1
-  - more info in weekly announcement
+  - LHW7
 
-- Math 32 discussion sections on Oct. 31 are optional
-  - canceled for Nov. 2
+- no lecture on Mar. 24, Apr. 3
+  
+- Exam 2 will be on Mon., Apr. 10
+
 
 :::
 
 ::: {.column width="50%"}
-![](jensen_road_sign.png)
+![](exam1dist.png)
 :::
 
 ::::
 
+## Misc
 
+![](jensen_road_sign.png)
 
 
 
