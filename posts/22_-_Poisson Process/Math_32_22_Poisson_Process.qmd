@@ -1,7 +1,7 @@
 ---
-title: "19: Poisson Process"
+title: "22: Poisson Process"
 author: "Derek Sollberger"
-date: "2022-11-03"
+date: "2023-03-17"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -152,7 +152,27 @@ Therefore $\text{E}[X] = \mu$ for a $\text{Pois}(\mu)$ distribution.  Furthermor
 
 :::::
 
+## Looking Ahead
 
+:::: {.columns}
+
+::: {.column width="50%"}
+- due Fri., Mar. 17:
+  - WHW8
+  - LHW7
+
+- no lecture on Mar. 24, Apr. 3
+  
+- Exam 2 will be on Mon., Apr. 10
+
+
+:::
+
+::: {.column width="50%"}
+![](Dory.gif)
+:::
+
+::::
 
 
 
