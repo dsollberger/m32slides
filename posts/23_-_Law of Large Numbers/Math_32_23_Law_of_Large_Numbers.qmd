@@ -1,7 +1,7 @@
 ---
-title: "20: Law of Large Numbers"
+title: "23: Law of Large Numbers"
 author: "Derek Sollberger"
-date: "2022-11-08"
+date: "2023-03-20"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -128,12 +128,15 @@ How many trials are needed so that the simulations converge to a mean within 0.0
 :::: {.columns}
 
 ::: {.column width="50%"}
-- WHW9
+- due Fri., Mar. 24:
+  - LHW8
+
+- no lecture on Mar. 24, Apr. 3
   
-Final Exam will be on Dec. 8
+- Exam 2 will be on Mon., Apr. 10
+
 
 :::
-
 ::: {.column width="50%"}
 ![](orange.png)
 
