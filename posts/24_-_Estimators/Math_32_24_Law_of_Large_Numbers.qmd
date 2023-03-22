@@ -1,7 +1,7 @@
 ---
-title: "21: Estimators"
+title: "24: Estimators"
 author: "Derek Sollberger"
-date: "2022-11-10"
+date: "2023-03-21"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -549,11 +549,12 @@ However, in practice, the discrepancy is usually so small that it is ignored.
 :::: {.columns}
 
 ::: {.column width="50%"}
-- WHW9
-- WHW10
-- (next LHW assignments will be given after Thanksgiving)
+- due Fri., Mar. 24:
+  - LHW8
+
+- no lecture on Mar. 24, Apr. 3
   
-Final Exam will be on Dec. 8
+- Exam 2 will be on Mon., Apr. 10
 
 :::
 
