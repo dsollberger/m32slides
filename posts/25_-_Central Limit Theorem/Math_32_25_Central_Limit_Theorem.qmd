@@ -1,7 +1,7 @@
 ---
-title: "22: Central Limit Theorem"
+title: "25: Central Limit Theorem"
 author: "Derek Sollberger"
-date: "2022-11-15"
+date: "2023-04-05"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -34,7 +34,7 @@ library("tidyverse")
 Recall, from our studies into linear operators,
 
 -  $\text{E}[aX + bY + c] = a\text{E}[X] + b\text{E}[Y] + c$
-- $\text{Var}[aX + bY + c] = a^{2}\text{Var}[X] + b^{2}\text{Var}[Y] + ab\text{Cov}(X,Y)$
+- $\text{Var}[aX + bY + c] = a^{2}\text{Var}[X] + b^{2}\text{Var}[Y] + 2ab\text{Cov}(X,Y)$
 
 Let $X_{i}$ be a set of $n$ i.i.d. random variables from the same distribution with mean $\mu$ and variance $\sigma^{2}$.  By induction, we can extrapolate these results for summations:
 
@@ -76,7 +76,7 @@ $$\sigma_{n} = \sigma\sqrt{n}$$
 
 Think: as sample size $n$ increases, does $\sigma_{n}$ increase or decrease?
 
-$$z\text{-score:} \quad z = \ds\frac{x - \mu}{\sigma} \quad\rightarrow\quad Z_{n} = \ds\frac{\sum X_{i} - n\mu}{\sigma_{n}} = \ds\frac{\sum X_{i} - n\mu}{\sigma\sqrt{n}}$$
+$$z\text{-score:} \quad z = \ds\frac{x - \mu}{\sigma} \quad\rightarrow\quad Z_{n} = \ds\frac{\sum X_{i} - \text{E}\left[ \ds\sum_{i=1}^{n} X_{i} \right]}{\sigma_{n}} = \ds\frac{\sum X_{i} - n\mu}{\sigma\sqrt{n}}$$
 
 ## Example
 
@@ -98,7 +98,7 @@ $$\sigma_{n} = \ds\frac{\sigma}{\sqrt{n}}$$
 
 Think: as sample size $n$ increases, does $\sigma_{n}$ increase or decrease?
 
-$$z\text{-score:} \quad z = \ds\frac{x - \mu}{\sigma} \quad\rightarrow\quad Z_{n} = \ds\frac{\bar{X}_{n} - \mu}{\sigma_{n}} = \ds\frac{\bar{X}_{n} - \mu}{\frac{\sigma}{\sqrt{n}}}$$
+$$z\text{-score:} \quad z = \ds\frac{x - \mu}{\sigma} \quad\rightarrow\quad Z_{n} = \ds\frac{\bar{X}_{n} - \text{E}[\bar{X}_{n}]}{\sigma_{n}} = \ds\frac{\bar{X}_{n} - \mu}{\frac{\sigma}{\sqrt{n}}}$$
 
 ## Example
 
@@ -109,27 +109,22 @@ For Covid-19, the population statistics for the incubation period are a mean of 
 
 ## Looking Ahead
 
-::::: {.panel-tabset}
+:::: {.columns}
 
-## Upcoming
+::: {.column width="60%"}
 
-- WHW9
-- WHW10
-- (next LHW assignments will be given after Thanksgiving)
-  
-Final Exam will be on Dec. 8
+* WHW9
+* Exam 2, Mon., Apr. 10
 
-## Exam 1 Dist
+    - more information in weekly announcement
+	
+:::
 
-![](exam1.png)
+::: {.column width="40%"}
+![Low battery?](Krababbel.jpg)
+:::
 
-## Exam 2 Dist
-
-![](exam2.png)
-
-:::::
-
-
+::::
 
 
 
