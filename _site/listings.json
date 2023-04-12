@@ -2,6 +2,7 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html",
       "/posts/26_-_Likelihood/Math_32_26_Likelihood.html",
       "/posts/25_-_Central Limit Theorem/Math_32_25_Central_Limit_Theorem.html",
       "/posts/24_-_Estimators/Math_32_24_Law_of_Large_Numbers.html",
@@ -29,7 +30,6 @@
       "/posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html",
       "/posts/01_-_Introduction/Math_32_-_Introductions.html",
       "/posts/24_-_Linear Regression/Math_32_24_Linear_Regression.html",
-      "/posts/23_-_Maximum Likelihood/Math_32_23_Maximum_Likelihood.html",
       "/posts/25_-_Confidence Intervals_-_concept/Math_32_-_25_-_Confidence_Intervals_concept.html",
       "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
       "/posts/27_-_Hypothesis Testing/Math_32_-_27_-_Hypothesis_Testing.html"

@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "26: Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 7, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n25: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nApr 5, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 21, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nMar 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Covariance\n\n\n\n\n\n\n\n\n\n\n\n\nMar 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n09: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n6: Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n5: Bayes’ Rule (Concepts)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n4: Conditional Probability\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Complements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "27: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 12, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n26: Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 7, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n25: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nApr 5, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 21, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nMar 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Covariance\n\n\n\n\n\n\n\n\n\n\n\n\nMar 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n09: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n6: Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n5: Bayes’ Rule (Concepts)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n4: Conditional Probability\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Complements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -2840,5 +2840,54 @@
     "title": "26: Likelihood",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\nWHW9\nExam 2, Mon., Apr. 10\n\nmore information in weekly announcement\n\n\n\n\ntweet source"
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#today-maximum-likelihood",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#today-maximum-likelihood",
+    "title": "27: Maximum Likelihood",
+    "section": "Today: Maximum Likelihood",
+    "text": "Today: Maximum Likelihood\nGoal: Modify distribution parameters based on observed data\nObjectives:\n\nderive maximum likelihood estimate for the exponential distribution\nderive maximum likelihood estimate for the Poisson distribution"
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#notation",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#notation",
+    "title": "27: Maximum Likelihood",
+    "section": "Notation",
+    "text": "Notation\n\n\n\n\n\n\nNotation\n\n\n\nRecall,\n\nLower-case \\(\\{x_{1}, x_{2}, x_{3}, ..., x_{n}\\}\\) is a set of observations\nUpper-case \\(\\{X_{1}, X_{2}, X_{3}, ..., X_{n}\\}\\) is a set of random variables (i.e. a data set)\nTreating \\(\\{X_{1}, X_{2}, ..., X_{n}\\}\\) as a set of \\(n\\) i.i.d. (independent and identically distributed) random variables is a common assumption.\nWith independence, \\[P(X_{1}, X_{2}, ..., X_{n}) = P(X_{1}) \\cdot P(X_{2}) \\cdot ... \\cdot P(X_{n})\\]\nEach individual probability is computed (at least theoretically) with a PDF (probability density function) \\[P(x_{i}) = f_{X}(x_{i})\\]"
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#likelihood",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#likelihood",
+    "title": "27: Maximum Likelihood",
+    "section": "Likelihood",
+    "text": "Likelihood\n::::: {.panel-tabset}"
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#definition",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#definition",
+    "title": "27: Maximum Likelihood",
+    "section": "Definition",
+    "text": "Definition\n\n\n\n\n\n\nLikelihood Function\n\n\n\nLet the likelihood function, in terms of a parameter \\(\\theta\\), be the joint probability\n\\[L(\\theta) = P(X_{1} = x_{1}, X_{2} = x_{2}, ..., X_{n} = x_{n}) = f_{X}(x_{1}) \\cdot f_{X}(x_{2}) \\cdots f_{X}(x_{n})\\]\nor\n\\[L\\left(\\theta; \\left\\{x_{i}\\right\\}_{i=1}^{n}\\right) = \\displaystyle\\prod_{i = 1}^{n} f_{X}(x_{i})\\]"
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#maximum-likelihood",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#maximum-likelihood",
+    "title": "27: Maximum Likelihood",
+    "section": "Maximum Likelihood",
+    "text": "Maximum Likelihood\n\nDefinitionVisualsExample 1Example 2\n\n\n\n\n\n\n\n\nLikelihood Function\n\n\n\n Given a data set \\(\\{x_{1}, x_{2}, ..., x_{n}\\}\\), we seek the desired parameter(s) that makes realizing the data set most likely.\n\\[L\\left(\\theta; \\left\\{x_{i}\\right\\}_{i=1}^{n}\\right) = \\displaystyle\\prod_{i = 1}^{n} f_{X}(x_{i})\\]\n\n\n\n\n\n\n\n\nMaximization\n\n\n\nFrom calculus, recall that the main step in maximizing the value of a function is setting the first derivative equal to zero.\n\n\n\n\n \n\n\nGiven a data set \\(\\{x_{1}, x_{2}, ..., x_{n}\\}\\), assume an \\(\\text{Exp}(\\lambda)\\) distribution.\n\nCompute the value of rate parameter \\(\\lambda\\) that maximizes the likelihood of the data set.\nCompute the likelihood at the maximum likelihood estimate (MLE).\nCharacterize the top 5 percent of light bulbs.\n\n\n\nGiven a data set \\(\\{x_{1}, x_{2}, ..., x_{n}\\}\\), assume an \\(\\text{Pois}(\\lambda)\\) distribution. Compute the value of parameter \\(\\lambda\\) that maximizes the likelihood of the data set."
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#estimators-revisited",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#estimators-revisited",
+    "title": "27: Maximum Likelihood",
+    "section": "Estimators Revisited",
+    "text": "Estimators Revisited\nIf we sample from a theoretical \\(U(0, M)\\) distribution, the sample maximum \\(s_{M}\\) of each sample is less than or equal to \\(M\\)\n\\[s_{M} \\leq M\\]\nIt would follow that the average of the sample maxima underestimates the true maximum\n\\[\\text{E}[s_{M}] \\leq M\\]\nTherefore the sample maximum is a biased estimator of the true maximum.\n\\[~\\]\nSimilarly, the sample minimum \\(s_{m}\\) from a \\(U(m, 0)\\) distribution overestimates\n\\[\\text{E}[s_{m}] \\geq m\\]\nTherefore the sample min-mum is a biased estimator of the true minumum."
+  },
+  {
+    "objectID": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#looking-ahead",
+    "href": "posts/27_-_Maximum Likelihood/Math_32_27_Maximum_Likelihood.html#looking-ahead",
+    "title": "27: Maximum Likelihood",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\nFinal Exam will be on May 6\n\n\ntweet source"
   }
 ]
