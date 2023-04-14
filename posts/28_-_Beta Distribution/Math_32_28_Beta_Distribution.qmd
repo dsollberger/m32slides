@@ -1,0 +1,189 @@
+---
+title: "28: Beta Distribution"
+author: "Derek Sollberger"
+date: "2023-04-14"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("tidyverse")
+```
+
+
+## Today: Beta Distribution
+
+**Goal**: Explore a distribution of proportions
+
+**Objectives**:
+
+- explore the beta distribution
+- explore the gamma function
+
+::: {.callout-note collapse="true"}
+## Odds
+
+In probability, the saying
+
+$$\text{the odds of observing } c \text{ is }a \text{ to } b$$
+
+is equivalent to the probability
+
+$$P(c) = \ds\frac{a}{a + b}$$
+:::
+
+::: {.callout-note collapse="true"}
+## Binomial Likelihood
+
+Since we have a two-state situation of observing $a$ or not among $a + b$ trials, we can envision a binomial situation $\text{Bin}(a + b, a)$, while probability $x$ obeys $0 \leq x \leq 1$.  That is, we might want some flexibility in understanding our probability $x$.  By Bayes' Rule, the posterior distribution is
+
+$$P(X = x | N = a) = \ds\frac{P(N = a | X = x) \cdot P(X = x)}{P(N = a)}$$
+
+while the likelihood is seen from a binomial distribution
+
+$$P(N = a | X = x) = \binom{a+b}{a}x^{a}(1-x)^{b}$$
+:::
+
+
+## Beta Distribution
+
+If $X \sim \text{Beta}(\alpha, \beta)$, then the probability density function (PDF) is
+
+$$f(X = x) = \begin{cases}
+  \ds\frac{1}{B(\alpha, \beta)}x^{\alpha - 1}(1-x)^{\beta - 1}, & 0 < x < 1 \\
+  0, & \text{otherwise}
+\end{cases}$$
+
+where the normalization constant
+
+$$B(\alpha, \beta) = \ds\int_{0}^{1} \! x^{\alpha - 1}(1-x)^{\beta - 1} \, dx$$
+
+to ensure that the total area under the curve is one unit.
+
+
+::: {.callout-tip collapse="true"}
+## Offsets
+
+The offset notation
+$$\begin{array}{rcl}
+  \alpha & = & a + 1 \\
+  \beta & = & b + 1 \\
+\end{array}$$
+is there to streamline the statistics seen later (such as the expected value and the variance).
+:::
+
+
+## Gamma Function
+
+::: {.callout-note collapse="true"}
+## Gamma Function
+
+That normalization constant
+
+$$B(\alpha, \beta) = \ds\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}$$
+
+can be viewed in terms of the \textit{gamma function}
+
+$$\Gamma(x) = \ds\int_{0}^{\infty} \! t^{x-1}e^{-t} \, dt$$
+:::
+
+**Claim:** $\Gamma(x+1) = x\Gamma(x)$
+
+::: {.callout-tip collapse="true"}
+## Connection to Factorials
+
+Along with computing $\Gamma(1) = 1$, it follows that for natural numbers
+$$\Gamma(x) = (x-1)!$$
+:::
+
+::: {.callout-tip collapse="true"}
+## Generalized Factorial Function
+
+However, the gamma function allows us to input real numbers.  For example,
+
+$$\begin{array}{rcll}
+  \Gamma\left(\ds\frac{1}{2}\right) & = & \ds\int_{0}^{\infty} \! t^{-1/2}e^{-t} \, dt & \text{defintion of gamma function} \\
+  ~ & = & \ds\int_{0}^{\infty} \! u^{-1}e^{-u^{2}}(2u) \, du & \text{substitution } t = u^{2} \rightarrow dt = 2u \, du \\
+  ~ & = & 2\ds\int_{0}^{\infty} \! e^{-u^{2}} \, du & \text{algebra} \\
+  ~ & = & \ds\int_{-\infty}^{\infty} \! e^{-u^{2}} \, du & \text{even function}  \\
+  ~ & = & \sqrt{\pi} & \text{Gaussian} \\
+\end{array}$$
+:::
+
+## Beta Distribution
+
+In terms of the gamma function, we now have that the beta distribution PDF is
+
+$$f(X = x) = \begin{cases}
+  \ds\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha - 1}(1-x)^{\beta - 1}, & 0 < x < 1 \\
+  0, & \text{otherwise}
+\end{cases}$$
+To understand the probabilistic environment, let us derive the expected value.
+
+::: {.callout-note collapse="true"}
+## Expected Value
+
+$$\begin{array}{rcl}
+  \text{E}[X] & = & \ds\int_{-\infty}^{\infty} \! x \cdot f_{X}(x) \, dx \\
+  ~ & = & \ds\int_{0}^{1} \! x \cdot \ds\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha - 1}(1-x)^{\beta - 1} \, dx \\
+  ~ & = & \ds\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\ds\int_{0}^{1} \! x^{(\alpha+1) - 1}(1-x)^{\beta - 1} \, dx \\
+  ~ & = & \ds\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \cdot \ds\frac{\Gamma(\alpha + 1)\Gamma(\beta)}{\Gamma(\alpha + \beta + 1)}\\
+  ~ & = & \ds\frac{\Gamma(\alpha + 1)}{\Gamma(\alpha)} \cdot \ds\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha + \beta + 1)} \\
+  ~ & = & \ds\frac{\alpha\Gamma(\alpha)}{\Gamma(\alpha)} \cdot \ds\frac{\Gamma(\alpha + \beta)}{(\alpha + \beta)\Gamma(\alpha + \beta)} \\
+  ~ & = & \ds\frac{\alpha}{\alpha + \beta} \\
+\end{array}$$
+:::
+
+::: {.callout-tip collapse="true"}
+## Variance
+
+Similarly, the variance for $X \sim \text{Beta}(\alpha, \beta)$ is
+$$\sigma^{2} = \ds\frac{\alpha\beta}{(\alpha + \beta + 1)(\alpha + \beta)^{2}}$$
+:::
+
+## Example
+
+If we have 3 heads and 2 tails in a trial of flipping an unfair coin, assume a beta distribution and build a range-rule-of-thumb interval $(\mu - 2\sigma, \mu + 2\sigma)$ for the posterior probability.
+
+::: {.callout-tip collapse="true"}
+## Parameters
+
+$$a = 3, b = 2 \quad\Rightarrow\quad \alpha = 4, \beta = 3$$
+$$\mu = \text{E}[X] = \ds\frac{\alpha}{\alpha + \beta} = \ds\frac{4}{7}, \quad \sigma^{2} = \ds\frac{\alpha\beta}{(\alpha + \beta + 1)(\alpha + \beta)^{2}} = \ds\frac{12}{8(7)^{2}}$$
+and our range-rule-of-thumb interval is
+$$\ds\frac{4}{7} \pm \ds\frac{2}{7}\sqrt{\ds\frac{3}{2}}$$
+or approximately $(0.2215, 0.9214)$
+:::
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
