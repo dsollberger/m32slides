@@ -1,7 +1,7 @@
 ---
-title: "24: Linear Regression"
+title: "29: Linear Regression"
 author: "Derek Sollberger"
-date: "2022-11-28"
+date: "2023-04-17"
 # format: 
 #   revealjs:
 #     scrollable: true
@@ -181,21 +181,19 @@ Joyce Byers notices that magnets are falling off the shelves.  She consults the 
 
 :::: {.columns}
 
-::: {.column width="50%"}
-## Upcoming
-
+::: {.column width="60%"}
+- WHW10
 - LHW9
-- LHW10
   
-Final Exam will be on Dec. 8	
+Final Exam will be on May 6
 
 - more information in weekly announcement
 :::
 
-::: {.column width="50%"}
-![](lambda.png)
+::: {.column width="40%"}
+![](where_draw_the_line.png)
 
-[tweet source](https://mobile.twitter.com/KellyBodwin/status/1579981646844993536)
+[tweet source](https://mobile.twitter.com/howie_hua/status/1526730800514748416)
 :::
 
 ::::
