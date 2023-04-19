@@ -186,7 +186,7 @@
     "href": "slides.html",
     "title": "m32slides",
     "section": "",
-    "text": "29: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nApr 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n28: Beta Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nApr 14, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n27: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 12, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n26: Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 7, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n25: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nApr 5, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 21, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nMar 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Covariance\n\n\n\n\n\n\n\n\n\n\n\n\nMar 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n09: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n6: Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n5: Bayes’ Rule (Concepts)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n4: Conditional Probability\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Complements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
+    "text": "30: Regression Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nApr 19, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n29: Linear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nApr 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n28: Beta Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nApr 14, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n27: Maximum Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 12, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n26: Likelihood\n\n\n\n\n\n\n\n\n\n\n\n\nApr 7, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n25: Central Limit Theorem\n\n\n\n\n\n\n\n\n\n\n\n\nApr 5, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n24: Estimators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 21, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n23: Law of Large Numbers\n\n\n\n\n\n\n\n\n\n\n\n\nMar 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n22: Poisson Process\n\n\n\n\n\n\n\n\n\n\n\n\nMar 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n21: Change of Variables\n\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n20: Correlation\n\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n19: Covariance\n\n\n\n\n\n\n\n\n\n\n\n\nMar 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n18: Linear Operators\n\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n17: Continuous Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n16: Discrete Joint Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n15: Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n14: Exponential Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n13: Continuous Distributions\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n12: Geometric Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 13, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n11: Cumulative Computation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n10: Binomial Distribution\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n09: Expectation\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n08: Variance\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n07: Measures of Centrality\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n6: Bayes’ Rule (Examples)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n5: Bayes’ Rule (Concepts)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n4: Conditional Probability\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n03_-_Complements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 22, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\n2: Inclusion-Exclusion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\nJan 17, 2023\n\n\nDerek Sollberger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfidence Intervals\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase Study: Yawning\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n[your name]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHypothesis Testing\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nDerek Sollberger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02_-_Independence/Math_32_-_02_-_Independence.html",
@@ -2980,5 +2980,131 @@
     "title": "29: Linear Regression",
     "section": "Looking Ahead",
     "text": "Looking Ahead\n\n\n\nWHW10\nLHW9\n\nFinal Exam will be on May 6\n\nmore information in weekly announcement\n\n\n\ntweet source"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#regression-analysis",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#regression-analysis",
+    "title": "30: Regression Analysis",
+    "section": "30: Regression Analysis",
+    "text": "30: Regression Analysis\nGoal: Discuss the validity of regression models\nObjectives:\n\nexplore nonlinear regression models\npractice using the coefficient of determination"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#setting",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#setting",
+    "title": "30: Regression Analysis",
+    "section": "Setting",
+    "text": "Setting\nKaggle was founded in April 2010 and is a data science resource that hosts many public data sets and hosts machine learning competitions.\n\npredictor variable\n\n\\[X: \\text{months since founding}\\]\n\nresponse variable\n\n\\[Y: \\text{number of users (in millions)}\\]"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data",
+    "title": "30: Regression Analysis",
+    "section": "Data",
+    "text": "Data\nThis data set is relatively small, so we can quickly transcribe it into an R data frame.\n\ndf <- data.frame(\n  months = c(0,86, 101, 110, 118, 123, 129, 134, 139, 143, 147),\n  users = 0:10\n)\n\nSource: https://www.kaggle.com/discussions/general/332147"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#linear-model",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#linear-model",
+    "title": "30: Regression Analysis",
+    "section": "Linear Model",
+    "text": "Linear Model\n\\[\\hat{y} = a + bx\\]\n\n\n\n\n\n\nDependent Variable\n\n\n\n\n\nIn model equations, the response variable is listed first\n\\[\\sim \\quad \\text{:} \\quad \\text{explained by}\\]\nthen the predictor variables.\n\n\n\n\nlinear_model <- lm(users ~ months, data = df)\n\n\nlinear_model\n\n\nCall:\nlm(formula = users ~ months, data = df)\n\nCoefficients:\n(Intercept)       months  \n   -2.38965      0.06609"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#prediction",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#prediction",
+    "title": "30: Regression Analysis",
+    "section": "Prediction",
+    "text": "Prediction\nExample: As of this writing (April 2023), there have been 156 months since Kaggle was established. Use a linear regression model to predict how many users are on Kaggle.\n\npredict(linear_model, newdata = data.frame(months = 156))\n\n       1 \n7.919814"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization",
+    "title": "30: Regression Analysis",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nIn ggplot2, the geom_smooth layer can quickly graph the linear regression model.\n\nGraphCode\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nsubtitle_string = \"<span style='color:#FF0000'>red: <b>regression model</b></span>, \n<span style='color:#0000FF'>blue: <b>true data</b></span>\"\n\ndf |>\n  ggplot(aes(x = months, y = users)) +\n  geom_point(color = \"blue\", size = 3) +\n  geom_smooth(color = \"red\", method = \"lm\", se = FALSE) +\n  labs(title = \"Kaggle Community\",\n       subtitle = subtitle_string,\n       caption = \"Math 32\",\n       x = \"months since April 2010 founding\",\n       y = \"number of users (in millions)\") +\n  theme_minimal() +\n  theme(plot.subtitle = element_markdown())"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#quadratic-regression",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#quadratic-regression",
+    "title": "30: Regression Analysis",
+    "section": "Quadratic Regression",
+    "text": "Quadratic Regression\n\\[\\hat{y} = a + bx + cx^{2}\\]\nBy default, R uses orthogonal polynomials in model creation. If we would rather gather easy-to-interpret coefficients in the model form above, use raw = TRUE.\n\nd2_model <- lm(users ~ poly(months, 2, raw = TRUE), data = df)\n\n\nd2_model\n\n\nCall:\nlm(formula = users ~ poly(months, 2, raw = TRUE), data = df)\n\nCoefficients:\n                 (Intercept)  poly(months, 2, raw = TRUE)1  \n                     0.06293                      -0.08169  \npoly(months, 2, raw = TRUE)2  \n                     0.00100  \n\n\nExample: As of this writing (April 2023), there have been 156 months since Kaggle was established. Use a quadratic regression model to predict how many users are on Kaggle.\n\npredict(d2_model, newdata = data.frame(months = 156))\n\n       1 \n11.66495"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-1",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-1",
+    "title": "30: Regression Analysis",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nIn ggplot2, the geom_smooth layer can quickly graph the polynomial regression model.\n\nGraphCode\n\n\n\n\n\n\n\n\n\n\nsubtitle_string = \"<span style='color:#FF0000'>red: <b>regression model</b></span>, \n<span style='color:#0000FF'>blue: <b>true data</b></span>, quadratic regression\"\n\ndf |>\n  ggplot(aes(x = months, y = users)) +\n  geom_point(color = \"blue\", size = 4) +\n  geom_smooth(color = \"red\", \n              formula = y ~ poly(x,2, raw = TRUE),\n              method = \"lm\", \n              se = FALSE) +\n  labs(title = \"Kaggle Community\",\n       subtitle = subtitle_string,\n       caption = \"Math 32\",\n       x = \"months since April 2010 founding\",\n       y = \"number of users (in millions)\") +\n  theme_minimal() +\n  theme(plot.title = element_text(face = \"bold\",\n                                  hjust = 0.5,\n                                  size = 20),\n        plot.subtitle = element_markdown(hjust = 0.5,\n                                         size = 15),\n        plot.caption = element_text(size = 10))"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#cubic-regression",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#cubic-regression",
+    "title": "30: Regression Analysis",
+    "section": "Cubic Regression",
+    "text": "Cubic Regression\n\\[\\hat{y} = a + bx + cx^{2} + dx^{3}\\]\nBy default, R uses orthogonal polynomials in model creation. If we would rather gather easy-to-interpret coefficients in the model form above, use raw = TRUE.\n\nd3_model <- lm(users ~ poly(months, 3, raw = TRUE), data = df)\n\n\nd3_model\n\n\nCall:\nlm(formula = users ~ poly(months, 3, raw = TRUE), data = df)\n\nCoefficients:\n                 (Intercept)  poly(months, 3, raw = TRUE)1  \n                   1.360e-03                     1.485e-02  \npoly(months, 3, raw = TRUE)2  poly(months, 3, raw = TRUE)3  \n                  -6.207e-04                     6.691e-06  \n\n\nExample: As of this writing (April 2023), there have been 156 months since Kaggle was established. Use a cubic regression model to predict how many users are on Kaggle.\n\npredict(d3_model, newdata = data.frame(months = 156))\n\n       1 \n12.61522"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-2",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-2",
+    "title": "30: Regression Analysis",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nIn ggplot2, the geom_smooth layer can quickly graph the polynomial regression model.\n\nGraphCode\n\n\n\n\n\n\n\n\n\n\nsubtitle_string = \"<span style='color:#FF0000'>red: <b>regression model</b></span>, \n<span style='color:#0000FF'>blue: <b>true data</b></span>, cubic regression\"\n\ndf |>\n  ggplot(aes(x = months, y = users)) +\n  geom_point(color = \"blue\", size = 5) +\n  geom_smooth(color = \"red\", \n              formula = y ~ poly(x,3, raw = TRUE),\n              method = \"lm\", \n              se = FALSE) +\n  labs(title = \"Kaggle Community\",\n       subtitle = subtitle_string,\n       caption = \"Math 32\",\n       x = \"months since April 2010 founding\",\n       y = \"number of users (in millions)\") +\n  theme_minimal() +\n  theme(plot.title = element_text(face = \"bold\",\n                                  hjust = 0.5,\n                                  size = 20),\n        plot.subtitle = element_markdown(hjust = 0.5,\n                                         size = 15),\n        plot.caption = element_text(size = 10))"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#analysis-of-variance",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#analysis-of-variance",
+    "title": "30: Regression Analysis",
+    "section": "Analysis of Variance",
+    "text": "Analysis of Variance\n\ndenote \\(y_{i}\\) for true outcomes\ndenote \\(\\hat{y}_{i}\\) for estimates (or predictions)\nthen \\(y_{i} - \\hat{y}_{i}\\) is the \\(i^{\\text{th}}\\) residual\n\n\\[SS_{\\text{res}} = \\displaystyle\\sum_{i=1}^{n}(y_{i} - \\hat{y_{i}})^{2}\\]\n\\[SS_{\\text{tot}} = \\displaystyle\\sum_{i=1}^{n}(y_{i} - \\bar{y_{i}})^{2}\\]"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#variation",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#variation",
+    "title": "30: Regression Analysis",
+    "section": "Variation",
+    "text": "Variation\n\\[R^{2} = 1 - \\displaystyle\\frac{SS_{\\text{res}}}{SS_{\\text{tot}}} = \\displaystyle\\frac{\\text{explained variation}}{\\text{total variation}}\\]\n\nfor linear regression, \\(R^{2}\\) is the square of correlation\nrange of \\(R^{2}\\) is \\([0,1]\\)\nhigher \\(R^{2}\\) implies better model"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#adjusted-coefficient-of-determination",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#adjusted-coefficient-of-determination",
+    "title": "30: Regression Analysis",
+    "section": "Adjusted Coefficient of Determination",
+    "text": "Adjusted Coefficient of Determination\nTo later mitigate issues such as the curse of dimensionality in more complex models, statisticians recommend use of an adjusted \\(R^{2}\\) such as\n\\[R^{2} = 1 - \\displaystyle\\frac{SS_{\\text{res}}}{SS_{\\text{tot}}} \\cdot \\displaystyle\\frac{df_{\\text{tot}}}{df_{\\text{res}}}\\]\n\nsummary(linear_model)\n\n\nCall:\nlm(formula = users ~ months, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.2938 -1.6442 -0.1355  1.5715  2.6750 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)   \n(Intercept) -2.38965    1.78199  -1.341  0.21278   \nmonths       0.06609    0.01503   4.398  0.00172 **\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.97 on 9 degrees of freedom\nMultiple R-squared:  0.6825,    Adjusted R-squared:  0.6472 \nF-statistic: 19.35 on 1 and 9 DF,  p-value: 0.001724"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#exponential-regression",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#exponential-regression",
+    "title": "30: Regression Analysis",
+    "section": "Exponential Regression",
+    "text": "Exponential Regression\n\\[\\hat{y} = a*b^{x}\\]\n\n# shouldn't compute ln 0\ndf$users[1] <- 0.1\n\nexp_model <- lm(log(users) ~ months, data = df)\n\n\n# coefficients of ln a and ln b\nexp_model\n\n\nCall:\nlm(formula = log(users) ~ months, data = df)\n\nCoefficients:\n(Intercept)       months  \n   -2.44344      0.03226  \n\n\nExample: As of this writing (April 2023), there have been 156 months since Kaggle was established. Use an exponential regression model to predict how many users are on Kaggle.\n\na <- exp(summary(exp_model)$coefficients[1])\nb <- exp(summary(exp_model)$coefficients[2])\na*b^{156}\n\n[1] 13.31783"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-3",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#data-visualization-3",
+    "title": "30: Regression Analysis",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nIn ggplot2, the geom_function layer can quickly graph a custom function.\n\nGraphCode\n\n\n\n\n\n\n\n\n\n\nsubtitle_string = \"<span style='color:#FF0000'>red: <b>regression model</b></span>, \n<span style='color:#0000FF'>blue: <b>true data</b></span>, exponential regression\"\n\nf <- function(x) { a*b^x }\n\ndf |>\n  ggplot(aes(x = months, y = users)) +\n  geom_point(color = \"blue\", size = 5) +\n  geom_function(fun = f, color = \"red\", linewidth = 2) +\n  labs(title = \"Kaggle Community\",\n       subtitle = subtitle_string,\n       caption = \"Math 32\",\n       x = \"months since April 2010 founding\",\n       y = \"number of users (in millions)\") +\n  theme_minimal() +\n  theme(plot.title = element_text(face = \"bold\",\n                                  hjust = 0.5,\n                                  size = 20),\n        plot.subtitle = element_markdown(hjust = 0.5,\n                                         size = 15),\n        plot.caption = element_text(size = 10))"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#model-selection",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#model-selection",
+    "title": "30: Regression Analysis",
+    "section": "Model Selection",
+    "text": "Model Selection\nLet us use the adjusted \\(R^{2}\\) values to judge our models.\n\nsummary(linear_model)$adj.r.squared\n\n[1] 0.6472128\n\n\n\nsummary(d2_model)$adj.r.squared\n\n[1] 0.9923513\n\n\n\nsummary(d3_model)$adj.r.squared\n\n[1] 0.9994897\n\n\n\nsummary(exp_model)$adj.r.squared\n\n[1] 0.9899031"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#what-happened",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#what-happened",
+    "title": "30: Regression Analysis",
+    "section": "What Happened",
+    "text": "What Happened\nOn April 17, 2023, Kaggle surpassed 13 million users!\n\n\n\nsource\n\n\ntweet source\n\npredict(d3_model, newdata = data.frame(months = 156))\n\n       1 \n12.61522"
+  },
+  {
+    "objectID": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#looking-ahead",
+    "href": "posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html#looking-ahead",
+    "title": "30: Regression Analysis",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\n\n\nWHW10\nLHW9\n\nFinal Exam will be on May 6\n\nmore information in weekly announcement\n\n\n\n\n\nEven Kaggle makes mistakes!\n\n\ntweet source"
   }
 ]

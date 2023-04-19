@@ -1,0 +1,519 @@
+---
+title: "30: Regression Analysis"
+author: "Derek Sollberger"
+date: "2023-04-19"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library("ggtext")
+library("tidyverse")
+```
+
+
+## 30: Regression Analysis
+
+**Goal**: Discuss the validity of regression models
+
+**Objectives**:
+
+- explore nonlinear regression models
+- practice using the coefficient of determination
+
+
+## Setting
+
+**Kaggle** was founded in April 2010 and is a data science resource that hosts many public data sets and hosts machine learning competitions.
+
+* predictor variable
+
+$$X: \text{months since founding}$$
+
+* response variable
+
+$$Y: \text{number of users (in millions)}$$
+
+
+## Data
+
+This data set is relatively small, so we can quickly transcribe it into an R data frame.
+
+```{r}
+df <- data.frame(
+  months = c(0,86, 101, 110, 118, 123, 129, 134, 139, 143, 147),
+  users = 0:10
+)
+```
+
+Source: https://www.kaggle.com/discussions/general/332147
+
+## Linear Model
+
+$$\hat{y} = a + bx$$
+
+::: {.callout-warning collapse="true"}
+## Dependent Variable
+
+In model equations, the response variable is listed first
+
+$$\sim \quad \text{:} \quad \text{explained by}$$
+
+then the predictor variables.
+:::
+
+```{r}
+linear_model <- lm(users ~ months, data = df)
+```
+
+```{r}
+linear_model
+```
+
+
+## Prediction
+
+Example: As of this writing (April 2023), there have been 156 months since Kaggle was established.  Use a linear regression model to predict how many users are on Kaggle.
+
+```{r}
+predict(linear_model, newdata = data.frame(months = 156))
+```
+
+
+## Data Visualization
+
+In `ggplot2`, the `geom_smooth` layer can quickly graph the linear regression model.
+
+::::: {.panel-tabset}
+
+## Graph
+
+```{r}
+#| echo: false
+#| eval: true
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, linear regression"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 3) +
+  geom_smooth(color = "red", method = "lm", se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 3) +
+  geom_smooth(color = "red", method = "lm", se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.subtitle = element_markdown())
+```
+
+:::::
+
+
+## Quadratic Regression
+
+$$\hat{y} = a + bx + cx^{2}$$
+
+By default, `R` uses orthogonal polynomials in model creation.  If we would rather gather easy-to-interpret coefficients in the model form above, use `raw = TRUE`.
+
+```{r}
+d2_model <- lm(users ~ poly(months, 2, raw = TRUE), data = df)
+```
+
+```{r}
+d2_model
+```
+
+Example: As of this writing (April 2023), there have been 156 months since Kaggle was established.  Use a quadratic regression model to predict how many users are on Kaggle.
+
+```{r}
+predict(d2_model, newdata = data.frame(months = 156))
+```
+
+
+## Data Visualization
+
+In `ggplot2`, the `geom_smooth` layer can quickly graph the polynomial regression model.
+
+::::: {.panel-tabset}
+
+## Graph
+
+```{r}
+#| echo: false
+#| eval: true
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, quadratic regression"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 4) +
+  geom_smooth(color = "red", 
+              formula = y ~ poly(x,2, raw = TRUE),
+              method = "lm", 
+              se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, quadratic regression"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 4) +
+  geom_smooth(color = "red", 
+              formula = y ~ poly(x,2, raw = TRUE),
+              method = "lm", 
+              se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+:::::
+
+
+## Cubic Regression
+
+$$\hat{y} = a + bx + cx^{2} + dx^{3}$$
+
+By default, `R` uses orthogonal polynomials in model creation.  If we would rather gather easy-to-interpret coefficients in the model form above, use `raw = TRUE`.
+
+```{r}
+d3_model <- lm(users ~ poly(months, 3, raw = TRUE), data = df)
+```
+
+```{r}
+d3_model
+```
+
+Example: As of this writing (April 2023), there have been 156 months since Kaggle was established.  Use a cubic regression model to predict how many users are on Kaggle.
+
+```{r}
+predict(d3_model, newdata = data.frame(months = 156))
+```
+
+## Data Visualization
+
+In `ggplot2`, the `geom_smooth` layer can quickly graph the polynomial regression model.
+
+::::: {.panel-tabset}
+
+## Graph
+
+```{r}
+#| echo: false
+#| eval: true
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, cubic regression"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 5) +
+  geom_smooth(color = "red", 
+              formula = y ~ poly(x,3, raw = TRUE),
+              method = "lm", 
+              se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, cubic regression"
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 5) +
+  geom_smooth(color = "red", 
+              formula = y ~ poly(x,3, raw = TRUE),
+              method = "lm", 
+              se = FALSE) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+:::::
+
+
+## Analysis of Variance
+
+- denote $y_{i}$ for true outcomes
+- denote $\hat{y}_{i}$ for estimates (or predictions)
+- then $y_{i} - \hat{y}_{i}$ is the $i^{\text{th}}$ *residual*
+
+$$SS_{\text{res}} = \ds\sum_{i=1}^{n}(y_{i} - \hat{y_{i}})^{2}$$
+
+$$SS_{\text{tot}} = \ds\sum_{i=1}^{n}(y_{i} - \bar{y_{i}})^{2}$$
+
+
+## Variation
+
+$$R^{2} = 1 - \ds\frac{SS_{\text{res}}}{SS_{\text{tot}}} = \ds\frac{\text{explained variation}}{\text{total variation}}$$
+
+* for linear regression, $R^{2}$ is the square of correlation
+* range of $R^{2}$ is $[0,1]$
+* higher $R^{2}$ implies better model
+
+
+## Adjusted Coefficient of Determination
+
+To later mitigate issues such as the curse of dimensionality in more complex models, statisticians recommend use of an adjusted $R^{2}$ such as
+
+$$R^{2} = 1 - \ds\frac{SS_{\text{res}}}{SS_{\text{tot}}} \cdot \ds\frac{df_{\text{tot}}}{df_{\text{res}}}$$
+
+```{r}
+summary(linear_model)
+```
+
+
+## Exponential Regression
+
+$$\hat{y} = a*b^{x}$$
+
+```{r}
+# shouldn't compute ln 0
+df$users[1] <- 0.1
+
+exp_model <- lm(log(users) ~ months, data = df)
+```
+
+```{r}
+# coefficients of ln a and ln b
+exp_model
+```
+
+Example: As of this writing (April 2023), there have been 156 months since Kaggle was established.  Use an exponential regression model to predict how many users are on Kaggle.
+
+```{r}
+a <- exp(summary(exp_model)$coefficients[1])
+b <- exp(summary(exp_model)$coefficients[2])
+a*b^{156}
+```
+
+## Data Visualization
+
+In `ggplot2`, the `geom_function` layer can quickly graph a custom function.
+
+::::: {.panel-tabset}
+
+## Graph
+
+```{r}
+#| echo: false
+#| eval: true
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, exponential regression"
+
+f <- function(x) { a*b^x }
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 5) +
+  geom_function(fun = f, color = "red", linewidth = 2) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+subtitle_string = "<span style='color:#FF0000'>red: <b>regression model</b></span>, 
+<span style='color:#0000FF'>blue: <b>true data</b></span>, exponential regression"
+
+f <- function(x) { a*b^x }
+
+df |>
+  ggplot(aes(x = months, y = users)) +
+  geom_point(color = "blue", size = 5) +
+  geom_function(fun = f, color = "red", linewidth = 2) +
+  labs(title = "Kaggle Community",
+       subtitle = subtitle_string,
+       caption = "Math 32",
+       x = "months since April 2010 founding",
+       y = "number of users (in millions)") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold",
+                                  hjust = 0.5,
+                                  size = 20),
+        plot.subtitle = element_markdown(hjust = 0.5,
+                                         size = 15),
+        plot.caption = element_text(size = 10))
+```
+
+:::::
+
+
+## Model Selection
+
+Let us use the adjusted $R^{2}$ values to judge our models.
+
+```{r}
+summary(linear_model)$adj.r.squared
+```
+
+```{r}
+summary(d2_model)$adj.r.squared
+```
+
+```{r}
+summary(d3_model)$adj.r.squared
+```
+
+```{r}
+summary(exp_model)$adj.r.squared
+```
+
+
+## What Happened
+
+On April 17, 2023, Kaggle surpassed 13 million users!
+
+![source](kaggle_community_1.png)
+
+[tweet source](https://mobile.twitter.com/kaggle/status/1648009624191115282)
+
+```{r}
+predict(d3_model, newdata = data.frame(months = 156))
+```
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- WHW10
+- LHW9
+  
+Final Exam will be on May 6
+
+- more information in weekly announcement
+:::
+
+::: {.column width="50%"}
+![Even Kaggle makes mistakes!](kaggle_community_2.png)
+
+[tweet source](https://mobile.twitter.com/kaggle/status/1648091344831692800)
+:::
+
+::::
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
