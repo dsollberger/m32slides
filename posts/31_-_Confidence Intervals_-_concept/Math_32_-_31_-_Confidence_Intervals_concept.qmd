@@ -1,13 +1,20 @@
 ---
 title: "Confidence Intervals"
-author: "[your name]"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: 
-  html_document:
-    toc: TRUE
+author: "Derek Sollberger"
+date: "2023-04-21"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
 ---
 
-```{r setup, message = FALSE}
+\newcommand{\ds}{\displaystyle}
+
+```{r setup}
+#| echo: false
+#| message: false
+#| warning: false
 knitr::opts_chunk$set(echo = TRUE)
 # install.packages() if needed
 library("infer")
@@ -16,12 +23,15 @@ library("patchwork")
 library("tidyverse")
 ```
 
-Source:  **Statistical Inference via Data Science:** *A Modern Dive into R and the Tidyverse*
 
+
+## 31: Confidence Intervals (Concept)
+
+* Source:  **Statistical Inference via Data Science:** *A Modern Dive into R and the Tidyverse*
 * Chapter 8: Bootstrapping and Confidence Intervals
 * [https://moderndive.com/8-confidence-intervals.html](https://moderndive.com/8-confidence-intervals.html)
 
-# Setting: Pennies
+## Setting: Pennies
 
 Among pennies in circulation in 2019, what was the average year of minting?  We have a sample size of 50 pennies.
 
@@ -29,6 +39,8 @@ Among pennies in circulation in 2019, what was the average year of minting?  We 
 # looking at the data set
 pennies_sample
 ```
+
+## Sample Distribution
 
 ```{r}
 # visualizing the the pennies
@@ -56,11 +68,12 @@ p1
 ```
 
 ```{r}
+# sample mean
 pennies_sample %>% summarize(xbar = mean(year))
 ```
 
 
-# Resampling
+## Resampling
 
 Using the available sample of data to fabricate another sample is called *resampling*.
 
@@ -87,6 +100,7 @@ p1 + p2
 ```
 
 ```{r}
+# a different sample mean
 pennies_resampled_once %>% summarize(xbar = mean(year))
 ```
 
@@ -165,7 +179,7 @@ c(xbar - 1.96*SE, xbar + 1.96*SE)
 pennies_resampled_means %>%
   ggplot(aes(x = mean_year)) +
   geom_histogram(binwidth = 1, color = "tan3", fill = "tan4") +
-  geom_vline(xintercept = c(xbar - 1.96*SE, xbar + 1.96*SE), color = "yellow", size = 2) +
+  geom_vline(xintercept = c(xbar - 1.96*SE, xbar + 1.96*SE), color = "yellow", linewidth = 2) +
   labs(title = "Resampling Results",
        subtitle = "N = 1337 resamples",
        caption = "Source: Modern Dive") +
@@ -201,9 +215,15 @@ bootstrap_distribution <- pennies_sample %>%
 bootstrap_distribution
 ```
 
+## Bootstrap Distribution
+
+The resulting distribution from sampling without replacement is called a **bootstrap distribution**
+
 ```{r}
 visualise(bootstrap_distribution)
 ```
+
+## Infer get_ci()
 
 There are also wrappers in the `infer` package to extract the confidence interval
 
@@ -229,7 +249,11 @@ visualize(bootstrap_distribution) +
   shade_ci(endpoints = SE_CI, color = "#DAA900", fill = "#002856")
 ```
 
-# Inference
+## Inference
+
+How do we describe confidence intervals?
+
+## Example: Bowl of Marbles
 
 The `bowl` data was literally a classroom bowl of red and white marbles
 
@@ -250,6 +274,7 @@ bowl %>%
   summarize(proportion_red = mean(color == "red"))
 ```
 
+## Simulations
 
 ```{r}
 CI_simulation <- function(confidence = 95, sample_size = 25, num_intervals = 10){
@@ -299,6 +324,10 @@ CI_simulation <- function(confidence = 95, sample_size = 25, num_intervals = 10)
 CI_simulation(confidence = 95, sample_size = 25, num_intervals = 100)
 ```
 
+::::: {.panel-tabset}
+
+## Significance Levels
+
 ```{r}
 p1 <- CI_simulation(80, 25, 100) + theme(legend.position = "none")
 p2 <- CI_simulation(95, 25, 100) + theme(legend.position = "none")
@@ -307,6 +336,10 @@ p3 <- CI_simulation(99, 25, 100) + theme(legend.position = "none")
 p1 + p2 + p3
 ```
 
+As we request more confidence, the confidence intervals are more likely to include the true population parameter.
+
+## Sample Sizes
+
 ```{r}
 p4 <- CI_simulation(95, 25, 100) + theme(legend.position = "none")
 p5 <- CI_simulation(95, 100, 100) + theme(legend.position = "none")
@@ -314,4 +347,61 @@ p6 <- CI_simulation(95, 400, 100) + theme(legend.position = "none")
 
 p4 + p5 + p6
 ```
+
+As we use larger sample sizes, the confidence intervals are more likely to include the true population parameter.
+
+:::::
+
+
+
+
+
+## Looking Ahead
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- WHW10 (due today)
+
+- WHW11
+- LHW9
+- LHW10
+  
+Final Exam will be on May 6
+
+- more information in weekly announcement
+:::
+
+::: {.column width="40%"}
+![](global_min.png)
+
+[tweet source](https://mobile.twitter.com/ChelseaParlett/status/1648898736784039936)
+:::
+
+::::
+
+
+
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+	
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+::::: {.panel-tabset}
+
+
+
+:::::
 
