@@ -5,7 +5,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 library("infer")      #tools to easily compute confidence intervals
 library("moderndive") #case study example
@@ -31,6 +31,32 @@ outlier_remover <- function(numerical_list){
   
   # return
   numerical_list
+}
+
+outlier_remover2 <- function(x){
+  # This function will remove possible outliers in a vector
+  # idea: outliers are in the extreme 10 percent of values
+  # INPUT: data vector
+  # OUTPUT: revised data vector without outliers
+  
+  # xbar <- mean(x, na.rm = TRUE)
+  # s <- sd(x, na.rm = TRUE)
+  p10 <- quantile(x, probs = 0.10, na.rm = TRUE)
+  p90 <- quantile(x, probs = 0.90, na.rm = TRUE)
+  n <- length(x)
+  new_x <- x
+  
+  for(i in 1:n){
+    if(is.na(x[i])){
+      new_x[i] <- NA
+    } else {
+      if(x[i] >= p90){ new_x[i] <- NA }
+      if(x[i] <= p10){ new_x[i] <- NA }
+    }
+  }
+  
+  #return
+  new_x
 }
 ```
 
