@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Derek Sollberger">
+<meta name="dcterms.date" content="2023-04-28">
+
+<title>Math 32 - 34: Introduction to Machine Learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Math 32</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../slides.html">
+ <span class="menu-text">Slides</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">34: Introduction to Machine Learning</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Derek Sollberger </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 28, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="cell">
+
+</div>
+<section id="introduction-to-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-machine-learning">34: Introduction to Machine Learning</h2>
+<p><strong>Goal</strong>: introduce machine learning (ideas and terminology)</p>
+<p><strong>Objectives</strong>:</p>
+<ul>
+<li>introduce <code>tidymodels</code> package</li>
+<li>practice with a <code>TidyTuesday</code> data set</li>
+</ul>
+</section>
+<section id="data-tour-de-france" class="level2">
+<h2 class="anchored" data-anchor-id="data-tour-de-france">Data: Tour de France</h2>
+<p>Source: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-04-07/readme.md">TidyTuesday</a> data set from April 7, 2020</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tdf_winners <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-07/tdf_winners.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tdf_winners, <span class="at">give.attr =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [106 × 19] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ edition      : num [1:106] 1 2 3 4 5 6 7 8 9 10 ...
+ $ start_date   : Date[1:106], format: "1903-07-01" "1904-07-02" ...
+ $ winner_name  : chr [1:106] "Maurice Garin" "Henri Cornet" "Louis Trousselier" "René Pottier" ...
+ $ winner_team  : chr [1:106] "La Française" "Conte" "Peugeot–Wolber" "Peugeot–Wolber" ...
+ $ distance     : num [1:106] 2428 2428 2994 4637 4488 ...
+ $ time_overall : num [1:106] 94.6 96.1 NA NA NA ...
+ $ time_margin  : num [1:106] 2.99 2.27 NA NA NA ...
+ $ stage_wins   : num [1:106] 3 1 5 5 2 5 6 4 2 3 ...
+ $ stages_led   : num [1:106] 6 3 10 12 5 13 13 3 13 13 ...
+ $ height       : num [1:106] 1.62 NA NA NA NA NA 1.78 NA NA NA ...
+ $ weight       : num [1:106] 60 NA NA NA NA NA 88 NA NA NA ...
+ $ age          : num [1:106] 32 19 24 27 24 25 22 22 26 23 ...
+ $ born         : Date[1:106], format: "1871-03-03" "1884-08-04" ...
+ $ died         : Date[1:106], format: "1957-02-19" "1941-03-18" ...
+ $ full_name    : chr [1:106] NA NA NA NA ...
+ $ nickname     : chr [1:106] "The Little Chimney-sweep" "Le rigolo (The joker)" "Levaloy / Trou-trou" NA ...
+ $ birth_town   : chr [1:106] "Arvier" "Desvres" "Paris" "Moret-sur-Loing" ...
+ $ birth_country: chr [1:106] "Italy" "France" "France" "France" ...
+ $ nationality  : chr [1:106] "&nbsp;France" "&nbsp;France" "&nbsp;France" "&nbsp;France" ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tdf_winners)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "edition"       "start_date"    "winner_name"   "winner_team"  
+ [5] "distance"      "time_overall"  "time_margin"   "stage_wins"   
+ [9] "stages_led"    "height"        "weight"        "age"          
+[13] "born"          "died"          "full_name"     "nickname"     
+[17] "birth_town"    "birth_country" "nationality"  </code></pre>
+</div>
+</div>
+</section>
+<section id="early-look" class="level2">
+<h2 class="anchored" data-anchor-id="early-look">Early Look</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tdf_winners <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> time_overall)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Are taller bicyclists faster?"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"featuring Tour de France winners"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: TidyTuesday"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"height (meters)"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"time (hours)"</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 41 rows containing missing values (`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="cleaning-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-data">Cleaning Data</h2>
+<p>Sometimes we like to perform some <em>preprocessing</em> of the data. In this example, we will</p>
+<ul>
+<li>focus on the champions that were more athletic than in the early years.</li>
+<li>focus on biker <code>pace</code> (response variable) as the route changes from year to year</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> tdf_winners <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(distance, time_overall, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           height, weight, age)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">complete.cases</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(height <span class="sc">&gt;=</span> <span class="fl">1.7</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pace =</span> distance <span class="sc">/</span> time_overall) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(pace, height, weight, age))</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 62  4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+   pace height weight   age
+  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1  31.6   1.72     66    23
+2  33.4   1.72     66    33
+3  32.1   1.77     68    29
+4  32.2   1.77     68    30
+5  34.6   1.79     75    26
+6  33.2   1.79     75    29</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-predictor-variables" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-predictor-variables">Multiple Predictor Variables</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Height</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Age</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Weight</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">R code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> pace)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">linewidth =</span> <span class="dv">3</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Are taller bicyclists faster?"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"featuring Tour de France winners"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: TidyTuesday"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"height (meters)"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"pace (km/hr)"</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> pace)) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">linewidth =</span> <span class="dv">3</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Are older bicyclists faster?"</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"featuring Tour de France winners"</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: TidyTuesday"</span>,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"age"</span>,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"pace (km/hr)"</span>) <span class="sc">+</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> pace)) <span class="sc">+</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">linewidth =</span> <span class="dv">3</span>,</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Are heavier bicyclists faster?"</span>,</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"featuring Tour de France winners"</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: TidyTuesday"</span>,</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"weight (kg)"</span>,</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"pace (km/hr)"</span>) <span class="sc">+</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="regression-via-tidymodels" class="level2">
+<h2 class="anchored" data-anchor-id="regression-via-tidymodels">Regression via TidyModels</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Start</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Model Engine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Fitting a Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Examining a Model</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>“With tidymodels, we start by specifying the functional form of the model that we want using the parsnip package.”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Regression Model Specification (regression)
+
+Computational engine: lm </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>“However, now that the type of model has been specified, a method for fitting or training the model can be stated using the engine. The engine value is often a mash-up of the software that can be used to fit or train the model as well as the estimation method.”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="co">#linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Regression Model Specification (regression)
+
+Computational engine: lm </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lm_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(pace <span class="sc">~</span> height <span class="sc">+</span> weight <span class="sc">+</span> age, <span class="at">data =</span> df)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>lm_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:
+stats::lm(formula = pace ~ height + weight + age, data = data)
+
+Coefficients:
+(Intercept)       height       weight          age  
+     3.8455      21.0987      -0.1387       0.2113  </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)    3.85    12.3        0.313  0.755 
+2 height        21.1      8.06       2.62   0.0112
+3 weight        -0.139    0.0685    -2.03   0.0474
+4 age            0.211    0.0979     2.16   0.0350</code></pre>
+</div>
+</div>
+<p>Observe where we have p-values &lt; 0.05</p>
+</div>
+</div>
+</div>
+</section>
+<section id="interaction-terms" class="level2">
+<h2 class="anchored" data-anchor-id="interaction-terms">Interaction Terms</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lm_fit_with_interaction <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(pace <span class="sc">~</span> height <span class="sc">+</span> weight <span class="sc">+</span> age <span class="sc">+</span> height<span class="sc">:</span>weight <span class="sc">+</span> height<span class="sc">:</span>age <span class="sc">+</span> weight<span class="sc">:</span>age <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        height<span class="sc">:</span>weight<span class="sc">:</span>age,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> df)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>lm_fit_with_interaction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:
+stats::lm(formula = pace ~ height + weight + age + height:weight + 
+    height:age + weight:age + height:weight:age, data = data)
+
+Coefficients:
+      (Intercept)             height             weight                age  
+         924.8499          -444.1560           -15.6339           -27.8628  
+    height:weight         height:age         weight:age  height:weight:age  
+           7.9297            13.9352             0.4802            -0.2425  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm_fit_with_interaction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 5
+  term              estimate std.error statistic p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)        925.     2272.        0.407   0.686
+2 height            -444.     1287.       -0.345   0.731
+3 weight             -15.6      32.8      -0.477   0.635
+4 age                -27.9      80.3      -0.347   0.730
+5 height:weight        7.93     18.5       0.428   0.670
+6 height:age          13.9      45.5       0.306   0.761
+7 weight:age           0.480     1.16      0.414   0.680
+8 height:weight:age   -0.243     0.656    -0.370   0.713</code></pre>
+</div>
+</div>
+<p>This may be foreshadowing of <em>overfitting</em>.</p>
+</section>
+<section id="prediction" class="level2">
+<h2 class="anchored" data-anchor-id="prediction">Prediction</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">New Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Predictions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Confidence Intervals</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Error Bars</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>SpongeBob is a 26-year-old, 1.77 m tall bicyclist who weighs 55 kg</li>
+<li>Patrick is a 25-year-old, 1.81 m tall bicyclist who weighs 75 kg</li>
+<li>Squidward is a 31-year-old, 1.89 m tall bicyclist who weighs 65 kg</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="spongebob_patrick_squidward.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>new_contestants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"SpongeBob"</span>, <span class="st">"Patrick"</span>, <span class="st">"Squidward"</span>),</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">26</span>, <span class="dv">25</span>, <span class="dv">31</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">height =</span> <span class="fu">c</span>(<span class="fl">1.77</span>, <span class="fl">1.81</span>, <span class="fl">1.89</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">weight =</span> <span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">75</span>, <span class="dv">65</span>))</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>mean_predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm_fit, <span class="at">new_data =</span> new_contestants)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>mean_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 1
+  .pred
+  &lt;dbl&gt;
+1  39.1
+2  36.9
+3  41.3</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>CI_predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm_fit,</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">new_data =</span> new_contestants,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type =</span> <span class="st">"conf_int"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>CI_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  .pred_lower .pred_upper
+        &lt;dbl&gt;       &lt;dbl&gt;
+1        37.1        41.0
+2        35.9        38.0
+3        39.0        43.5</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_for_plot <span class="ot">&lt;-</span> new_contestants <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(mean_predictions) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(CI_predictions)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>df_for_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       name age height weight    .pred .pred_lower .pred_upper
+1 SpongeBob  26   1.77     55 39.05386    37.07966    41.02807
+2   Patrick  25   1.81     75 36.91179    35.85758    37.96601
+3 Squidward  31   1.89     65 41.25491    38.97189    43.53794</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_for_plot <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name)) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> .pred_lower,</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> .pred_upper),</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.32</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tour de Under the Sea"</span>,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Welcome the new contestants!"</span>,</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Math 32"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"pace (km/hr)"</span>) <span class="sc">+</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-splitting" class="level2">
+<h2 class="anchored" data-anchor-id="data-splitting">Data Splitting</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Split</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">One Split</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Many Splits</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">R code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(df)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>train_df <span class="ot">&lt;-</span> <span class="fu">training</span>(data_split)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>test_df <span class="ot">&lt;-</span> <span class="fu">testing</span>(data_split)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"The number of observations in the training set is:"</span>, </span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">nrow</span>(train_df)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The number of observations in the training set is: 46"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"The number of observations in the testing set is:"</span>, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">nrow</span>(test_df)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The number of observations in the testing set is: 16"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="Math_32_34_Intro_Machine_Learning_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p><img src="images/many_splits.gif" class="img-fluid"></p>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>title_string <span class="ot">&lt;-</span> <span class="st">"&lt;span style='color:#000000'&gt;&lt;b&gt;Training Sets&lt;/b&gt;&lt;/span&gt; &lt;span style='color:#0000FF'&gt;and&lt;/span&gt; </span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;span style='color:#FF0000'&gt;&lt;b&gt;Testing Sets&lt;/b&gt;&lt;/span&gt;"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  data_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(df)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  train_df <span class="ot">&lt;-</span> <span class="fu">training</span>(data_split)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  test_df <span class="ot">&lt;-</span> <span class="fu">testing</span>(data_split)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  this_plot <span class="ot">&lt;-</span> train_df <span class="sc">%&gt;%</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> pace)) <span class="sc">+</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"training set"</span>), </span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>               <span class="co"># color = "black"</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> pace),</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> train_df,</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">formula =</span> <span class="st">"y ~ x"</span>,</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> pace, <span class="at">color =</span> <span class="st">"testing set"</span>),</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>             <span class="co"># color = "red",</span></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> test_df,</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> title_string,</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"approx 75-25 percent split"</span>,</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Math 32"</span>,</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"height (meters)"</span>,</span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"pace (km/hr)"</span>) <span class="sc">+</span></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Data Split"</span>,</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"training set"</span>, <span class="st">"testing set"</span>),</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"training set"</span> <span class="ot">=</span> <span class="st">"black"</span>,</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"testing set"</span> <span class="ot">=</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="fu">paste0</span>(<span class="st">"images/plot"</span>, i, <span class="st">".png"</span>),</span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot =</span> this_plot,</span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">device =</span> <span class="st">"png"</span>)</span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">Metrics</h2>
+<p>We then should get a sense of the validity of a model. One metric is <em>mean square error</em> of the test set.</p>
+<p><span class="math display">\[\text{MSE} = \displaystyle\frac{1}{n_{\text{test}}}\sum_{j = 1}^{n_{\text{test}}} (y_{j} - \hat{y}_{j})^{2}\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(df)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>train_df <span class="ot">&lt;-</span> <span class="fu">training</span>(data_split)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>test_df <span class="ot">&lt;-</span> <span class="fu">testing</span>(data_split)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>lm_train <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(pace <span class="sc">~</span> height <span class="sc">+</span> weight <span class="sc">+</span> age, <span class="at">data =</span> train_df)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>n_test <span class="ot">&lt;-</span> <span class="fu">nrow</span>(test_df)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>MSE <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">/</span>n_test)<span class="sc">*</span><span class="fu">sum</span>((</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  test_df<span class="sc">$</span>pace <span class="sc">-</span> </span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">predict</span>(lm_train, <span class="at">new_data =</span> test_df <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>pace))</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>MSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.773913</code></pre>
+</div>
+</div>
+</section>
+<section id="cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="cross-validation">Cross-Validation</h2>
+<p>To help generalize to a variety of testing sets, we can perform <em>cross-validation</em> by utilizing several training/testing set splits.</p>
+<p>We can then compute the <em>cross-validation error</em> by computing the mean of the test metric.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>MSE_vec <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, N)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N){</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  data_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(df)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  train_df <span class="ot">&lt;-</span> <span class="fu">training</span>(data_split)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  test_df <span class="ot">&lt;-</span> <span class="fu">testing</span>(data_split)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  lm_train <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fit</span>(pace <span class="sc">~</span> height <span class="sc">+</span> weight <span class="sc">+</span> age, <span class="at">data =</span> train_df)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  n_test <span class="ot">&lt;-</span> <span class="fu">nrow</span>(test_df)</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  MSE_vec[j] <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">/</span>n_test)<span class="sc">*</span><span class="fu">sum</span>((</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    test_df<span class="sc">$</span>pace <span class="sc">-</span> </span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(lm_train, <span class="at">new_data =</span> test_df <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>pace))</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="co"># vector of MSE</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>MSE_vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  6.721709  9.335262  5.487857 10.713953  3.355675  9.758514  4.483034
+ [8] 12.320367  4.809474  6.830113</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-validation error</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>cv_error <span class="ot">&lt;-</span> <span class="fu">mean</span>(MSE_vec)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>cv_error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.381596</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

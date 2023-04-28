@@ -2,6 +2,7 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/posts/34_-_Intro_Machine_Learning/Math_32_34_Intro_Machine_Learning.html",
       "/posts/31_-_Confidence Intervals_-_concept/Math_32_-_31_-_Confidence_Intervals_concept.html",
       "/posts/30_-_Regression Analysis/Math_32_30_Regression_Analysis.html",
       "/posts/29_-_Linear Regression/Math_32_29_Linear_Regression.html",
@@ -33,8 +34,8 @@
       "/posts/03_-_Complements/Math_32_03_Complements.html",
       "/posts/02_-_Inclusion-Exclusion/Math_32_-_02_-_Inclusion_Exclusion.html",
       "/posts/01_-_Introduction/Math_32_-_Introductions.html",
-      "/posts/26_-_Confidence Intervals_-_case studies/Math_32_-_26_-_Confidence_Intervals_case_studies.html",
-      "/posts/27_-_Hypothesis Testing/Math_32_-_27_-_Hypothesis_Testing.html"
+      "/posts/32_-_Confidence Intervals_-_case studies/Math_32_32_Confidence_Intervals_case_studies.html",
+      "/posts/33_-_Hypothesis Testing/Math_32_33_Hypothesis_Testing.html"
     ]
   }
 ]

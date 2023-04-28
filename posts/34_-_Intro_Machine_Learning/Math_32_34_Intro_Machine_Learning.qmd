@@ -1,0 +1,501 @@
+---
+title: "34: Introduction to Machine Learning"
+author: "Derek Sollberger"
+date: "2023-04-28"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library("ggtext")
+library("tidymodels")
+library("tidyverse")
+```
+
+
+## 34: Introduction to Machine Learning
+
+**Goal**: introduce machine learning (ideas and terminology)
+
+**Objectives**:
+
+- introduce `tidymodels` package
+- practice with a `TidyTuesday` data set
+
+
+## Data: Tour de France
+
+Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-04-07/readme.md) data set from April 7, 2020
+
+```{r}
+#| message: false
+#| warning: false
+tdf_winners <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-07/tdf_winners.csv')
+```
+
+```{r}
+str(tdf_winners, give.attr = FALSE)
+```
+
+```{r}
+colnames(tdf_winners)
+```
+
+## Early Look
+
+```{r}
+tdf_winners %>%
+  ggplot(aes(x = height, y = time_overall)) +
+  geom_point(color = "blue") +
+  labs(title = "Are taller bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "height (meters)",
+       y = "time (hours)") +
+  theme_minimal()
+```
+
+
+## Cleaning Data
+
+Sometimes we like to perform some *preprocessing* of the data.  In this example, we will 
+
+* focus on the champions that were more athletic than in the early years.
+* focus on biker `pace` (response variable) as the route changes from year to year
+
+```{r}
+df <- tdf_winners %>%
+  select(c(distance, time_overall, 
+           height, weight, age)) %>%
+  filter(complete.cases(.)) %>%
+  filter(height >= 1.7) %>%
+  mutate(pace = distance / time_overall) %>%
+  select(c(pace, height, weight, age))
+
+# dimensions
+dim(df)
+```
+
+```{r}
+head(df)
+```
+
+## Multiple Predictor Variables
+
+::::: {.panel-tabset}
+
+### Height
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+df %>%
+  ggplot(aes(x = height, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are taller bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "height (meters)",
+       y = "pace (km/hr)") +
+  theme_minimal()
+```
+
+### Age
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+df %>%
+  ggplot(aes(x = age, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are older bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "age",
+       y = "pace (km/hr)") +
+  theme_minimal()
+```
+
+### Weight
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+df %>%
+  ggplot(aes(x = weight, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are heavier bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "weight (kg)",
+       y = "pace (km/hr)") +
+  theme_minimal()
+```
+
+### R code
+
+```{r}
+#| eval: false
+#| message: false
+#| warning: false
+
+df %>%
+  ggplot(aes(x = height, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are taller bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "height (meters)",
+       y = "pace (km/hr)") +
+  theme_minimal()
+
+df %>%
+  ggplot(aes(x = age, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are older bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "age",
+       y = "pace (km/hr)") +
+  theme_minimal()
+
+df %>%
+  ggplot(aes(x = weight, y = pace)) +
+  geom_point(color = "blue", size = 2) +
+  geom_smooth(method = "lm", linewidth = 3,
+              se = FALSE, color = "red") +
+  labs(title = "Are heavier bicyclists faster?",
+       subtitle = "featuring Tour de France winners",
+       caption = "Source: TidyTuesday",
+       x = "weight (kg)",
+       y = "pace (km/hr)") +
+  theme_minimal()
+```
+
+:::::
+
+## Regression via TidyModels
+
+::::: {.panel-tabset}
+
+### Start
+
+“With tidymodels, we start by specifying the functional form of the model that we want using the parsnip package.”
+
+```{r}
+linear_reg()
+```
+
+### Model Engine
+
+“However, now that the type of model has been specified, a method for fitting or training the model can be stated using the engine. The engine value is often a mash-up of the software that can be used to fit or train the model as well as the estimation method.”
+
+```{r}
+linear_reg() %>% 
+  set_engine("lm") #linear model
+```
+
+### Fitting a Model
+
+```{r}
+lm_fit <- linear_reg() %>% 
+  set_engine("lm") %>%
+  fit(pace ~ height + weight + age, data = df)
+lm_fit
+```
+
+### Examining a Model
+
+```{r}
+tidy(lm_fit)
+```
+
+Observe where we have p-values < 0.05
+
+:::::
+
+## Interaction Terms
+
+```{r}
+lm_fit_with_interaction <- linear_reg() %>% 
+  set_engine("lm") %>%
+  fit(pace ~ height + weight + age + height:weight + height:age + weight:age +
+        height:weight:age,
+      data = df)
+lm_fit_with_interaction
+```
+
+```{r}
+tidy(lm_fit_with_interaction)
+```
+
+This may be foreshadowing of *overfitting*.
+
+## Prediction
+
+::::: {.panel-tabset}
+
+### New Data
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* SpongeBob is a 26-year-old, 1.77 m tall bicyclist who weighs 55 kg
+* Patrick is a 25-year-old, 1.81 m tall bicyclist who weighs 75 kg
+* Squidward is a 31-year-old, 1.89 m tall bicyclist who weighs 65 kg
+	
+:::
+
+::: {.column width="50%"}
+![](spongebob_patrick_squidward.png)
+:::
+
+::::
+
+### Predictions
+
+```{r}
+new_contestants <- data.frame(name = c("SpongeBob", "Patrick", "Squidward"),
+                              age = c(26, 25, 31),
+                              height = c(1.77, 1.81, 1.89),
+                              weight = c(55, 75, 65))
+mean_predictions <- predict(lm_fit, new_data = new_contestants)
+mean_predictions
+```
+
+### Confidence Intervals
+
+```{r}
+CI_predictions <- predict(lm_fit,
+                          new_data = new_contestants,
+                          type = "conf_int")
+CI_predictions
+```
+
+### Error Bars
+
+```{r}
+df_for_plot <- new_contestants %>%
+  bind_cols(mean_predictions) %>%
+  bind_cols(CI_predictions)
+df_for_plot
+```
+
+### Plot
+
+```{r}
+df_for_plot %>%
+  ggplot(aes(x = name)) +
+  geom_errorbar(aes(ymin = .pred_lower,
+                    ymax = .pred_upper),
+                color = "red",
+                width = 0.32) +
+  geom_point(aes(y = .pred), color = "blue", size = 5) +
+  labs(title = "Tour de Under the Sea",
+       subtitle = "Welcome the new contestants!",
+       caption = "Math 32",
+       x = "",
+       y = "pace (km/hr)") +
+  theme_minimal()
+```
+
+:::::
+
+## Data Splitting
+
+::::: {.panel-tabset}
+
+### Split
+
+```{r}
+data_split <- initial_split(df)
+train_df <- training(data_split)
+test_df <- testing(data_split)
+
+print(paste("The number of observations in the training set is:", 
+            nrow(train_df)))
+print(paste("The number of observations in the testing set is:", 
+            nrow(test_df)))
+```
+
+### One Split
+
+```{r}
+#| echo: false
+
+title_string <- "<span style='color:#000000'><b>Training Sets</b></span> <span style='color:#0000FF'>and</span> 
+<span style='color:#FF0000'><b>Testing Sets</b></span>"
+
+train_df %>%
+  ggplot(aes(x = height, y = pace)) +
+  geom_point(aes(color = "training set"), 
+             # color = "black"
+             ) +
+  geom_smooth(method = "lm",
+              aes(x = height, y = pace),
+              color = "black",
+              data = train_df,
+              formula = "y ~ x",
+              se = FALSE) +
+  geom_point(aes(x = height, y = pace, color = "testing set"),
+             # color = "red",
+             data = test_df,
+             size = 3) +
+  labs(title = title_string,
+       subtitle = "approx 75-25 percent split",
+       caption = "Math 32",
+       x = "height (meters)",
+       y = "pace (km/hr)") +
+  scale_color_manual(name = "Data Split",
+                     breaks = c("training set", "testing set"),
+                     values = c("training set" = "black",
+                                "testing set" = "red")) +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.title = element_markdown(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+### Many Splits
+
+![](images/many_splits.gif)
+
+### R code
+
+```{r}
+#| eval: false
+
+title_string <- "<span style='color:#000000'><b>Training Sets</b></span> <span style='color:#0000FF'>and</span> 
+<span style='color:#FF0000'><b>Testing Sets</b></span>"
+
+for(i in 1:10){
+  
+  data_split <- initial_split(df)
+  train_df <- training(data_split)
+  test_df <- testing(data_split)
+  
+  this_plot <- train_df %>%
+    ggplot(aes(x = height, y = pace)) +
+    geom_point(aes(color = "training set"), 
+               # color = "black"
+    ) +
+    geom_smooth(method = "lm",
+                aes(x = height, y = pace),
+                color = "black",
+                data = train_df,
+                formula = "y ~ x",
+              se = FALSE) +
+  geom_point(aes(x = height, y = pace, color = "testing set"),
+             # color = "red",
+             data = test_df,
+             size = 3) +
+  labs(title = title_string,
+       subtitle = "approx 75-25 percent split",
+       caption = "Math 32",
+       x = "height (meters)",
+       y = "pace (km/hr)") +
+  scale_color_manual(name = "Data Split",
+                     breaks = c("training set", "testing set"),
+                     values = c("training set" = "black",
+                                "testing set" = "red")) +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.title = element_markdown(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+  
+  ggsave(paste0("images/plot", i, ".png"),
+         plot = this_plot,
+         device = "png")
+}
+
+
+```
+
+:::::
+
+## Metrics
+
+We then should get a sense of the validity of a model.  One metric is *mean square error* of the test set.
+
+$$\text{MSE} = \ds\frac{1}{n_{\text{test}}}\sum_{j = 1}^{n_{\text{test}}} (y_{j} - \hat{y}_{j})^{2}$$
+
+```{r}
+data_split <- initial_split(df)
+train_df <- training(data_split)
+test_df <- testing(data_split)
+
+lm_train <- linear_reg() %>% 
+  set_engine("lm") %>%
+  fit(pace ~ height + weight + age, data = train_df)
+
+n_test <- nrow(test_df)
+
+MSE <- (1/n_test)*sum((
+  test_df$pace - 
+    predict(lm_train, new_data = test_df |> select(-pace))
+)^2)
+MSE
+```
+
+## Cross-Validation
+
+To help generalize to a variety of testing sets, we can perform *cross-validation* by utilizing several training/testing set splits.
+
+We can then compute the *cross-validation error* by computing the mean of the test metric.
+
+```{r}
+N <- 10
+MSE_vec <- rep(NA, N)
+
+for(j in 1:N){
+  data_split <- initial_split(df)
+  train_df <- training(data_split)
+  test_df <- testing(data_split)
+  
+  lm_train <- linear_reg() %>% 
+    set_engine("lm") %>%
+    fit(pace ~ height + weight + age, data = train_df)
+  
+  n_test <- nrow(test_df)
+  
+  MSE_vec[j] <- (1/n_test)*sum((
+    test_df$pace - 
+      predict(lm_train, new_data = test_df |> select(-pace))
+  )^2)
+}
+
+# vector of MSE
+MSE_vec
+```
+
+```{r}
+# cross-validation error
+cv_error <- mean(MSE_vec)
+cv_error
+```
+
