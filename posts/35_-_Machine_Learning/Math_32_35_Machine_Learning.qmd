@@ -1,0 +1,471 @@
+---
+title: "35: Introduction to Machine Learning (2)"
+author: "Derek Sollberger"
+date: "2023-05-01"
+# format: 
+#   revealjs:
+#     scrollable: true
+format: html
+# server: shiny
+---
+
+\newcommand{\ds}{\displaystyle}
+
+
+## 35: Introduction to Machine Learning (2)
+
+**Goal**: overview of some machine learning techniques
+
+**Objectives**:
+
+- introduce random forests
+- introduce clustering
+
+```{r}
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library("caret")
+library("ggraph")
+library("igraph")
+library("patchwork")
+library("randomForest")
+library("skimr")          #tools to quickly extract summary statistics
+library("tidymodels")
+library("tidyverse")
+
+set.seed(123) #actually needed to turn off some randomization
+```
+
+## Data: Eggs
+
+Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-04-11/readme.md) data set from April 11, 2023
+
+The data this week comes from The Humane League's US Egg Production dataset by Samara Mendez. Dataset and code is available for this project on OSF at US Egg Production Data Set.  This dataset tracks the supply of cage-free eggs in the United States from December 2007 to February 2021.
+
+```{r}
+#| message: false
+#| warning: false
+egg_df_raw <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-11/egg-production.csv')
+```
+
+```{r}
+str(egg_df_raw, give.attr = FALSE)
+```
+
+```{r}
+skimr::skim(egg_df_raw)
+```
+
+```{r}
+egg_df_raw %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(color = "blue") +
+  labs(title = "US Egg Production",
+       subtitle = "December 2007 to February 2021",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal()
+```
+
+
+## Cleaning Data
+
+Sometimes we like to perform some *preprocessing* of the data.  In this example, we will 
+
+* focus on smaller farms where the number of hens is under 100 million
+* `separate` the date into year, month, and day columns
+* turn `prod_process` into a factor variable (helps with R stuff for categorical variables)
+
+```{r}
+egg_df <- egg_df_raw |>
+  filter(n_hens < 1e8) |>
+  separate(observed_month,
+           into = c("year", "month", "day"),
+           remove = FALSE)
+
+egg_df$prod_process <- factor(egg_df$prod_process,
+                              levels = c("cage-free (organic)",
+                                         "cage-free (non-organic)",
+                                         "all"))
+
+# dimensions
+dim(egg_df)
+```
+
+```{r}
+head(egg_df)
+```
+
+```{r}
+egg_df %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = prod_process),
+             size = 3, alpha = 0.75) +
+  labs(title = "US Egg Production",
+       subtitle = "December 2007 to February 2021",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal()
+```
+
+```{r}
+egg_df %>%
+  ggplot(aes(x = month, y = n_eggs)) +
+  geom_boxplot(aes(fill = month)) +
+  labs(title = "US Egg Production",
+       subtitle = "December 2007 to February 2021",
+       caption = "Source: TidyTuesday",
+       x = "month",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Supervised Learning
+
+* In **supervised learning** has the goal of making predictions with a set of known labels for the response variable.
+
+    * Goal: predict the production type (e.g. cage-free) of each report of the egg data.
+
+* response variable: `prod_process`
+* predictor variables: `n_hens`, `n_eggs`, `month`, `year`, `prod_type`
+* model formula: `prod_process ~ n_hens + n_eggs + month + year + prod_type`
+
+```{r}
+egg_split <- initial_split(egg_df)
+egg_train <- training(egg_split)
+egg_test  <- testing(egg_split)
+```
+
+
+## Random Forests
+
+“Random forest models are ensembles of decision trees. A large number of decision tree models are created for the ensemble based on slightly different versions of the training set. When creating the individual decision trees, the fitting process encourages them to be as diverse as possible. The collection of trees are combined into the random forest model and, when a new sample is predicted, the votes from each tree are used to calculate the final predicted value for the new sample.” —tidymodels.org
+
+### Define the Forest
+
+```{r}
+random_forest_model <- 
+  rand_forest(trees = 250) %>% 
+  set_engine("ranger") %>% 
+  set_mode("classification")
+```
+
+### Fitting the Forest
+
+```{r}
+random_forest_fit <-
+  random_forest_model %>%
+  fit(prod_process ~ n_hens + n_eggs + month + year + prod_type, 
+      data = egg_train)
+
+random_forest_fit
+```
+
+## Visualizing the Forest
+
+(This is an old-fashioned code using the `caret` package, and Derek really should revise his knowledge here.)
+
+```{r}
+# OLD-FASHIONED WAY with the caret package
+model_rf <- caret::train(prod_process ~ n_hens + n_eggs + month + year + prod_type,
+                         data = egg_train, 
+                         method = "rf")
+model_rf
+```
+
+```{r}
+model_rpart <- caret::train(prod_process ~ n_hens + n_eggs + month + year + prod_type,
+                         data = egg_train, 
+                         method = "rpart")
+model_rpart
+```
+
+```{r}
+#| message: false
+#| warning: false
+#source:  https://shiring.github.io/machine_learning/2017/03/16/rf_plot_ggraph
+tree_func <- function(final_model, 
+                      tree_num) {
+  
+  # get tree by index
+  tree <- randomForest::getTree(final_model, 
+                                k = tree_num, 
+                                labelVar = TRUE) %>%
+    tibble::rownames_to_column() %>%
+    # make leaf split points to NA, so the 0s won't get plotted
+    mutate(`split point` = ifelse(is.na(prediction), `split point`, NA))
+  
+  # prepare data frame for graph
+  graph_frame <- data.frame(from = rep(tree$rowname, 2),
+                            to = c(tree$`left daughter`, tree$`right daughter`))
+  
+  # convert to graph and delete the last node that we don't want to plot
+  graph <- graph_from_data_frame(graph_frame) %>%
+    delete_vertices("0")
+  
+  # set node labels
+  V(graph)$node_label <- gsub("_", " ", as.character(tree$`split var`))
+  V(graph)$leaf_label <- as.character(tree$prediction)
+  V(graph)$split <- as.character(round(tree$`split point`, digits = 2))
+  
+  # plot
+  plot <- ggraph(graph, 'dendrogram') + 
+    theme_bw() +
+    geom_edge_link() +
+    geom_node_point() +
+    geom_node_text(aes(label = node_label), na.rm = TRUE, repel = TRUE) +
+    geom_node_label(aes(label = split), vjust = 2.5, na.rm = TRUE, fill = "white") +
+    geom_node_label(aes(label = leaf_label, fill = leaf_label), na.rm = TRUE, 
+                    repel = TRUE, colour = "white", fontface = "bold", show.legend = FALSE) +
+    theme(panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.background = element_blank(),
+          plot.background = element_rect(fill = "white"),
+          panel.border = element_blank(),
+          axis.line = element_blank(),
+          axis.text.x = element_blank(),
+          axis.text.y = element_blank(),
+          axis.ticks = element_blank(),
+          axis.title.x = element_blank(),
+          axis.title.y = element_blank(),
+          plot.title = element_text(size = 18))
+  
+  print(plot)
+}
+
+tree_num <- which.min(model_rf$finalModel$forest$ndbigtree == min(model_rf$finalModel$forest$ndbigtree))
+
+tree_func(final_model = model_rf$finalModel, tree_num)
+```
+
+## Classification Error
+
+```{r}
+egg_predictions <- predict(model_rf, newdata = egg_test)
+table(egg_predictions)
+```
+
+
+```{r}
+plot_1 <- egg_test %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = egg_predictions),
+             size = 3, alpha = 0.75) +
+  labs(title = "US Egg Production",
+       subtitle = "predictions",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+plot_2 <- egg_test %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = prod_process),
+             size = 3, alpha = 0.75) +
+  labs(title = "US Egg Production",
+       subtitle = "true classifications",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+# patchwork
+plot_1 + plot_2
+```
+
+```{r}
+confusionMatrix(egg_predictions, egg_test$prod_process)
+```
+
+
+## Unsupervised Learning
+
+* In **unsupervised learning**, we try to find structure in the data of the response variable without predetermined labels.
+
+    * Goal: classify farms into groups by size
+
+## K-Means Clustering
+
+### Numerical Variables
+
+```{r}
+egg_numerical <- egg_df |>
+  select(n_hens, n_eggs)
+head(egg_numerical)
+```
+
+```{r}
+egg_numerical %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(color = "black") +
+  labs(title = "US Egg Production",
+       subtitle = "How can we organize this data?",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+### First Look
+
+Are there 3 types of chicken farms in the data?
+
+```{r}
+clusters3 <- kmeans(egg_numerical, 3)
+
+egg_df_with_clusters <- cbind(egg_numerical, clusters3$cluster)
+colnames(egg_df_with_clusters) <- c("n_hens", "n_eggs", "cluster")
+
+# turn cluster from a numerical variable into a factor (categorical) variable
+egg_df_with_clusters$cluster <- factor(egg_df_with_clusters$cluster)
+
+# show a sample of observations
+egg_df_with_clusters |>
+  slice_sample(n = 10, replace = TRUE)
+```
+
+```{r}
+egg_df_with_clusters %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = cluster),
+             size = 3, alpha = 0.7) +
+  labs(title = "US Egg Production",
+       subtitle = "k = 3 clusters",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal()
+```
+
+### How to select the number of clusters
+
+```{r}
+egg_df_with_clusters %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = cluster),
+             size = 3, alpha = 0.7) +
+  geom_point(aes(x = n_hens, y = n_eggs),
+             color = "black",
+             data = data.frame(clusters3$centers), 
+             size = 5) +
+  labs(title = "US Egg Production",
+       subtitle = "k = 3 clusters (with centers)",
+       caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal()
+```
+
+We start with an $d$-dimensional data set of numerical variables and prescribe a number $k$ for the number of clusters and run the `kmeans` algorithm.
+
+* Each cluster $C_k$ has $n_k$ points labeled $x_i$ in $d$-dimensional space
+* Each cluster has a cluster center $\mu_k$
+* Each cluster has a *within-sum-of-squares*
+
+$$\text{WSS} = \ds\sum_{x_{i} \in C_{k}} (x_i−\mu_k)^{2}$$
+
+Thus, our metric for the clustering will be the reported *total-within-sum-of-squares*
+
+$$\text{TWSS} = \ds\sum_{j=1}^{k}\sum_{x_{i} \in C_{k}} (x_i−\mu_k)^{2}$$
+
+* as the number $k$ of clusters increases, the TWSS decreases
+* but we generally do not want a large number of clusters for later interpretation
+
+### Scree Plot
+
+```{r}
+k_vals <- 1:9
+twss <- rep(NA, 9)
+
+for(k in k_vals){
+  this_clustering <- kmeans(egg_numerical, k)
+  twss[k] <- this_clustering$tot.withinss
+}
+
+df_analysis <- data.frame(k_vals, twss)
+
+df_analysis %>%
+  ggplot(aes(x = k_vals, y = twss)) +
+  geom_line() +
+  geom_point(size = 3) +
+  labs(title = "Scree Plot",
+       subtitle = "How many clusters should we pick?",
+       caption = "Math 32",
+       x = "number of clusters",
+       y = "total within sum of squares") +
+  scale_x_continuous(breaks = 1:9) +
+  theme_minimal()
+```
+
+* some advise to pick the “elbow” in the scree plot (where the concavity is greatest)
+* some advise to pick the place where TWSS starts to barely improve
+
+```{r}
+clusters2 <- kmeans(egg_numerical, 2)
+
+egg_df_with_clusters <- cbind(egg_numerical, clusters2$cluster)
+colnames(egg_df_with_clusters) <- c("n_hens", "n_eggs", "cluster")
+
+# turn cluster from a numerical variable into a factor (categorical) variable
+egg_df_with_clusters$cluster <- factor(egg_df_with_clusters$cluster)
+
+plot_k2 <- egg_df_with_clusters %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = cluster),
+             size = 3, alpha = 0.7) +
+  labs(title = "US Egg Production",
+       subtitle = "k = 2 clusters",
+       # caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+clusters5 <- kmeans(egg_numerical, 5)
+
+egg_df_with_clusters <- cbind(egg_numerical, clusters5$cluster)
+colnames(egg_df_with_clusters) <- c("n_hens", "n_eggs", "cluster")
+
+# turn cluster from a numerical variable into a factor (categorical) variable
+egg_df_with_clusters$cluster <- factor(egg_df_with_clusters$cluster)
+
+plot_k5 <- egg_df_with_clusters %>%
+  ggplot(aes(x = n_hens, y = n_eggs)) +
+  geom_point(aes(color = cluster),
+             size = 3, alpha = 0.7) +
+  labs(title = "US Egg Production",
+       subtitle = "k = 5 clusters",
+       # caption = "Source: TidyTuesday",
+       x = "number of hens",
+       y = "number of eggs") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#patchwork
+plot_k2 + plot_2 + plot_k5
+```
+
+
+
+
+
+
+
+
+
+
+
+

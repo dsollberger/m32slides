@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/index.html</loc>
-    <lastmod>2023-04-28T07:08:06.029Z</lastmod>
+    <lastmod>2023-05-01T05:50:34.606Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/post-with-code/index.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://www.dsollberger.com/slides.html</loc>
-    <lastmod>2023-04-28T07:08:10.171Z</lastmod>
+    <lastmod>2023-05-01T05:54:11.368Z</lastmod>
   </url>
   <url>
     <loc>https://www.dsollberger.com/posts/02_-_Independence/Math_32_-_02_-_Independence.html</loc>
@@ -247,5 +247,9 @@
   <url>
     <loc>https://www.dsollberger.com/posts/34_-_Intro_Machine_Learning/Math_32_34_Intro_Machine_Learning.html</loc>
     <lastmod>2023-04-28T07:08:20.876Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dsollberger.com/posts/35_-_Machine_Learning/Math_32_35_Machine_Learning.html</loc>
+    <lastmod>2023-05-01T05:54:13.564Z</lastmod>
   </url>
 </urlset>
